@@ -111,10 +111,9 @@ chapter_opener_body = """
     </div>
 """
 chapter_opener_image = """
-    <div class="img-placeholder" style="position:absolute; top:calc(-1 * var(--bleed)); bottom:calc(-1 * var(--bleed)); right:calc(-1 * var(--bleed)); left:38%;">
-      <div class="ph-inner">
-        <div class="ph-caption">Photography placeholder &mdash; overhead flat-lay: 4&ndash;5 labeled glass<br>pantry jars filled with dry rice / pasta mixes, kraft labels,<br>light wood surface, soft natural window light, shallow props<br>(measuring spoon, linen napkin). Full-bleed, warm &amp; editorial.</div>
-      </div>
+    <div class="img-photo" style="position:absolute; top:calc(-1 * var(--bleed)); bottom:calc(-1 * var(--bleed)); right:calc(-1 * var(--bleed)); left:38%;">
+      <img src="../../images/source-brand/jarC.jpg" alt="">
+      <div class="photo-tag">Real author photography (brand jar shot) &mdash; generic, not recipe-specific.<br>Final: recipe-matched Replicate photography once network access is enabled.</div>
     </div>
 """
 html_out = f"""<!doctype html>
@@ -134,7 +133,7 @@ open("/home/user/Formattazione-Ross/design/sample/1-chapter-opener.html", "w").w
 # ---------------------------------------------------------------------------
 # 2 & 3. NORMAL RECIPE PAGES
 # ---------------------------------------------------------------------------
-def normal_recipe_page(title, side, tag, folio_num, rh_text, out_path, thumb_caption):
+def normal_recipe_page(title, side, tag, folio_num, rh_text, out_path, thumb_caption, thumb_src):
     r = get(title)
     add_html = ""
     if add_ingredients(r):
@@ -151,8 +150,9 @@ def normal_recipe_page(title, side, tag, folio_num, rh_text, out_path, thumb_cap
         <div class="section-label">{jar_label(r)}</div>
         <ul class="ingredient-list">{ingredient_block(jar_ingredients(r))}</ul>
         {add_html}
-        <div class="img-placeholder" style="margin-top:16px; height:1.5in; border-radius:2px;">
-          <div class="ph-inner"><div class="ph-caption">{thumb_caption}</div></div>
+        <div class="img-photo" style="margin-top:16px; height:1.5in; border-radius:2px;">
+          <img src="{thumb_src}" alt="">
+          <div class="photo-tag">{thumb_caption}</div>
         </div>
       </div>
       <div style="flex:1;">
@@ -184,14 +184,16 @@ normal_recipe_page(
     "NORMAL RECIPE PAGE 1 (verso)", 24,
     "Chapter One · Meal-Ready Dry Mixes",
     "/home/user/Formattazione-Ross/design/sample/2-recipe-normal-1.html",
-    "Photography placeholder &mdash; small jar of pale cheese-sauce mix, wood surface",
+    "Real author photo (generic jar) &mdash; final: recipe-matched photography pending",
+    "../../images/source-brand/jarB.jpg",
 )
 normal_recipe_page(
     "Taco and Burrito Bowl Seasoning Kit", "page-right",
     "NORMAL RECIPE PAGE 2 (recto)", 29,
     "Taco & Burrito Bowl Seasoning Kit",
     "/home/user/Formattazione-Ross/design/sample/3-recipe-normal-2.html",
-    "Photography placeholder &mdash; jar of red-toned rice seasoning mix, overhead",
+    "Real author photo (generic jar) &mdash; final: recipe-matched photography pending",
+    "../../images/source-brand/jarA.jpg",
 )
 
 # ---------------------------------------------------------------------------
@@ -199,10 +201,9 @@ normal_recipe_page(
 # ---------------------------------------------------------------------------
 r = get("Rice Pilaf Mix")
 body = f"""
-    <div class="img-placeholder" style="position:absolute; top:calc(-1 * var(--bleed)); left:calc(-1 * var(--bleed)); right:calc(-1 * var(--bleed)); height:5.6in;">
-      <div class="ph-inner">
-        <div class="ph-caption">Photography placeholder &mdash; full-bleed hero: finished rice pilaf in a rustic<br>bowl, steam visible, wooden spoon resting alongside, labeled pantry jar<br>of the dry mix just in frame. Warm natural light, shallow depth of field.</div>
-      </div>
+    <div class="img-photo" style="position:absolute; top:calc(-1 * var(--bleed)); left:calc(-1 * var(--bleed)); right:calc(-1 * var(--bleed)); height:5.6in;">
+      <img src="../../images/source-brand/jarA.jpg" alt="" style="object-position: 50% 30%;">
+      <div class="photo-tag">Real author photo (generic jar) &mdash; final: dish-specific hero photography pending</div>
     </div>
     <div style="position:absolute; top:5.85in; left:0; right:0;">
       <div class="recipe-eyebrow">Chapter 1 &middot; Recipe 01</div>
@@ -246,8 +247,9 @@ body = f"""
         <div class="recipe-title long" style="margin-top:6px;">{esc(r['title'])}</div>
         <div class="recipe-intro" style="margin-top:8px;">{esc(r['intro'])}</div>
       </div>
-      <div class="img-placeholder" style="width:1.9in; height:1.9in; flex:0 0 auto; border-radius:2px;">
-        <div class="ph-inner"><div class="ph-caption">Placeholder &mdash; fajita rice bowl, overhead</div></div>
+      <div class="img-photo" style="width:1.9in; height:1.9in; flex:0 0 auto; border-radius:2px;">
+        <img src="../../images/source-brand/jarC.jpg" alt="">
+        <div class="photo-tag">Real author photo (generic jar) &mdash; final photo pending</div>
       </div>
     </div>
     <div style="margin-top:14px;">{meta_row(r)}</div>

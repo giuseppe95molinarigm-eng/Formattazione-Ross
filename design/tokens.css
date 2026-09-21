@@ -385,6 +385,36 @@ body {
   line-height: 1.5;
 }
 
+.img-photo {
+  position: relative;
+  overflow: hidden;
+  background: #e9ddc6;
+}
+.img-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.guides .img-photo .photo-tag {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  z-index: 40;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 6.7pt;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: rgba(42,36,32,0.72);
+  padding: 3px 7px;
+  border-radius: 2px;
+  max-width: 90%;
+  line-height: 1.35;
+}
+.photo-tag { display: none; }
+
 .divider {
   border: none;
   border-top: 0.75pt solid var(--line);
