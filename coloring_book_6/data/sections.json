@@ -1,0 +1,49 @@
+{
+  "sections": [
+    {
+      "section": 1,
+      "label": "Parte 1",
+      "title": "Mi cuerpo sigue creciendo",
+      "full_title": "Parte 1 – Mi cuerpo sigue creciendo",
+      "first_id": 1,
+      "last_id": 20,
+      "count": 20
+    },
+    {
+      "section": 2,
+      "label": "Parte 2",
+      "title": "Mis sentidos y mi cuerpo trabajan en equipo",
+      "full_title": "Parte 2 – Mis sentidos y mi cuerpo trabajan en equipo",
+      "first_id": 21,
+      "last_id": 40,
+      "count": 20
+    },
+    {
+      "section": 3,
+      "label": "Parte 3",
+      "title": "Ahora hago cosas de niño mayor",
+      "full_title": "Parte 3 – Ahora hago cosas de niño mayor",
+      "first_id": 41,
+      "last_id": 60,
+      "count": 20
+    },
+    {
+      "section": 4,
+      "label": "Parte 4",
+      "title": "Mi mente aprende cada vez más",
+      "full_title": "Parte 4 – Mi mente aprende cada vez más",
+      "first_id": 61,
+      "last_id": 80,
+      "count": 20
+    },
+    {
+      "section": 5,
+      "label": "Parte 5",
+      "title": "Mis amigos, mis emociones y mi cole",
+      "full_title": "Parte 5 – Mis amigos, mis emociones y mi cole",
+      "first_id": 81,
+      "last_id": 101,
+      "count": 21
+    }
+  ]
+}

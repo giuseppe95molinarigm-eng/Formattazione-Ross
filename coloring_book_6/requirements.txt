@@ -1,0 +1,22 @@
+# ── Core pipeline ───────────────────────────────────────────────────────────
+replicate>=1.0.4          # official Replicate API client
+python-dotenv>=1.0.1      # loads REPLICATE_API_TOKEN from .env
+PyYAML>=6.0.2             # config.yaml
+pydantic>=2.9.0           # typed validation of entries / metadata
+
+# ── Image processing & QC ───────────────────────────────────────────────────
+Pillow>=10.4.0            # resize / threshold / contact sheets
+numpy>=1.26.0             # pixel statistics for validation
+ImageHash>=4.3.1          # perceptual duplicate detection
+scipy>=1.11.0             # high-quality Lanczos/edge-preserving helpers
+
+# ── PDF build + preflight ──────────────────────────────────────────────────
+reportlab>=4.2.0          # print-ready interior PDF generation
+PyMuPDF>=1.24.0           # PDF inspection / preflight verification
+
+# ── Manuscript parsing ─────────────────────────────────────────────────────
+python-docx>=1.1.2        # reads the .docx manuscript
+
+# ── CLI niceties ───────────────────────────────────────────────────────────
+rich>=13.8.0              # tables, progress bars, batch previews
+requests>=2.32.0          # image download from Replicate URLs

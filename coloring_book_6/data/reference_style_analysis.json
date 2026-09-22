@@ -1,0 +1,348 @@
+{
+  "envelope": {
+    "artwork_sample_count": 6,
+    "text_page_sample_count": 5,
+    "native_dimensions": [
+      [
+        2550,
+        3300
+      ]
+    ],
+    "ink_fraction": {
+      "min": 0.04644,
+      "max": 0.08383,
+      "mean": 0.05787
+    },
+    "white_fraction": {
+      "min": 0.91237,
+      "max": 0.93014,
+      "mean": 0.92064
+    },
+    "midtone_fraction": {
+      "min": 0.00376,
+      "max": 0.05227,
+      "mean": 0.03082
+    },
+    "channel_spread": {
+      "min": 0.0,
+      "max": 0.263,
+      "mean": 0.16267
+    },
+    "internal_margin_px": {
+      "top_px": {
+        "min": 291.0,
+        "max": 496.0,
+        "mean": 337.0
+      },
+      "bottom_px": {
+        "min": 249.0,
+        "max": 568.0,
+        "mean": 323.0
+      },
+      "left_px": {
+        "min": 170.0,
+        "max": 445.0,
+        "mean": 255.0
+      },
+      "right_px": {
+        "min": 168.0,
+        "max": 445.0,
+        "mean": 246.0
+      }
+    },
+    "primary_contour_px": {
+      "min": 16.0,
+      "max": 82.0,
+      "mean": 34.66667
+    },
+    "interior_detail_px": {
+      "min": 7.0,
+      "max": 34.0,
+      "mean": 14.66667
+    }
+  },
+  "observed": {
+    "style_notes": [
+      "Pure black line art on pure white; no colour, no grey shading.",
+      "Thick, confident primary contours; thinner interior detail lines.",
+      "Large closed areas sized for a 6-year-old's crayon.",
+      "Background filled with simple star / dot / 4-point-sparkle confetti.",
+      "Protagonist wears a t-shirt with a single five-point star emblem.",
+      "Concept 'insets' drawn as a plain circular vignette, never a label.",
+      "Supporting props may carry simple cute faces (tooth, teddy bear).",
+      "Clocks/rulers show tick marks only — never numerals.",
+      "Subject reads instantly at arm's length; one clear focal action."
+    ],
+    "confirmed_no_written_language": true,
+    "trim_native_px": [
+      2550,
+      3300
+    ]
+  },
+  "per_image": [
+    {
+      "file": "prev_book_01.png",
+      "width": 2550,
+      "height": 3300,
+      "aspect": 0.77273,
+      "ppi_at_8_5in": 300.0,
+      "ink_fraction": 0.06707,
+      "white_fraction": 0.93014,
+      "midtone_fraction": 0.00506,
+      "channel_spread": 0.066,
+      "contrast_range": 255,
+      "ink_bbox_margins": {
+        "top_px": 294,
+        "bottom_px": 306,
+        "left_px": 358,
+        "right_px": 168
+      },
+      "stroke_width": {
+        "median_px": 23.0,
+        "p10_px": 9.0,
+        "p90_px": 57.0,
+        "mean_px": 26.62
+      }
+    },
+    {
+      "file": "prev_book_03.png",
+      "width": 2550,
+      "height": 3300,
+      "aspect": 0.77273,
+      "ppi_at_8_5in": 300.0,
+      "ink_fraction": 0.08075,
+      "white_fraction": 0.91627,
+      "midtone_fraction": 0.00637,
+      "channel_spread": 0.0,
+      "contrast_range": 255,
+      "ink_bbox_margins": {
+        "top_px": 1020,
+        "bottom_px": 389,
+        "left_px": 286,
+        "right_px": 252
+      },
+      "stroke_width": {
+        "median_px": 18.0,
+        "p10_px": 15.0,
+        "p90_px": 46.0,
+        "mean_px": 24.84
+      }
+    },
+    {
+      "file": "prev_book_04.png",
+      "width": 2550,
+      "height": 3300,
+      "aspect": 0.77273,
+      "ppi_at_8_5in": 300.0,
+      "ink_fraction": 0.04747,
+      "white_fraction": 0.95205,
+      "midtone_fraction": 0.00093,
+      "channel_spread": 0.0,
+      "contrast_range": 255,
+      "ink_bbox_margins": {
+        "top_px": 1017,
+        "bottom_px": 1016,
+        "left_px": 433,
+        "right_px": 504
+      },
+      "stroke_width": {
+        "median_px": 53.0,
+        "p10_px": 49.0,
+        "p90_px": 78.69999999999999,
+        "mean_px": 58.41
+      }
+    },
+    {
+      "file": "prev_book_06.png",
+      "width": 2550,
+      "height": 3300,
+      "aspect": 0.77273,
+      "ppi_at_8_5in": 300.0,
+      "ink_fraction": 0.04644,
+      "white_fraction": 0.92435,
+      "midtone_fraction": 0.04143,
+      "channel_spread": 0.263,
+      "contrast_range": 255,
+      "ink_bbox_margins": {
+        "top_px": 291,
+        "bottom_px": 317,
+        "left_px": 217,
+        "right_px": 254
+      },
+      "stroke_width": {
+        "median_px": 7.0,
+        "p10_px": 4.0,
+        "p90_px": 16.0,
+        "mean_px": 9.95
+      }
+    },
+    {
+      "file": "prev_book_07.png",
+      "width": 2550,
+      "height": 3300,
+      "aspect": 0.77273,
+      "ppi_at_8_5in": 300.0,
+      "ink_fraction": 0.07129,
+      "white_fraction": 0.92719,
+      "midtone_fraction": 0.00313,
+      "channel_spread": 0.0,
+      "contrast_range": 255,
+      "ink_bbox_margins": {
+        "top_px": 625,
+        "bottom_px": 737,
+        "left_px": 396,
+        "right_px": 395
+      },
+      "stroke_width": {
+        "median_px": 34.0,
+        "p10_px": 30.0,
+        "p90_px": 85.0,
+        "mean_px": 45.4
+      }
+    },
+    {
+      "file": "prev_book_08.png",
+      "width": 2550,
+      "height": 3300,
+      "aspect": 0.77273,
+      "ppi_at_8_5in": 300.0,
+      "ink_fraction": 0.05237,
+      "white_fraction": 0.91393,
+      "midtone_fraction": 0.0474,
+      "channel_spread": 0.192,
+      "contrast_range": 255,
+      "ink_bbox_margins": {
+        "top_px": 323,
+        "bottom_px": 249,
+        "left_px": 170,
+        "right_px": 203
+      },
+      "stroke_width": {
+        "median_px": 8.0,
+        "p10_px": 4.0,
+        "p90_px": 17.0,
+        "mean_px": 10.28
+      }
+    },
+    {
+      "file": "prev_book_09.png",
+      "width": 2550,
+      "height": 3300,
+      "aspect": 0.77273,
+      "ppi_at_8_5in": 300.0,
+      "ink_fraction": 0.08383,
+      "white_fraction": 0.91431,
+      "midtone_fraction": 0.00376,
+      "channel_spread": 0.0,
+      "contrast_range": 255,
+      "ink_bbox_margins": {
+        "top_px": 496,
+        "bottom_px": 568,
+        "left_px": 445,
+        "right_px": 445
+      },
+      "stroke_width": {
+        "median_px": 34.0,
+        "p10_px": 26.0,
+        "p90_px": 82.0,
+        "mean_px": 44.86
+      }
+    },
+    {
+      "file": "prev_book_10.png",
+      "width": 2550,
+      "height": 3300,
+      "aspect": 0.77273,
+      "ppi_at_8_5in": 300.0,
+      "ink_fraction": 0.04664,
+      "white_fraction": 0.92876,
+      "midtone_fraction": 0.03501,
+      "channel_spread": 0.214,
+      "contrast_range": 255,
+      "ink_bbox_margins": {
+        "top_px": 315,
+        "bottom_px": 249,
+        "left_px": 170,
+        "right_px": 203
+      },
+      "stroke_width": {
+        "median_px": 9.0,
+        "p10_px": 4.0,
+        "p90_px": 20.0,
+        "mean_px": 11.97
+      }
+    },
+    {
+      "file": "prev_book_11.png",
+      "width": 2550,
+      "height": 3300,
+      "aspect": 0.77273,
+      "ppi_at_8_5in": 300.0,
+      "ink_fraction": 0.07386,
+      "white_fraction": 0.92459,
+      "midtone_fraction": 0.00318,
+      "channel_spread": 0.0,
+      "contrast_range": 255,
+      "ink_bbox_margins": {
+        "top_px": 753,
+        "bottom_px": 865,
+        "left_px": 419,
+        "right_px": 416
+      },
+      "stroke_width": {
+        "median_px": 34.0,
+        "p10_px": 27.0,
+        "p90_px": 85.0,
+        "mean_px": 45.85
+      }
+    },
+    {
+      "file": "prev_book_12.png",
+      "width": 2550,
+      "height": 3300,
+      "aspect": 0.77273,
+      "ppi_at_8_5in": 300.0,
+      "ink_fraction": 0.05085,
+      "white_fraction": 0.91237,
+      "midtone_fraction": 0.05227,
+      "channel_spread": 0.241,
+      "contrast_range": 255,
+      "ink_bbox_margins": {
+        "top_px": 303,
+        "bottom_px": 249,
+        "left_px": 170,
+        "right_px": 203
+      },
+      "stroke_width": {
+        "median_px": 7.0,
+        "p10_px": 4.0,
+        "p90_px": 16.0,
+        "mean_px": 9.5
+      }
+    },
+    {
+      "file": "prev_book_13.png",
+      "width": 2550,
+      "height": 3300,
+      "aspect": 0.77273,
+      "ppi_at_8_5in": 300.0,
+      "ink_fraction": 0.08192,
+      "white_fraction": 0.91631,
+      "midtone_fraction": 0.00353,
+      "channel_spread": 0.0,
+      "contrast_range": 255,
+      "ink_bbox_margins": {
+        "top_px": 625,
+        "bottom_px": 697,
+        "left_px": 365,
+        "right_px": 364
+      },
+      "stroke_width": {
+        "median_px": 34.0,
+        "p10_px": 30.0,
+        "p90_px": 86.0,
+        "mean_px": 45.54
+      }
+    }
+  ]
+}

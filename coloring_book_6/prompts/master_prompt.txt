@@ -1,0 +1,30 @@
+# ══════════════════════════════════════════════════════════════════════════
+# MASTER STYLE PROMPT — "¡Ya tengo 6 años!" (AHLivros)
+#
+# Blocks are assembled by scripts/prompt_builder.py in this order:
+#   [A] STYLE  →  [B] CHARACTER  →  [C] SCENE  →  [D] COMPOSITION  →  [E] EXCLUSIONS
+# Lines starting with '#' are comments and are stripped before sending.
+# {{PLACEHOLDERS}} are substituted per illustration.
+# ══════════════════════════════════════════════════════════════════════════
+
+[A:STYLE]
+Professional children's coloring book illustration for a printed activity book: clean pure-black ink line art on a pure white background. Bold, smooth, confident outlines with two clear line weights — thick even primary contours around every figure and major object, and noticeably thinner lines for interior detail such as folds, hair strands and small features. All shapes are closed so that each area can be filled in with crayons, and every enclosed area is generously large and simple, sized for the hand of a six-year-old child. Flat, cheerful, friendly cartoon style with rounded forms. Absolutely no colour, no grey tones, no shading, no gradients, no hatching and no texture: the page is only black line and white paper. Light, airy decorative background scattered with simple five-point star outlines of assorted sizes, small open circles and four-point sparkle glints, plus a few large simple props that make the scene's idea clear. The background stays open and uncrowded — roughly ninety percent of the page remains white. Immediately readable at arm's length, with one single obvious focal action. Commercial children's activity-book quality, consistent with a published series.
+
+[B:CHARACTER]
+The recurring main character is the same cheerful six-year-old boy on every page. He is clearly a school-age child: not a toddler and not a teenager, with a head-to-body proportion of about one to four and a half. Soft rounded oval face with gently full cheeks and a small rounded chin. Large round wide-set eyes, each drawn as a bold circular outline filled solid black with one small round white highlight in the upper left, and a fine upper lash line. Two short curved tapered eyebrows set high above the eyes. A very small soft button nose made of one short rounded stroke. A wide cheerful open smile showing a clean white mouth interior. Two small oval blush marks on the cheeks drawn as thin open outlines, never filled. Small simple rounded ears. Short boyish tousled hair with a softly spiky fringe and several pointed tufts along the crown, drawn as outline only and left white so it can be coloured, with a few long thin strand lines inside to show direction. Sturdy little torso, short rounded limbs, and small rounded hands with five clearly separated, cleanly drawn fingers. {{WARDROBE}} His expression here is {{EXPRESSION}}.
+
+[B2:SUPPORTING_CAST]
+{{SUPPORTING_CAST}}
+
+[C:SCENE]
+{{SCENE}}
+
+[D:COMPOSITION]
+{{FRAMING}} Vertical portrait full-page composition with the boy as the unmistakable focal point, filling a generous share of the frame. {{POSE}} Generous white breathing space is left around the edges of the page and all meaningful line work stays well inside the printable area, so nothing important is near any edge. The head is never cropped{{FULLBODY_CLAUSE}}. Clean, balanced, uncluttered staging that a young child can read instantly.
+
+[E:EXCLUSIONS]
+Critical requirement: the illustration must contain absolutely no written language of any kind. No words, no letters, no alphabet characters, no numbers, no digits, no captions, no labels, no titles, no signs with writing, no written text on clothing or objects, no speech bubbles containing text, no watermark, no signature, no logo, no pseudo-text and no gibberish lettering. {{BLANK_SURFACES}}Every surface that would normally carry writing is drawn completely blank or replaced with a purely pictorial symbol. Also avoid: colour of any kind, greyscale shading, gradients, drop shadows, photorealism, 3D rendering, painterly texture, cross-hatching, stippling, sketchy or doubled lines, excessive tiny detail, dark or heavily filled backgrounds, large solid black areas, malformed hands, extra fingers, missing fingers, fused fingers, extra limbs, duplicated limbs, distorted anatomy, malformed or merged faces, duplicate copies of the main character, cloned identical children, a cropped head, cropped hands, and anything unsafe or frightening for a young child.{{EXTRA_EXCLUSIONS}}
+
+[F:REFERENCE_ROLE_INSTRUCTIONS]
+# Prepended when reference images are attached (nano-banana-pro style refs).
+The attached images are STYLE REFERENCES from earlier books in this same published series. Match their visual language exactly: the line weight and line quality, the character's face construction and proportions, the level of background detail, the star and sparkle confetti motifs, the amount of white space, and the overall commercial coloring-book finish. Draw the same recurring boy character shown in the references, at the same apparent age and in the same drawing style. Do NOT copy any composition, pose, prop arrangement or scene from the reference images — the new illustration must be an entirely original composition showing only what the scene description below specifies.

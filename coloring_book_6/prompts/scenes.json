@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "note": "One authored scene per manuscript entry. Authored batch-by-batch so each batch can be reviewed before the next is designed. 'concept' records the manuscript idea being illustrated; 'scene' is block [C] of the assembled prompt.",
+    "authored_ranges": [[1, 20]]
+  },
+  "scenes": {
+    "1": {
+      "concept": "Los dientes de leche se caen y debajo vienen los definitivos, más grandes y fuertes",
+      "scene": "The boy stands in a bright bathroom, grinning widely straight at the viewer and using one index finger to point proudly at a clear gap in his lower front teeth where a baby tooth has just fallen out. His other hand holds up the tiny lost baby tooth between finger and thumb. Floating in the background to one side is a plain circular vignette with simple radiating glint lines around it, showing a cross-section drawing of a gum with one small round baby tooth lifting away above and one noticeably larger, stronger new tooth pushing up from below to replace it. A simple sink with a tap and a toothbrush in a cup stand behind him.",
+      "framing": "Medium shot from the chest up, slightly low angle so the smile dominates.",
+      "pose": "Head tilted cheerfully, one finger at the tooth gap, the other hand raised holding the tiny tooth.",
+      "expression": "delighted and proud, beaming",
+      "blank_surfaces": "The mirror behind him reflects only plain shapes and carries no writing. ",
+      "extra_exclusions": " Do not draw blood, do not draw an injured or painful mouth, and do not draw any tooth-fairy lettering or numerals."
+    },
+    "2": {
+      "concept": "Estás pegando un estirón: si te mides ahora eres unos seis centímetros más alto que a los 5 años",
+      "scene": "The boy stands very straight with his back and heels against a door frame at home, chin level and a delighted look on his face, while he reaches one arm up and over his own head to press a flat wooden ruler down onto his hair to mark his height. On the door frame beside him are exactly two small horizontal tick marks scratched into the wood: a lower one near his shoulder from last year and a new higher one level with the top of his head, with a simple double-headed arrow drawn between the two marks to show how much he has grown. No numerals, letters or units appear anywhere on the frame or the ruler. Scattered star outlines and small sparkles fill the wall behind, with a simple skirting-board line at the floor.",
+      "framing": "Full-body composition seen straight on, the whole figure from head to sneakers.",
+      "pose": "Standing tall and stretched upright, heels together, one arm folded up over the head holding the ruler flat.",
+      "expression": "thrilled and a little amazed at himself",
+      "blank_surfaces": "The ruler and the door frame show plain tick marks only, with no numbers, letters or measurement units of any kind. ",
+      "extra_exclusions": " Do not draw a printed growth chart, do not draw numbered graduations, and do not draw measuring-tape numerals."
+    },
+    "3": {
+      "concept": "Ahora escribes mejor: los músculos de tus manos son más fuertes y controlas mejor el lápiz",
+      "scene": "The boy sits at a small table leaning over a sheet of paper, tongue-tip of concentration just showing, gripping a chunky pencil in a correct tripod grip with his thumb and two fingers clearly separated and visible. His other hand rests flat on the paper to steady it. On the paper he has drawn a single clean five-point star outline and a simple wavy line — a picture, never writing. A pot of pencils and a rubber sit on the table beside him. Star and sparkle confetti decorate the wall behind.",
+      "framing": "Three-quarter medium shot from slightly above and to the side, so both the hands and the paper read clearly; the drawing hand is large and prominent in the frame.",
+      "pose": "Seated, upper body leaning in over the table, elbow resting on the tabletop, fingers curled neatly around the pencil.",
+      "expression": "absorbed and happily concentrating, tip of the tongue peeking out",
+      "blank_surfaces": "The sheet of paper carries only a drawn star and a plain wavy line — absolutely no letters, no words, no numbers and nothing that resembles handwriting or script. ",
+      "extra_exclusions": " Do not draw handwriting, do not draw practice letters or alphabet rows, do not draw ruled lines with writing on them, and do not draw any lettering on the pencils."
+    },
+    "4": {
+      "concept": "Tienes muchísima más energía: puedes correr y jugar en el parque más tiempo sin cansarte",
+      "scene": "Bursting with energy, the boy sprints across a sunny park at full tilt, both arms pumping and one knee driving high, his hair blown back by his own speed. Curved swoosh lines and a scatter of small sparkles trail behind his heels to show how fast he is going. Behind him a simple park scene opens out: a climbing frame, a pair of swings, two rounded trees and a few bushes, all drawn as large simple shapes. Star outlines and small circles fill the sky.",
+      "framing": "Dynamic full-body action shot from a low angle, the figure set on a strong diagonal so he seems to charge towards the viewer.",
+      "pose": "Mid-stride sprint, both feet off the ground, one knee high, arms swinging in opposition, body leaning into the run.",
+      "expression": "exhilarated, mouth open in a joyful laugh",
+      "extra_exclusions": " Do not draw a race number, a bib, a stopwatch with numerals or any signage in the park."
+    },
+    "5": {
+      "concept": "Tu equilibrio es casi de mayor: ya puedes montar en bicicleta sin ruedines o ir rápido en patinete",
+      "scene": "The boy rides a child's bicycle confidently along a park path, perfectly balanced with both hands on the handlebars and both feet on the pedals. The bicycle clearly has only two wheels and no training wheels — a pair of small detached training wheels lies discarded on the grass at the side of the path behind him, making it obvious he no longer needs them. He wears a simple rounded safety helmet with a chin strap. Motion swooshes curl from the spinning wheels, and trees, bushes and a simple bench line the path. Stars and sparkles fill the sky.",
+      "framing": "Full-body three-quarter view from the side and slightly ahead, the whole bicycle and rider inside the frame.",
+      "pose": "Upright and balanced in the saddle, leaning very slightly into a gentle curve of the path, one pedal down and one up.",
+      "expression": "confident and thrilled, big open smile",
+      "extra_exclusions": " Do not draw brand names or lettering on the helmet, frame or tyres, and do not draw road signs with writing."
+    },
+    "6": {
+      "concept": "Tus huesos se hacen más fuertes y resistentes, preparados para tus saltos y carreras",
+      "scene": "The boy leaps energetically off a low garden step, both arms thrown up above his head and both knees bent, captured at the top of a strong bounce with small impact sparkles and two curved motion arcs beneath his sneakers. Floating in the background is a plain circular vignette ringed with simple radiating glint lines, containing a clean cartoon drawing of a single sturdy leg bone with a small speckled marrow pattern inside, shown as a friendly strong shape. A simple ground line, a bush and a low step complete the setting, with star and sparkle confetti in the sky.",
+      "framing": "Full-body action shot, slightly low angle looking up so the jump feels powerful.",
+      "pose": "Mid-air jump with both arms stretched high, knees tucked and bent, body full of upward spring.",
+      "expression": "gleeful and full of bounce, laughing",
+      "extra_exclusions": " Do not draw a whole skeleton, do not draw anything medical, clinical or frightening, do not draw an x-ray label, and do not draw a skull."
+    },
+    "7": {
+      "concept": "Tus dedos son súper hábiles: a los 6 años muchos niños aprenden a atarse solos los cordones",
+      "scene": "The boy crouches down on one knee on a doorstep, head bent forward in concentration, tying the laces of his own sneaker entirely by himself. Both hands are drawn large and clearly in the centre of the picture, each with five distinctly separated fingers, pulling two lace loops into a neat bow. The finished bow on the other, already-tied sneaker sits beside it for comparison. A couple of small sparkles mark his success. A simple doorstep, a doormat drawn as a plain rounded rectangle with a simple striped border, and confetti stars complete the scene.",
+      "framing": "Close three-quarter shot from slightly above, cropping at the shins so the hands, laces and bow fill the middle of the frame while the whole head and face stay fully visible.",
+      "pose": "Crouched low on one knee, torso folded forward, both hands working together at the shoe.",
+      "expression": "intently focused with a small proud smile",
+      "extra_exclusions": " Do not draw writing on the doormat, the shoes or the step, and do not draw shoe-brand marks."
+    },
+    "8": {
+      "concept": "Movimientos más complicados: saltar a la pata coja más tiempo o saltar a la comba con tus amigos",
+      "scene": "In a school playground the boy jumps a long skipping rope, caught in mid-air with both feet together just above the rope as it sweeps under him. Two clearly different children turn the long rope, one at each side of the picture: on the left a taller girl with two bunches of curly hair wearing a pinafore dress, and on the right a shorter boy with straight hair and round glasses wearing a striped long-sleeved top and trousers. Neither of them wears a star t-shirt and neither resembles the main character. Small motion arcs show the rope spinning. A simple playground fence, a bush and confetti stars fill the background.",
+      "framing": "Full-body wide composition showing all three children, the main boy central and largest, the two rope-turners smaller at the sides.",
+      "pose": "Mid-jump with both feet together and tucked up, arms bent at his sides, body light and airborne.",
+      "expression": "laughing with delight",
+      "supporting_cast": "Two additional children appear and must read as two completely distinct individuals, different from each other and from the main character in hairstyle, face shape, height, build and clothing. Draw them at the same apparent age, in the same line-art style, as clearly separate people — never as copies, twins or mirrored versions of the main boy.",
+      "extra_exclusions": " Do not draw playground signage, do not draw any lettering on clothing, and do not clone the main character's face, hair or star t-shirt onto the other children."
+    },
+    "9": {
+      "concept": "Tus pulmones están creciendo: cada vez tienes más resistencia para correr, nadar y jugar",
+      "scene": "The boy swims happily across a swimming pool doing a front-crawl stroke, his head turned to the side and up out of the water, mouth open taking a big deep breath. One arm reaches forward over the water while the other pulls back, and simple curved wave lines, a few round bubbles and small splash marks surround him. He wears simple swimming trunks and small round goggles pushed up on his forehead. Floating in the background is a plain circular vignette with radiating glint lines, containing a simple friendly drawing of a pair of lungs shaped like two rounded leaves with a little branching windpipe, drawn big and strong. Wave lines and sparkles complete the water.",
+      "framing": "Three-quarter view from slightly above and in front, showing head, shoulders, both arms and the suggestion of the body under simple water lines.",
+      "pose": "Mid-stroke swimming, one arm extended forward, the other sweeping back, head rolled to the side to inhale.",
+      "expression": "energetic and strong, taking a big happy breath",
+      "wardrobe": "For this water scene he wears simple swimming trunks with one outlined five-point star on the hip, keeping the collection's star motif, plus small round goggles resting on his forehead. Everything is outline only and left white for colouring.",
+      "extra_exclusions": " Do not draw pool-lane numbers, do not draw depth markings, do not draw warning signs, and do not draw anything that suggests drowning or distress."
+    },
+    "10": {
+      "concept": "Tu corazón ya no late tan deprisa como cuando eras un bebé: ha crecido contigo y bombea sangre",
+      "scene": "The boy sits calmly on the grass after playing, legs crossed, with one open hand pressed flat against his own chest so he can feel his heartbeat, and his head tilted slightly as he listens to it with a peaceful, curious look. A football rests on the grass beside him. Floating in the background is a plain circular vignette ringed with simple radiating glint lines, containing a friendly rounded cartoon heart with two simple tube-like vessels curving out of the top, and beside it one clean zig-zag pulse line with slow wide peaks to suggest a calm, steady beat. A simple ground line, a bush and confetti stars complete the scene.",
+      "framing": "Medium shot from the front and slightly above, showing him from the crossed legs upward.",
+      "pose": "Sitting cross-legged and relaxed, back straight, one hand flat on the chest, the other resting on his knee.",
+      "expression": "calm, curious and content, a soft closed-lip smile",
+      "extra_exclusions": " Do not draw an anatomically realistic or medical heart, do not draw an electrocardiogram readout with numbers or grid labels, and do not draw blood."
+    },
+    "11": {
+      "concept": "Tu cara va cambiando y tus mandíbulas crecen para hacer sitio a tus nuevos dientes",
+      "scene": "The boy stands in front of a large oval bathroom mirror, leaning in close and turning his head slightly to one side while he gently presses his fingertips against his own jaw and cheek, studying how his face is changing. His reflection is clearly visible inside the mirror frame, facing him, showing the same boy from the front with a wide smile and one small gap in his lower teeth — the reflection is obviously a mirror image and not a second child. A simple sink with a tap, a cup holding a toothbrush and a rounded soap bar sit below the mirror, and star and sparkle confetti fill the wall.",
+      "framing": "Medium shot from behind his shoulder and slightly to the side, so both the real boy and his reflection in the mirror are visible together.",
+      "pose": "Standing, upper body leaning towards the mirror, head turned and tilted, fingertips of one hand exploring the line of his jaw.",
+      "expression": "curious and fascinated, half-smiling as he inspects himself",
+      "blank_surfaces": "The mirror shows only his reflection and carries no writing anywhere on its frame or surface. ",
+      "allow_reflection": true,
+      "extra_exclusions": " Do not draw a second separate child, a twin or a duplicate character — the only repeated figure is his own reflection inside the mirror frame. Do not draw dental diagrams with labels."
+    },
+    "12": {
+      "concept": "Tu cuerpo necesita más energía, así que notas que tienes más apetito al comer o merendar",
+      "scene": "Sitting at the kitchen table for his afternoon snack, the boy tucks into his food with a big appetite, holding a thick sandwich in both hands and taking a huge happy bite from it, cheeks full. On the plain white plate in front of him are an apple and a small bunch of grapes, and a tall glass of milk stands beside it. A simple fruit bowl sits in the middle of the table. A rounded kitchen window with simple curtains and a plain clock showing tick marks and hands but no numerals hang on the wall behind, with stars and sparkles around them.",
+      "framing": "Medium shot from the front across the table, showing him from mid-chest upward with the plate and glass in the foreground.",
+      "pose": "Seated, elbows on the table, leaning forward, both hands holding the sandwich up to his open mouth mid-bite.",
+      "expression": "hungry and thoroughly delighted, eyes happily closed in enjoyment",
+      "blank_surfaces": "The wall clock has plain tick marks and hands with no numerals; any packaging, jar or carton on the table is completely blank with no labels, letters or brand marks. ",
+      "extra_exclusions": " Do not draw food packaging with writing, do not draw a menu, do not draw a calendar, and do not draw junk food."
+    },
+    "13": {
+      "concept": "Tus pies no paran de crecer: puede que hayas necesitado zapatos de una talla más",
+      "scene": "Sitting on a low bench at home, the boy has just pushed his foot into a brand-new, visibly bigger sneaker and wiggles his toes happily inside it, holding the shoe's heel with both hands as he pulls it on. On the floor directly beside him lies his old sneaker, drawn noticeably smaller, with a simple curved double-headed arrow between the two shoes to show the difference in size. An open shoe box with a plain blank lid, completely free of any writing, sits behind them. His bare other foot is visible with five clearly drawn toes. Star and sparkle confetti decorate the wall.",
+      "framing": "Three-quarter view from the side and slightly above, full body seated, both shoes clearly visible in the lower half of the frame.",
+      "pose": "Seated on the bench, leaning forward, one knee drawn up with both hands guiding the new shoe onto the foot.",
+      "expression": "surprised and pleased, eyebrows raised with a wide grin",
+      "blank_surfaces": "The shoe box, its lid and the shoes are completely blank, with no shoe sizes, numbers, letters, labels or brand marks anywhere. ",
+      "extra_exclusions": " Do not draw shoe-size numerals, do not draw a size chart, and do not draw brand logos or swooshes."
+    },
+    "14": {
+      "concept": "Qué buenos reflejos: ahora atrapar una pelota pequeña al vuelo te resulta más fácil",
+      "scene": "The boy is caught at the exact instant of a catch in a sunny back garden: a small ball is arriving in front of his chest and both of his hands are cupped together around it, fingers spread and clearly separated, closing on the ball. A dashed curved flight arc sweeps in from one upper corner of the page to the ball, and a few small impact sparkles burst at his palms. His eyes are locked on the ball and his body is coiled with his weight on the balls of his feet. A simple hedge, a tree and confetti stars complete the garden.",
+      "framing": "Full-body action shot from the front and very slightly low, the ball and both hands forming the clear centre of the composition.",
+      "pose": "Knees bent, torso leaning slightly forward, both arms out in front with hands cupped together at chest height, up on his toes.",
+      "expression": "sharply focused and excited, eyes wide, mouth open in a delighted gasp",
+      "extra_exclusions": " Do not draw any lettering, numbering or brand mark on the ball; keep it a plain ball with simple curved seam lines only."
+    },
+    "15": {
+      "concept": "Eres un artista recortando: usas las tijeras con más precisión y sigues mejor las líneas del papel",
+      "scene": "The boy stands at a craft table carefully cutting out a shape from a sheet of paper with a pair of child-safe round-tipped scissors held correctly in one hand, thumb through the top loop, while his other hand turns the paper to follow the line. The sheet has a large drawn outline of a simple five-point star with a plain dashed cutting line around it, and he is halfway along that line, with a curl of cut-off paper falling away and a few paper snippets on the table. A pot of crayons and a rounded glue stick with a completely blank body sit nearby. Stars and sparkles fill the wall behind.",
+      "framing": "Medium shot from the front and slightly above, showing him from the waist up with the paper, scissors and both hands prominent.",
+      "pose": "Standing and leaning in over the table, one hand working the scissors, the other steadying and rotating the paper.",
+      "expression": "carefully concentrating with the tip of his tongue out and a pleased half-smile",
+      "blank_surfaces": "The paper shows only a drawn star shape and a dashed cutting line — no letters, words or numbers. The glue stick and crayons are entirely blank with no labels. ",
+      "extra_exclusions": " Do not draw printed worksheets, do not draw dotted letters or tracing alphabets, and do not draw pointed or dangerous-looking scissors."
+    },
+    "16": {
+      "concept": "Vestirte solo es cada vez más fácil: abrochar botones o subir la cremallera del abrigo ya no cuesta",
+      "scene": "Standing by the front door ready to go out, the boy fastens his own coat all by himself: one hand pinches the zip pull at his chest and draws it upward while the other hand holds the bottom hem of the coat taut. The zip teeth are drawn as a simple neat row of small marks, closed below his hand and still open above it, so the action reads instantly. Both hands are large, clear and prominent with five separated fingers each. A scarf hangs around his neck and a small rounded backpack waits on the floor beside him, next to a plain coat hook on the wall. Star and sparkle confetti fill the hallway wall.",
+      "framing": "Medium close shot from the front, cropping at the hips, so the fastening hands at chest height are the focal point while the whole head stays well inside the frame.",
+      "pose": "Standing upright, chin tucked down as he watches his own hands, one hand pulling the zip up, the other holding the coat hem steady.",
+      "expression": "determined and quietly proud, a small closed-lip smile of accomplishment",
+      "wardrobe": "Over his usual star t-shirt he wears an open winter coat with large simple round buttons on one side and a chunky zip up the centre, plus a soft scarf. All garments are outline only, left white for colouring, and carry no writing.",
+      "extra_exclusions": " Do not draw any lettering, slogan or logo on the coat, scarf or backpack."
+    },
+    "17": {
+      "concept": "Eres mucho más ágil: trepar por los juegos del parque te resulta más fácil y divertido",
+      "scene": "The boy climbs high up a playground rope climbing net, seen from below so he appears to be scaling the structure above the viewer. Both hands grip the thick rope crossings firmly and one foot is planted on a rope while the other leg reaches confidently up to the next level. He looks down over his shoulder towards the viewer with a triumphant grin. The rope net is drawn as a bold simple diamond grid with chunky knot circles at each crossing. Below and behind, the tops of a slide, a climbing frame and rounded treetops are visible, with clouds, star outlines and sparkles filling the sky around him.",
+      "framing": "Full-body composition from a strong low angle looking steeply upward, the figure high in the frame against open sky.",
+      "pose": "Mid-climb and stretched out on the net, both hands gripping above, one foot planted and the opposite leg reaching up, head turned down towards the viewer.",
+      "expression": "triumphant and adventurous, a wide confident grin",
+      "extra_exclusions": " Do not draw playground rules signage, height-restriction signs or any lettering on the equipment, and do not show a dangerous fall."
+    },
+    "18": {
+      "concept": "Tus dibujos tienen más detalles: dibujas personas con cuello, dedos y hasta ropa chula",
+      "scene": "Beaming with pride, the boy holds up his finished drawing towards the viewer with both hands so the picture faces us squarely. On the sheet is his child-style drawing of a person, drawn in a deliberately simpler, wobblier line than the rest of the illustration, and clearly showing the new details he has mastered: a proper neck joining head to body, hands with separate fingers, and smart clothes with a jacket and patterned trousers. The drawn figure has a simple smiley face. A few crayons lie on the table in front of him and a pot of pencils stands beside it. Star and sparkle confetti fill the wall behind.",
+      "framing": "Medium shot from the front, showing him from the waist up, the held-up drawing large and fully legible beside and slightly in front of his face so neither the sheet nor his head is obscured or cropped.",
+      "pose": "Standing, both arms raised to hold the drawing up and out towards the viewer, chest puffed with pride.",
+      "expression": "bursting with pride, a huge open smile and shining eyes",
+      "blank_surfaces": "The held-up sheet contains only a child's drawing of a person — no title, no signature, no name, no letters and no numbers anywhere on it. ",
+      "extra_exclusions": " Do not sign or title the drawing, do not draw a name on the sheet, and do not let the drawn figure resemble a duplicate of the main character."
+    },
+    "19": {
+      "concept": "A los 6 años muchos niños ya tienen una mano preferida: puede que sepas si eres diestro o zurdo",
+      "scene": "The boy stands facing the viewer and holds both of his hands up in front of his chest to compare them, discovering which one is his favourite. One hand is closed confidently around a chunky crayon in a neat, practised writing grip and is lifted slightly higher, with a few small sparkles around it to mark it as the preferred hand. The other hand is held open and relaxed, palm towards the viewer, with all five fingers clearly spread and separated. He looks from one hand to the other with a thoughtful, discovering expression. A sheet of paper with a simple drawn spiral and a pot of crayons sit on a table just behind him. Star and sparkle confetti fill the wall.",
+      "framing": "Medium close shot from the front, cropping at the waist, so both hands and the whole face are large and clearly readable.",
+      "pose": "Standing, both arms bent up in front of the chest, one fist gripping a crayon and raised a little higher, the other palm open and spread, head tilted as he looks between them.",
+      "expression": "thoughtful and curious with a dawning pleased smile, one eyebrow raised",
+      "extra_exclusions": " Do not draw letters or words on the paper, do not draw handedness symbols, labels or arrows with text, and make certain each hand has exactly five fingers."
+    },
+    "20": {
+      "concept": "Tienes más fuerza que antes y ya puedes ayudar a llevar una bolsa ligera de la compra",
+      "scene": "Walking home from the shops, the boy proudly carries a light shopping bag with both hands in front of him, leaning back slightly and puffing out his chest with the effort, clearly delighted to be helping. A loaf of bread, a bunch of carrots and the round tops of two apples poke out of the top of his bag. Beside and a little behind him walks a tall adult with adult proportions, short hair and a friendly smile, carrying two larger bags and looking down at him warmly. A simple pavement line, a low garden wall, a tree and a few bushes set the street, with star and sparkle confetti in the sky.",
+      "framing": "Full-body composition from the front and slightly to the side, showing both figures walking towards the viewer; the boy is central and largest in the frame and the adult is partly behind him.",
+      "pose": "Mid-stride walking, both hands gripping the bag handles in front of his tummy, shoulders back and chest out with proud effort.",
+      "expression": "proud and pleased with himself, a big determined smile",
+      "supporting_cast": "One adult accompanies him and must clearly read as a grown-up, drawn with adult proportions of roughly one to six head-to-body, noticeably taller than the boy, with a simple friendly adult face and warm supportive body language. The adult never wears a star t-shirt and must not look like an enlarged copy of the child.",
+      "blank_surfaces": "The shopping bags and all groceries are completely blank, with no brand names, labels, prices or lettering of any kind. ",
+      "extra_exclusions": " Do not draw shop signage, price tags, receipts or any packaging text, and do not show the boy straining under a heavy load."
+    }
+  }
+}

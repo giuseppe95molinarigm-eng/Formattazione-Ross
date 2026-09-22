@@ -1,0 +1,121 @@
+{
+  "spec_version": "1.0",
+  "derived_from": {
+    "reference_book": "¡Ya tengo 5 años! — BOYS EDITION (AHLivros)",
+    "reference_pages_analysed": 11,
+    "artwork_pages_analysed": 6,
+    "analysis_file": "data/reference_style_analysis.json"
+  },
+
+  "protagonist": {
+    "name_internal": "MATEO",
+    "note": "Internal working name only. It must NEVER be written, lettered or monogrammed anywhere inside an illustration.",
+    "identity": "One single recurring boy, six years old, appearing in all 101 illustrations.",
+    "apparent_age": "6 years old — a school-age child, clearly past toddlerhood and clearly far from adolescence",
+    "age_guardrails": [
+      "NOT a toddler: no chubby baby cheeks, no oversized head-to-body ratio, no diaper-era proportions",
+      "NOT a teenager: no long limbs, no slim adolescent face, no styled or long hair, no adult jawline",
+      "Head is large and rounded but the body already reads as a school child: roughly 1 : 4.5 head-to-body"
+    ],
+
+    "face": {
+      "shape": "soft rounded oval, gently wider at the cheeks, small softly rounded chin",
+      "eyes": "large, round, wide-set; a bold circular outline filled solid black except for one small round white highlight in the upper-left of each pupil; a fine upper lash line; no eyelashes fanning out, no eyeliner",
+      "eyebrows": "two short, slightly curved tapered strokes set well above the eyes, thin relative to the contour line",
+      "nose": "very small, a single short rounded stroke or tiny soft button — never nostrils, never a realistic bridge",
+      "mouth": "wide cheerful open smile showing a clean white mouth interior; upper teeth may be suggested by a simple curved line; tongue only when the expression calls for it",
+      "cheeks": "two small oval blush marks, drawn as thin open outlines (never filled, never hatched), one on each cheek",
+      "ears": "small, simple rounded ears with a single interior curve, visible at the sides of the head",
+      "freckles": "none"
+    },
+
+    "hair": {
+      "colour_treatment": "outline only — never filled black, never shaded; the hair must be a closed white area a child can colour",
+      "style": "short boyish cut with a tousled, softly spiky fringe; several pointed tufts along the top and hairline",
+      "internal_detail": "3–6 long flowing strand lines drawn with the thinner interior line weight to suggest direction and volume",
+      "consistency_rule": "the silhouette of the fringe and the tufted crown must stay recognisably the same in every illustration, regardless of pose or angle"
+    },
+
+    "body": {
+      "proportions": "head-to-body about 1 : 4.5; sturdy little torso, short rounded limbs, small hands and feet",
+      "hands": "simple rounded mitten-style hands with FIVE clearly separated fingers, drawn cleanly and never merged, never extra, never missing",
+      "build": "healthy, average; not thin, not heavy"
+    },
+
+    "wardrobe": {
+      "signature": "The collection's signature garment: a short-sleeved t-shirt carrying ONE single outlined five-point star emblem centred on the chest. The star is a plain outline shape — it is never a letter, number, word or logo.",
+      "default_outfit": "short-sleeved star t-shirt, knee-length shorts with a simple rolled cuff, short socks, and chunky rounded sneakers with two or three simple strap or lace lines",
+      "variation_rule": "Clothing may and should change to suit the activity — pyjamas for sleep, a coat and scarf for cold weather, a swimsuit for water, a sports kit for games, an apron for cooking. Whenever the activity plausibly allows it, keep the star t-shirt, because it is the strongest recognition cue in the collection.",
+      "forbidden_on_clothing": "no text, no letters, no numbers, no brand marks, no printed slogans, no jersey numbers"
+    },
+
+    "expression_range": "cheerful and warm by default: bright open smile, raised eyebrows, lively eyes. Gentle variation is welcome and expected — proud, curious, concentrating, surprised, delighted, calm, thoughtful, kind. Distress is only ever mild and always resolved inside the same picture (e.g. a small frown while breathing deeply to calm down). Never frightened, never crying hard, never angry at the reader."
+  },
+
+  "supporting_cast": {
+    "rule": "When the manuscript entry involves other people — classmates, friends, teammates, a teacher, a parent, a sibling, a new child at school — draw them, and make them visibly DIFFERENT PEOPLE.",
+    "distinctness_requirements": [
+      "vary hairstyle and hair length clearly (curly, braided, straight, buzzed, bunches, afro, bob)",
+      "vary face shape, eye size and smile",
+      "vary height and build noticeably — children of the same age differ",
+      "vary clothing shape and colour-areas; NO other child ever wears the star t-shirt",
+      "vary pose and what each child is doing",
+      "include girls and boys, and a natural mix of skin tones expressed ONLY through line work (never shading or fill) so every child stays fully colourable"
+    ],
+    "anti_clone_rule": "Never duplicate the protagonist's face, hair or outfit on another character. No twins, no mirrored copies, no repeated identical children in a crowd.",
+    "adults": "Adults are drawn taller with adult proportions (head-to-body about 1 : 6), simple friendly faces, calm supportive body language. They are clearly grown-ups, never large children.",
+    "group_size": "Keep groups readable: normally 1–3 additional characters, at most 4, so every shape stays large enough to colour."
+  },
+
+  "style": {
+    "medium": "professional children's coloring-book line art, pure black ink on pure white",
+    "line_weight": {
+      "primary_contour": "thick, smooth, confident, perfectly even — the outer silhouette of every figure and major object",
+      "interior_detail": "noticeably thinner than the contour — folds, strands, small features",
+      "measured_from_references_at_2550px_wide": {
+        "primary_contour_px": 35,
+        "interior_detail_px": 15
+      },
+      "rule": "two clear weights only; no tapering calligraphic strokes, no sketchy multi-pass lines"
+    },
+    "fill_and_shading": {
+      "allowed": "closed white areas, bounded by line only",
+      "forbidden": "grey tones, gradients, cross-hatching, stippling for shade, drop shadows, filled black regions larger than an eye pupil, dark backgrounds"
+    },
+    "colourability": "Every enclosed area must be large enough for a 6-year-old to fill with a crayon. Detail is deliberately limited; no fine texture, no micro-patterning.",
+    "background": {
+      "treatment": "light, airy and decorative, never crowded",
+      "signature_motifs": "scattered five-point star outlines of assorted sizes, small open circles, and four-point sparkle glints — the collection's constant background confetti",
+      "environment": "a few large, simple, relevant props or scenery shapes that make the concept legible (tree, slide, swing, bed, table, bookshelf silhouette, bushes, clouds, a simple ground line)",
+      "ink_budget": "background must stay well inside the measured envelope: total page ink coverage 4–9%, white 90–95%"
+    },
+    "concept_inset": "When an idea needs a second visual beat (a growing bone, a new tooth, a heartbeat), draw it as a plain circular vignette floating in the background with simple radiating glint lines — exactly as the previous book does. The vignette contains a drawing only, never a caption.",
+    "composition": {
+      "format": "vertical / portrait, full page",
+      "subject_scale": "the protagonist is the unmistakable focal point, filling a generous share of the frame",
+      "framing_variety": "deliberately mix full-body shots, three-quarter shots, medium shots, close-ups, low and high angles, and active diagonal action poses across the 101 pages",
+      "pose_variety": "no two consecutive illustrations repeat the same stance; running, reaching, crouching, jumping, sitting, balancing, leaning, kneeling, lying down",
+      "safe_area": "all meaningful line work stays inside the printable safe area — nothing important within 0.25in of any edge",
+      "internal_whitespace_px_at_2550x3300": { "top": 335, "bottom": 325, "left": 255, "right": 245 }
+    }
+  },
+
+  "absolute_prohibitions": {
+    "written_language": "The illustrations must contain NO written language of any kind: no words, letters, numbers, digits, captions, labels, signs, titles, speech bubbles with text, watermarks, signatures, logos, pseudo-text or AI gibberish typography.",
+    "blank_surface_rule": "Any surface that would normally carry writing must be redrawn BLANK or replaced with purely non-linguistic symbols: a classroom board shows a simple drawing or is empty; a book shows blank pages or a plain picture; a clock shows tick marks and hands but no numerals; a ruler or height chart shows tick marks only; a calendar shows an empty grid; a screen is blank or shows a simple shape; a shop sign is an empty plaque or a pictogram; a scoreboard shows dots.",
+    "rendering": "no colour, no greyscale shading, no gradients, no photorealism, no 3D rendering, no painterly texture, no heavy hatching",
+    "anatomy": "no malformed or extra or missing fingers, no extra or duplicated limbs, no distorted or merged faces, no fused bodies, no floating detached parts",
+    "cropping": "never crop the head; never crop hands or feet when a full-body composition is intended",
+    "content": "nothing frightening, unsafe or age-inappropriate; no injuries; no blood; helmets shown where a real child would wear one"
+  },
+
+  "per_page_variation_checklist": [
+    "Has the framing changed from the previous page?",
+    "Has the pose changed from the previous page?",
+    "Is the setting varied across the section (home, school, park, playground, street, kitchen, bedroom, bathroom, sports ground)?",
+    "Does the scene show the manuscript's IDEA, not just a decorative child?",
+    "Is every writing surface blank or symbolic?",
+    "Is the protagonist recognisably the same 6-year-old boy?",
+    "Are any additional characters clearly distinct individuals?"
+  ]
+}

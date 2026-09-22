@@ -1,0 +1,188 @@
+book:
+  title: ¡Ya tengo 6 años!
+  subtitle: Actividades, datos Curiosos y dibujos para colorear para niños de 6 años
+  imprint: AHLivros
+  copyright: Copyright © 2026 AHLivros
+  rights: Todos los derechos reservados.
+  language: es
+  target_age: 6
+  protagonist: boy
+  total_entries: 101
+print:
+  trim_width_in: 8.5
+  trim_height_in: 11.0
+  orientation: portrait
+  bleed: false
+  target_ppi: 300
+  target_width_px: 2550
+  target_height_px: 3300
+  outside_margin_in: 0.5
+  top_margin_in: 0.5
+  bottom_margin_in: 0.5
+  gutter_table:
+  - max_pages: 150
+    gutter_in: 0.375
+  - max_pages: 300
+    gutter_in: 0.5
+  - max_pages: 500
+    gutter_in: 0.625
+  - max_pages: 700
+    gutter_in: 0.75
+  - max_pages: 828
+    gutter_in: 0.875
+  gutter_safety_pad_in: 0.125
+image_generation:
+  provider: replicate
+  model: google/nano-banana-pro
+  active_profile: nano_banana_pro
+  output_format: png
+  target_width: 2550
+  target_height: 3300
+  batch_size: 20
+  max_attempts: 3
+  request_timeout_s: 300
+  retry_backoff_s:
+  - 2
+  - 4
+  - 8
+  - 16
+  parallel_workers: 3
+  use_reference_images: true
+  reference_count: 3
+  reference_images:
+  - references/reference_images/prev_book_06.png
+  - references/reference_images/prev_book_10.png
+  - references/reference_images/prev_book_12.png
+model_profiles:
+  nano_banana_pro:
+    slug: google/nano-banana-pro
+    aspect_ratio: '3:4'
+    output_resolution: 4k
+    supports_reference_images: true
+    reference_field: image_input
+    max_reference_images: 3
+    supports_negative_prompt: false
+    extra_input:
+      output_format: png
+    price_usd_per_image: 0.24
+  flux_2_pro:
+    slug: black-forest-labs/flux-2-pro
+    aspect_ratio: '3:4'
+    supports_reference_images: true
+    reference_field: image_prompt
+    max_reference_images: 8
+    supports_negative_prompt: false
+    extra_input:
+      output_format: png
+      output_quality: 100
+    price_usd_per_image: 0.26
+  ideogram_v3:
+    slug: ideogram-ai/ideogram-v3-quality
+    aspect_ratio: '3:4'
+    supports_reference_images: true
+    reference_field: style_reference_images
+    max_reference_images: 8
+    supports_negative_prompt: true
+    negative_prompt_field: magic_prompt_option
+    extra_input: {}
+    price_usd_per_image: 0.09
+postprocess:
+  autotrim_to_ink: true
+  autotrim_threshold: 200
+  art_margin_in: 0.35
+  resample_filter: LANCZOS
+  white_point: 244
+  black_point: 60
+  force_grayscale: true
+  final_format: png
+  png_compress_level: 6
+validation:
+  exact_dimensions:
+  - 2550
+  - 3300
+  require_portrait: true
+  aspect_tolerance: 0.005
+  min_white_fraction: 0.8
+  max_white_fraction: 0.995
+  min_ink_fraction: 0.015
+  max_ink_fraction: 0.2
+  max_mean_saturation: 6
+  min_contrast_range: 200
+  safe_margin_in: 0.25
+  edge_clip_band_px: 6
+  edge_clip_max_ink: 0.02
+  phash_size: 16
+  phash_duplicate_distance: 8
+  phash_identical_distance: 2
+review:
+  columns: 4
+  rows: 5
+  thumb_px: 700
+  caption_height_px: 92
+  page_width_px: 2550
+  page_height_px: 3300
+layout:
+  image_on: verso
+  text_on: recto
+  fonts:
+    number:
+      file: fonts/Poppins-Bold.ttf
+      name: Poppins-Bold
+    body:
+      file: fonts/Poppins-ExtraBold.ttf
+      name: Poppins-ExtraBold
+    part:
+      file: fonts/Poppins-ExtraBold.ttf
+      name: Poppins-ExtraBold
+    title:
+      file: fonts/Poppins-ExtraBold.ttf
+      name: Poppins-ExtraBold
+    sub:
+      file: fonts/Poppins-Medium.ttf
+      name: Poppins-Medium
+    base:
+      file: fonts/Poppins-Regular.ttf
+      name: Poppins-Regular
+  text_page:
+    body_size_pt: 30
+    body_size_min_pt: 19
+    body_leading_ratio: 1.34
+    number_size_pt: 46
+    number_gap_pt: 30
+    align: center
+    vertical: center
+    max_line_chars: 30
+  part_page:
+    label_size_pt: 26
+    title_size_pt: 44
+    rule_width_pt: 150
+  front_matter:
+    title_size_pt: 58
+    subtitle_size_pt: 19
+    imprint_size_pt: 20
+    copyright_size_pt: 11
+  image_page:
+    fit: contain
+    honor_gutter: true
+output:
+  interior_pdf: output/final_interior.pdf
+  preflight_report: output/preflight_report.txt
+  pdf_title: ¡Ya tengo 6 años!
+  pdf_author: AHLivros
+  compress_streams: true
+paths:
+  manuscript: manuscript/manuscript.docx
+  entries: data/entries.json
+  sections: data/sections.json
+  character_spec: data/character_spec.json
+  metadata: data/generation_metadata.json
+  page_map: data/page_map.json
+  style_analysis: data/reference_style_analysis.json
+  master_prompt: prompts/master_prompt.txt
+  scenes: prompts/scenes.json
+  generated_prompts: prompts/generated_prompts.json
+  raw_dir: images/raw
+  final_dir: images/final
+  rejected_dir: images/rejected
+  review_dir: review
+  log_dir: logs

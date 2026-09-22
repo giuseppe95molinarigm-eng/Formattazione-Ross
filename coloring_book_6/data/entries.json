@@ -1,0 +1,723 @@
+{
+  "meta": {
+    "source_file": "manuscript.docx",
+    "front_matter_lines": [
+      "¡Ya tengo 6 años!",
+      "Actividades, datos Curiosos y dibujos para colorear para niños de 6 años",
+      "AHLivros",
+      "Copyright © 2026 AHLivros",
+      "Todos los derechos reservados."
+    ],
+    "entry_count": 101,
+    "section_count": 5
+  },
+  "entries": [
+    {
+      "id": 1,
+      "section": 1,
+      "text": "¡Tus dientes de leche han empezado a caerse! No te preocupes: debajo vienen los dientes definitivos, ¡mucho más grandes y fuertes!",
+      "char_count": 130,
+      "word_count": 21
+    },
+    {
+      "id": 2,
+      "section": 1,
+      "text": "¡Estás pegando un estirón! Si te mides ahora, puede que veas que eres unos seis centímetros más alto que cuando tenías 5 años.",
+      "char_count": 126,
+      "word_count": 23
+    },
+    {
+      "id": 3,
+      "section": 1,
+      "text": "¿Te has dado cuenta de que ahora escribes mejor? Los músculos de tus manos son más fuertes y cada vez controlas mejor el lápiz.",
+      "char_count": 127,
+      "word_count": 24
+    },
+    {
+      "id": 4,
+      "section": 1,
+      "text": "¡Tienes muchísima más energía! Ahora puedes correr y jugar en el parque durante más tiempo sin cansarte tan rápido.",
+      "char_count": 115,
+      "word_count": 19
+    },
+    {
+      "id": 5,
+      "section": 1,
+      "text": "Tu equilibrio es casi de mayor. Ya puedes probar a montar en bicicleta sin ruedines o ir súper rápido en patinete.",
+      "char_count": 114,
+      "word_count": 21
+    },
+    {
+      "id": 6,
+      "section": 1,
+      "text": "Tus huesos se están haciendo más fuertes y resistentes a medida que creces, preparados para todos tus saltos y carreras.",
+      "char_count": 120,
+      "word_count": 20
+    },
+    {
+      "id": 7,
+      "section": 1,
+      "text": "¡Tus dedos son súper hábiles! A los 6 años, muchos niños ya aprenden a atarse solos los cordones de las zapatillas.",
+      "char_count": 115,
+      "word_count": 21
+    },
+    {
+      "id": 8,
+      "section": 1,
+      "text": "Ahora puedes hacer movimientos más complicados, como saltar a la pata coja durante más tiempo o intentar saltar a la comba con tus amigos.",
+      "char_count": 138,
+      "word_count": 24
+    },
+    {
+      "id": 9,
+      "section": 1,
+      "text": "Tus pulmones también están creciendo. Por eso, cada vez tienes más resistencia para correr, nadar y jugar.",
+      "char_count": 106,
+      "word_count": 17
+    },
+    {
+      "id": 10,
+      "section": 1,
+      "text": "Tu corazón ya no late tan deprisa como cuando eras un bebé. Ha crecido contigo y sigue bombeando sangre por todo tu cuerpo.",
+      "char_count": 123,
+      "word_count": 23
+    },
+    {
+      "id": 11,
+      "section": 1,
+      "text": "¿Te has mirado bien al espejo? Poco a poco, tu cara va cambiando y tus mandíbulas crecen para hacer sitio a tus nuevos dientes.",
+      "char_count": 127,
+      "word_count": 24
+    },
+    {
+      "id": 12,
+      "section": 1,
+      "text": "A medida que creces, tu cuerpo necesita más energía, así que puede que notes que tienes más apetito a la hora de comer o de merendar.",
+      "char_count": 133,
+      "word_count": 26
+    },
+    {
+      "id": 13,
+      "section": 1,
+      "text": "¡Tus pies no paran de crecer! Puede que en estos últimos meses hayas necesitado zapatos de una talla más.",
+      "char_count": 105,
+      "word_count": 19
+    },
+    {
+      "id": 14,
+      "section": 1,
+      "text": "¡Qué buenos reflejos tienes! Ahora atrapar una pelota pequeña al vuelo puede resultarte mucho más fácil que el año pasado.",
+      "char_count": 122,
+      "word_count": 20
+    },
+    {
+      "id": 15,
+      "section": 1,
+      "text": "Eres todo un artista recortando. Ahora usas las tijeras con mucha más precisión y puedes seguir mucho mejor las líneas del papel.",
+      "char_count": 129,
+      "word_count": 22
+    },
+    {
+      "id": 16,
+      "section": 1,
+      "text": "Vestirte solo por las mañanas es cada vez más fácil. Abrocharte los botones de la camisa o subirte la cremallera del abrigo ya no te cuesta tanto.",
+      "char_count": 146,
+      "word_count": 27
+    },
+    {
+      "id": 17,
+      "section": 1,
+      "text": "Eres mucho más ágil. Trepar por los juegos del parque te resulta más fácil y divertido porque controlas mejor tu cuerpo.",
+      "char_count": 120,
+      "word_count": 21
+    },
+    {
+      "id": 18,
+      "section": 1,
+      "text": "Tus dibujos tienen muchos más detalles. Como controlas mejor la mano, ahora puedes dibujar personas con cuello, dedos ¡y hasta ropa chula!",
+      "char_count": 138,
+      "word_count": 22
+    },
+    {
+      "id": 19,
+      "section": 1,
+      "text": "A los 6 años, muchos niños ya tienen una mano preferida para escribir, recortar y pintar. ¡Puede que tú ya sepas si eres diestro o zurdo!",
+      "char_count": 137,
+      "word_count": 26
+    },
+    {
+      "id": 20,
+      "section": 1,
+      "text": "¡Mírate esos músculos! Tienes más fuerza que cuando eras más pequeño y ya puedes ayudar, por ejemplo, a llevar alguna bolsa ligera de la compra.",
+      "char_count": 144,
+      "word_count": 25
+    },
+    {
+      "id": 21,
+      "section": 2,
+      "text": "Cuando te lanzan una pelota, ¡ahora puedes atraparla solo con las manos! A los 5 años, a lo mejor la parabas contra el pecho, pero ahora tus ojos y tus manos se coordinan mucho mejor.",
+      "char_count": 183,
+      "word_count": 35
+    },
+    {
+      "id": 22,
+      "section": 2,
+      "text": "¿Te has fijado en tus dibujos? Como tus ojos guían cada vez mejor los movimientos de tu mano, ahora puedes colorear tus personajes favoritos sin salirte tanto de las líneas.",
+      "char_count": 173,
+      "word_count": 30
+    },
+    {
+      "id": 23,
+      "section": 2,
+      "text": "Tus piernas y tu vista hacen un equipazo. ¡Cada vez calculas mejor el momento justo para darle una buena patada a un balón que viene rodando hacia ti!",
+      "char_count": 150,
+      "word_count": 28
+    },
+    {
+      "id": 24,
+      "section": 2,
+      "text": "Al escribir, tu cerebro te ayuda a calcular el espacio en el papel. Cada vez te resulta más fácil dejar un huequito entre una palabra y otra.",
+      "char_count": 141,
+      "word_count": 27
+    },
+    {
+      "id": 25,
+      "section": 2,
+      "text": "Si escuchas tu canción favorita, tus manos y tus oídos trabajan en equipo. ¡Ahora puedes dar palmas siguiendo el ritmo de la música sin perderte!",
+      "char_count": 145,
+      "word_count": 25
+    },
+    {
+      "id": 26,
+      "section": 2,
+      "text": "En el patio del cole, cada vez esquivas mejor. Tus ojos ven a los demás niños corriendo y tus piernas reaccionan rápido para intentar no chocar con nadie en medio del juego.",
+      "char_count": 173,
+      "word_count": 32
+    },
+    {
+      "id": 27,
+      "section": 2,
+      "text": "A la hora de comer, usar los cubiertos es cada vez más fácil. Tus dos manos se coordinan mejor para que puedas usar el cuchillo y el tenedor a la vez.",
+      "char_count": 150,
+      "word_count": 31
+    },
+    {
+      "id": 28,
+      "section": 2,
+      "text": "Tu sentido del tacto y tus dedos trabajan juntos para hacer tareas muy precisas, como abrochar un botón pequeño o enhebrar cuentas en un cordón.",
+      "char_count": 144,
+      "word_count": 25
+    },
+    {
+      "id": 29,
+      "section": 2,
+      "text": "Tus pies cada vez coordinan mejor los movimientos. Si lo intentas, puedes dar saltitos alternando los pies al ritmo de una canción.",
+      "char_count": 131,
+      "word_count": 22
+    },
+    {
+      "id": 30,
+      "section": 2,
+      "text": "En clase, puedes mirar un dibujo en la pizarra, bajar la vista a tu mesa e intentar copiarlo en tu hoja. ¡Tus ojos y tu mano trabajan en equipo para conseguirlo!",
+      "char_count": 161,
+      "word_count": 31
+    },
+    {
+      "id": 31,
+      "section": 2,
+      "text": "Eres todo un experto en construcciones. Al montar bloques, tus ojos buscan la pieza que necesitas y tus dedos te ayudan a encajarla haciendo «clic».",
+      "char_count": 148,
+      "word_count": 25
+    },
+    {
+      "id": 32,
+      "section": 2,
+      "text": "¿Sabes columpiarte tú solo? Tu cuerpo y tu sentido del equilibrio trabajan en equipo para que sepas cuándo estirar y encoger las piernas y así coger impulso.",
+      "char_count": 157,
+      "word_count": 27
+    },
+    {
+      "id": 33,
+      "section": 2,
+      "text": "Si te sirves agua de una botella, tus ojos y tu mano se coordinan para saber cuándo dejar de echar. ¡Cada vez es más fácil llenar el vaso sin que se derrame!",
+      "char_count": 157,
+      "word_count": 32
+    },
+    {
+      "id": 34,
+      "section": 2,
+      "text": "Caminar por un bordillo sin caerte es cada vez más fácil. Tu cerebro usa lo que ven tus ojos para ayudarte a mantener el equilibrio.",
+      "char_count": 132,
+      "word_count": 25
+    },
+    {
+      "id": 35,
+      "section": 2,
+      "text": "¡Tus reflejos son cada vez más rápidos! Si juegas al escondite inglés y llega el momento de parar, tus oídos captan la señal y tu cuerpo intenta quedarse quieto como una estatua.",
+      "char_count": 178,
+      "word_count": 32
+    },
+    {
+      "id": 36,
+      "section": 2,
+      "text": "Empiezas a distinguir cada vez mejor la derecha de la izquierda. ¡Cuando te dicen qué mano o qué pie levantar, ya tienes muchas menos dudas!",
+      "char_count": 140,
+      "word_count": 25
+    },
+    {
+      "id": 37,
+      "section": 2,
+      "text": "También puedes concentrarte durante más tiempo. Ahora eres capaz de sentarte a montar un puzle difícil o hacer una manualidad durante un buen rato.",
+      "char_count": 147,
+      "word_count": 24
+    },
+    {
+      "id": 38,
+      "section": 2,
+      "text": "Cada vez tienes más puntería. Tus ojos te ayudan a calcular la distancia y tu brazo, a lanzar con la fuerza necesaria para intentar encestar una pelota en una canasta.",
+      "char_count": 167,
+      "word_count": 30
+    },
+    {
+      "id": 39,
+      "section": 2,
+      "text": "Tu cuerpo aprende a controlar mejor la fuerza que utilizas. Puedes acariciar a un gatito con mucha suavidad y luego correr al patio y darle una buena patada a un balón.",
+      "char_count": 168,
+      "word_count": 31
+    },
+    {
+      "id": 40,
+      "section": 2,
+      "text": "Cada vez te orientas mejor en el espacio. Si juegas a la gallinita ciega, aunque tengas los ojos tapados, tus oídos y los demás sentidos te ayudan a saber por dónde te mueves.",
+      "char_count": 175,
+      "word_count": 33
+    },
+    {
+      "id": 41,
+      "section": 3,
+      "text": "Abrocharte el cinturón o el broche de la mochila tú solo ya es mucho más fácil. ¡Cada vez tienes más maña!",
+      "char_count": 106,
+      "word_count": 21
+    },
+    {
+      "id": 42,
+      "section": 3,
+      "text": "¡Ya empiezas a entender mejor cómo funciona el tiempo! Sabes qué significan «mañana», «tarde» y «noche», y puedes empezar a aprender a leer la hora en el reloj.",
+      "char_count": 160,
+      "word_count": 28
+    },
+    {
+      "id": 43,
+      "section": 3,
+      "text": "¡Puede que ya te sepas los días de la semana de memoria! Cada vez entiendes mejor cuándo toca ir al cole y cuándo llega el fin de semana para descansar y jugar.",
+      "char_count": 160,
+      "word_count": 32
+    },
+    {
+      "id": 44,
+      "section": 3,
+      "text": "En el cole, cada vez eres más responsable de tus cosas. Ya sabes dónde dejar la mochila y el abrigo al llegar a clase y necesitas menos ayuda para acordarte.",
+      "char_count": 157,
+      "word_count": 30
+    },
+    {
+      "id": 45,
+      "section": 3,
+      "text": "Empiezas a entender para qué sirven las monedas y los billetes. Sabes que las cosas de las tiendas cuestan dinero y puede que hasta tengas tu propia hucha en casa.",
+      "char_count": 163,
+      "word_count": 30
+    },
+    {
+      "id": 46,
+      "section": 3,
+      "text": "¡Cada vez se te da mejor preparar la mochila! Puedes revisar qué libros, material o merienda necesitas meter para llevar al cole al día siguiente.",
+      "char_count": 146,
+      "word_count": 25
+    },
+    {
+      "id": 47,
+      "section": 3,
+      "text": "Ayudar a poner la mesa es cada vez más fácil. Ya puedes colocar los platos, los vasos, las servilletas y los cubiertos en su sitio.",
+      "char_count": 131,
+      "word_count": 25
+    },
+    {
+      "id": 48,
+      "section": 3,
+      "text": "A la hora de la ducha eres mucho más independiente. Cada vez puedes hacer más cosas tú solo, como enjabonarte y aclararte bien.",
+      "char_count": 127,
+      "word_count": 23
+    },
+    {
+      "id": 49,
+      "section": 3,
+      "text": "Si pierdes la goma de borrar o tu lápiz favorito en clase, ya sabes qué hacer. ¡Puedes buscarlo por tu cuenta o pedirle a un compañero que te preste uno!",
+      "char_count": 153,
+      "word_count": 30
+    },
+    {
+      "id": 50,
+      "section": 3,
+      "text": "Empiezas a tomar tus propias decisiones y a entender mejor sus consecuencias. Por ejemplo, si no te comes la merienda, puede que después tengas más hambre.",
+      "char_count": 155,
+      "word_count": 26
+    },
+    {
+      "id": 51,
+      "section": 3,
+      "text": "¡Tu memoria no para de mejorar! Muchos niños de 6 años ya pueden aprenderse datos importantes, como su dirección o el número de teléfono de algún familiar.",
+      "char_count": 155,
+      "word_count": 27
+    },
+    {
+      "id": 52,
+      "section": 3,
+      "text": "Ya vas teniendo tus propias rutinas. Cuando llegas a casa, entiendes que a veces toca hacer los deberes del cole o leer un poco antes de ponerte a jugar.",
+      "char_count": 153,
+      "word_count": 29
+    },
+    {
+      "id": 53,
+      "section": 3,
+      "text": "En la cocina puedes ayudar a preparar cosas un poco más difíciles. ¡Por ejemplo, puedes preparar un sándwich para la merienda con ayuda si la necesitas!",
+      "char_count": 152,
+      "word_count": 26
+    },
+    {
+      "id": 54,
+      "section": 3,
+      "text": "Ir al baño tú solo ya se te da muy bien. Además, cada vez te acuerdas mejor de tirar de la cadena y lavarte las manos con agua y jabón al terminar.",
+      "char_count": 147,
+      "word_count": 32
+    },
+    {
+      "id": 55,
+      "section": 3,
+      "text": "Cada vez puedes elegir mejor qué ropa ponerte por las mañanas, fijándote en si fuera hace frío o calor.",
+      "char_count": 103,
+      "word_count": 19
+    },
+    {
+      "id": 56,
+      "section": 3,
+      "text": "También puedes ayudar a mantener ordenada tu habitación. Ya puedes echar una mano para hacer la cama y colocar tus cuentos en la estantería cuando terminas de leer.",
+      "char_count": 164,
+      "word_count": 28
+    },
+    {
+      "id": 57,
+      "section": 3,
+      "text": "En el supermercado puedes ser un gran ayudante. Puedes buscar algunas de las cosas de la lista de la compra y meterlas con cuidado en el carrito.",
+      "char_count": 145,
+      "word_count": 27
+    },
+    {
+      "id": 58,
+      "section": 3,
+      "text": "¡Cada vez tienes más paciencia! Puedes esperar mejor tu turno para hablar en clase o para jugar en el parque sin interrumpir a los demás.",
+      "char_count": 137,
+      "word_count": 25
+    },
+    {
+      "id": 59,
+      "section": 3,
+      "text": "Cada vez entiendes mejor los límites y las normas de seguridad. Por ejemplo, sabes que no debes alejarte demasiado en el parque y que tienes que seguir las indicaciones de los adultos que te acompañan.",
+      "char_count": 201,
+      "word_count": 35
+    },
+    {
+      "id": 60,
+      "section": 3,
+      "text": "También puedes empezar a aprender a ahorrar. Si te dan alguna moneda, puedes guardarla en tu hucha en vez de gastarla enseguida y ahorrar para algo que te haga ilusión.",
+      "char_count": 168,
+      "word_count": 30
+    },
+    {
+      "id": 61,
+      "section": 4,
+      "text": "¡Ya estás empezando a leer palabras de verdad! Antes reconocías las letras y ahora empiezas a juntarlas para descubrir qué pone en los cuentos.",
+      "char_count": 143,
+      "word_count": 24
+    },
+    {
+      "id": 62,
+      "section": 4,
+      "text": "Escribir mensajes es tu nuevo superpoder. Ya no solo escribes tu nombre, sino que también puedes escribir palabras y notas cortas con las letras que vas aprendiendo.",
+      "char_count": 165,
+      "word_count": 27
+    },
+    {
+      "id": 63,
+      "section": 4,
+      "text": "¡Estás aprendiendo a sumar! Si tienes 3 coches de juguete y te regalan 2 más, ya puedes descubrir que ahora tienes 5.",
+      "char_count": 117,
+      "word_count": 22
+    },
+    {
+      "id": 64,
+      "section": 4,
+      "text": "Cada vez te manejas mejor con los números. Puedes contar hasta números cada vez más altos ¡e incluso intentar contar hacia atrás como en el despegue de un cohete!",
+      "char_count": 162,
+      "word_count": 29
+    },
+    {
+      "id": 65,
+      "section": 4,
+      "text": "¡Es casi magia! Cuando miras un libro, cada vez te resulta más fácil leer frases tú solo y entender qué les pasa a los personajes de la historia.",
+      "char_count": 145,
+      "word_count": 28
+    },
+    {
+      "id": 66,
+      "section": 4,
+      "text": "Empiezas a entender conceptos como «mayor que» y «menor que». Si tú tienes 5 cromos y un amigo tiene 8, ¡puedes descubrir enseguida quién tiene más!",
+      "char_count": 148,
+      "word_count": 26
+    },
+    {
+      "id": 67,
+      "section": 4,
+      "text": "Cada vez puedes concentrarte durante más tiempo. Ahora eres capaz de escuchar un cuento largo en clase sin distraerte tanto como cuando eras más pequeño.",
+      "char_count": 153,
+      "word_count": 25
+    },
+    {
+      "id": 68,
+      "section": 4,
+      "text": "Cada vez se te da mejor resolver problemas. Si una torre de bloques se cae, puedes pensar en una nueva forma de construirla para que sea más resistente.",
+      "char_count": 152,
+      "word_count": 28
+    },
+    {
+      "id": 69,
+      "section": 4,
+      "text": "¡Tus juegos son cada vez más emocionantes! Cuando juegas con tus amigos, podéis inventar reglas y poneros de acuerdo para que todos os divirtáis.",
+      "char_count": 145,
+      "word_count": 24
+    },
+    {
+      "id": 70,
+      "section": 4,
+      "text": "Cuando juegas con tus muñecos, puedes inventar historias llenas de aventuras. ¡Cada vez tienen más detalles, personajes y cosas emocionantes que contar!",
+      "char_count": 152,
+      "word_count": 22
+    },
+    {
+      "id": 71,
+      "section": 4,
+      "text": "Cada vez entiendes mejor el porqué de las cosas. Por ejemplo, sabes que si dejas un cubito de hielo al sol, se derrite por el calor.",
+      "char_count": 132,
+      "word_count": 26
+    },
+    {
+      "id": 72,
+      "section": 4,
+      "text": "¡Eres todo un narrador! Ahora puedes contarle a tu familia algo que te pasó ayer y ordenar tus ideas para explicar qué ocurrió primero y qué pasó después.",
+      "char_count": 154,
+      "word_count": 28
+    },
+    {
+      "id": 73,
+      "section": 4,
+      "text": "También estás empezando a entender las restas. Si tienes 4 galletas y te comes 2, ¡puedes calcular que te quedan 2!",
+      "char_count": 115,
+      "word_count": 21
+    },
+    {
+      "id": 74,
+      "section": 4,
+      "text": "A veces intentas escribir palabras nuevas pensando en cómo suenan. ¡Eso es genial! Significa que estás aprendiendo a relacionar los sonidos con las letras.",
+      "char_count": 155,
+      "word_count": 24
+    },
+    {
+      "id": 75,
+      "section": 4,
+      "text": "También empiezas a hacer predicciones. Si ves que el cielo está lleno de nubes muy grises, puedes pensar que quizá vaya a llover antes de que caiga la primera gota.",
+      "char_count": 164,
+      "word_count": 30
+    },
+    {
+      "id": 76,
+      "section": 4,
+      "text": "Cada vez entiendes mejor los chistes y las adivinanzas. ¡Incluso puedes inventarte tus propias bromas y juegos de palabras para hacer reír a los demás!",
+      "char_count": 151,
+      "word_count": 25
+    },
+    {
+      "id": 77,
+      "section": 4,
+      "text": "Tienes memoria de elefante para las cosas que te encantan. Puedes aprenderte un montón de nombres de dinosaurios, personajes y otros detalles que te interesan.",
+      "char_count": 159,
+      "word_count": 25
+    },
+    {
+      "id": 78,
+      "section": 4,
+      "text": "Cada vez se te da mejor planificar. Antes de empezar un dibujo o montar una nave con piezas, puedes pensar cómo quieres que quede y qué vas a hacer primero.",
+      "char_count": 156,
+      "word_count": 30
+    },
+    {
+      "id": 79,
+      "section": 4,
+      "text": "Empiezas a descubrir conceptos matemáticos nuevos. Además de reconocer formas como el cuadrado o el círculo, puedes empezar a identificar algunas figuras con volumen y a entender qué significa una mitad.",
+      "char_count": 203,
+      "word_count": 31
+    },
+    {
+      "id": 80,
+      "section": 4,
+      "text": "Ya sabes que los cuentos no aparecen solos. Detrás de cada historia hay un autor que la ha imaginado y escrito para que otras personas puedan leerla.",
+      "char_count": 149,
+      "word_count": 27
+    },
+    {
+      "id": 81,
+      "section": 5,
+      "text": "A los 6 años, las amistades son muy importantes. ¡Puede que ya tengas algún amigo especial con el que te encante jugar en el recreo!",
+      "char_count": 132,
+      "word_count": 25
+    },
+    {
+      "id": 82,
+      "section": 5,
+      "text": "Cada vez entiendes mejor lo que significa jugar limpio. Si estáis jugando en grupo, puedes darte cuenta de que alguien no ha tenido su turno y ayudar a que todos puedan participar.",
+      "char_count": 180,
+      "word_count": 32
+    },
+    {
+      "id": 83,
+      "section": 5,
+      "text": "Cada vez entiendes mejor cómo se sienten los demás. Si notas que un amigo está más callado de lo normal, puedes acercarte y preguntarle qué le pasa.",
+      "char_count": 148,
+      "word_count": 27
+    },
+    {
+      "id": 84,
+      "section": 5,
+      "text": "Trabajar en equipo en el cole puede ser genial. Ya puedes hacer un dibujo o un proyecto con otros niños, escuchando sus ideas y compartiendo también las tuyas.",
+      "char_count": 159,
+      "word_count": 28
+    },
+    {
+      "id": 85,
+      "section": 5,
+      "text": "Cada vez aprendes más formas de controlar el enfado. Cuando algo te molesta mucho, puedes respirar hondo para calmarte e intentar explicar qué te ha pasado.",
+      "char_count": 156,
+      "word_count": 26
+    },
+    {
+      "id": 86,
+      "section": 5,
+      "text": "Entiendes que los demás pueden tener gustos diferentes. A tu amigo puede encantarle jugar al fútbol aunque a ti no te guste nada, ¡y no pasa absolutamente nada!",
+      "char_count": 160,
+      "word_count": 28
+    },
+    {
+      "id": 87,
+      "section": 5,
+      "text": "Perder en un juego puede seguir dando un poco de rabia, pero estás aprendiendo a aceptar la derrota y a felicitar a los demás cuando ganan.",
+      "char_count": 139,
+      "word_count": 26
+    },
+    {
+      "id": 88,
+      "section": 5,
+      "text": "Cada vez se te da mejor resolver pequeños problemas con tus amigos. Si discutís, podéis intentar hablarlo y hacer las paces, aunque a veces necesitéis la ayuda de un adulto.",
+      "char_count": 173,
+      "word_count": 30
+    },
+    {
+      "id": 89,
+      "section": 5,
+      "text": "Cada vez entiendes mejor lo que es justo y lo que no. Puedes darte cuenta de cuándo algo te parece injusto para ti o para otra persona y querer buscar una solución.",
+      "char_count": 164,
+      "word_count": 32
+    },
+    {
+      "id": 90,
+      "section": 5,
+      "text": "Cada vez eres más capaz de guardar una sorpresa. Si estás preparando algo especial para alguien en el cole, ¡puede que consigas no contárselo hasta que llegue el momento!",
+      "char_count": 170,
+      "word_count": 29
+    },
+    {
+      "id": 91,
+      "section": 5,
+      "text": "Te sientes muy orgulloso de tus esfuerzos. Cuando haces un trabajo en clase que te ha costado mucho, ¡puede que estés deseando llegar a casa para enseñárselo a tu familia!",
+      "char_count": 171,
+      "word_count": 30
+    },
+    {
+      "id": 92,
+      "section": 5,
+      "text": "Cada vez entiendes mejor tus propios sentimientos. Empiezas a descubrir que puedes sentir dos emociones a la vez, como estar nervioso y emocionado en tu primer día en un equipo nuevo.",
+      "char_count": 183,
+      "word_count": 31
+    },
+    {
+      "id": 93,
+      "section": 5,
+      "text": "Cuando invitas a un amigo a jugar a casa, cada vez se os da mejor poneros de acuerdo para elegir a qué jugar y compartir los juguetes.",
+      "char_count": 134,
+      "word_count": 27
+    },
+    {
+      "id": 94,
+      "section": 5,
+      "text": "Respetar los turnos de palabra en clase requiere paciencia. Cada vez se te da mejor levantar la mano y esperar tu turno para hablar.",
+      "char_count": 132,
+      "word_count": 24
+    },
+    {
+      "id": 95,
+      "section": 5,
+      "text": "Cada vez entiendes mejor el humor de tus amigos. Compartís bromas en el cole y os morís de risa juntos por cosas que quizá a los mayores no les hagan tanta gracia.",
+      "char_count": 163,
+      "word_count": 32
+    },
+    {
+      "id": 96,
+      "section": 5,
+      "text": "Si te equivocas en los deberes, estás aprendiendo que puedes borrar y volver a intentarlo. ¡Equivocarse también forma parte de aprender!",
+      "char_count": 136,
+      "word_count": 21
+    },
+    {
+      "id": 97,
+      "section": 5,
+      "text": "Tu empatía sigue creciendo. Si llega un niño nuevo al cole, puedes imaginar cómo se siente y acercarte a invitarlo a jugar.",
+      "char_count": 123,
+      "word_count": 22
+    },
+    {
+      "id": 98,
+      "section": 5,
+      "text": "También estás aprendiendo a alegrarte por los demás. Cuando un amigo marca un gol o gana una carrera, puedes aplaudirlo y darle la enhorabuena.",
+      "char_count": 143,
+      "word_count": 24
+    },
+    {
+      "id": 99,
+      "section": 5,
+      "text": "Cada vez reconoces mejor cuándo necesitas ayuda. Si intentas hacer algo difícil y no te sale, puedes pedir consejo a un adulto en lugar de rendirte.",
+      "char_count": 148,
+      "word_count": 26
+    },
+    {
+      "id": 100,
+      "section": 5,
+      "text": "¡Tener 6 años es una pasada! Tu cuerpo sigue creciendo, tu mente aprende cosas nuevas cada día y cada vez sabes mejor cómo querer y cuidar a tu familia y a tus amigos.",
+      "char_count": 167,
+      "word_count": 33
+    },
+    {
+      "id": 101,
+      "section": 5,
+      "text": "¡Enhorabuena por esta nueva edad! Te espera un año lleno de descubrimientos, nuevos retos y un montón de diversión. ¡Disfruta muchísimo de tus 6 años!",
+      "char_count": 150,
+      "word_count": 25
+    }
+  ]
+}

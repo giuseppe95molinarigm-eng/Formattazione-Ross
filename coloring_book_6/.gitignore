@@ -1,0 +1,24 @@
+# ── Secrets: NEVER commit ──────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.token
+.replicate_token
+
+# ── Python ─────────────────────────────────────────────────────────────────
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# ── Generated / large binary artefacts ─────────────────────────────────────
+images/raw/
+images/rejected/
+logs/*.log
+
+# ── OS cruft ───────────────────────────────────────────────────────────────
+.DS_Store
+._*
+Thumbs.db
