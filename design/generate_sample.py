@@ -104,8 +104,8 @@ chapter_opener_body = """
       <div class="kicker" style="margin-bottom:10px;">Chapter One</div>
       <div class="chapter-number">01</div>
       <div class="chapter-title" style="margin-top:6px;">Meal-Ready<br>Dry Mixes &amp;<br>Pantry Helpers</div>
-      <div style="margin-top:22px; width:46px; border-top:2pt solid var(--terracotta);"></div>
-      <div class="recipe-intro" style="margin-top:18px; max-width:300px; font-size:11.5pt;">
+      <div class="gingham-strip" style="margin-top:20px; width:58px; height:9px; border-radius:1px;"></div>
+      <div class="recipe-intro" style="margin-top:16px; max-width:300px; font-size:11.5pt;">
         Thirty-one jars built to carry the whole weeknight &mdash; rice, pasta, and skillet bases that only need what&#8217;s already in the fridge.
       </div>
     </div>
@@ -181,7 +181,7 @@ def normal_recipe_page(title, side, tag, folio_num, rh_text, out_path, thumb_cap
 
 normal_recipe_page(
     "Cheesy Scalloped Potato Mix", "page-left",
-    "NORMAL RECIPE PAGE 1 (verso)", 24,
+    "NORMAL RECIPE PAGE 1 (verso)", 14,
     "Chapter One · Meal-Ready Dry Mixes",
     "/home/user/Formattazione-Ross/design/sample/2-recipe-normal-1.html",
     "Real author photo (generic jar) &mdash; final: recipe-matched photography pending",
@@ -189,7 +189,7 @@ normal_recipe_page(
 )
 normal_recipe_page(
     "Taco and Burrito Bowl Seasoning Kit", "page-right",
-    "NORMAL RECIPE PAGE 2 (recto)", 29,
+    "NORMAL RECIPE PAGE 2 (recto)", 15,
     "Taco & Burrito Bowl Seasoning Kit",
     "/home/user/Formattazione-Ross/design/sample/3-recipe-normal-2.html",
     "Real author photo (generic jar) &mdash; final: recipe-matched photography pending",
@@ -230,7 +230,7 @@ page = f"""<!doctype html>
 <div class="page guides page-left">
   <div class="trim-line"></div>
   <span class="label-tag">IMAGE-HEAVY RECIPE PAGE (verso) &mdash; running head dropped: bled photo occupies that zone. No nutrition field in source, correctly omitted.</span>
-  <div class="folio">18</div>
+  <div class="folio">16</div>
   <div class="content" style="top:0; bottom:calc(var(--bleed) + var(--margin-bottom));">{body}</div>
 </div>
 </body></html>"""
@@ -279,7 +279,7 @@ page = f"""<!doctype html>
   <div class="safe-line"></div>
   <span class="label-tag">TEXT-HEAVY RECIPE PAGE (recto) &mdash; densest recipe in Ch.1, all fields present</span>
   <div class="running-head">Chicken Fajita Rice Bowl Mix</div>
-  <div class="folio">19</div>
+  <div class="folio">17</div>
   <div class="content">{body}</div>
 </div>
 </body></html>"""
