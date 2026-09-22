@@ -1,0 +1,747 @@
+{
+ "n_images": 4,
+ "blocks": [
+  {
+   "i": 2,
+   "type": "p",
+   "style": "normal",
+   "text": "Copyright © 2026 Maggie Reeves",
+   "bold": false
+  },
+  {
+   "i": 3,
+   "type": "p",
+   "style": "normal",
+   "text": "All rights reserved.",
+   "bold": false
+  },
+  {
+   "i": 4,
+   "type": "p",
+   "style": "normal",
+   "text": "No part of this book may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.",
+   "bold": false
+  },
+  {
+   "i": 5,
+   "type": "p",
+   "style": "normal",
+   "text": "For permission requests, write to the publisher at the email address below.",
+   "bold": false
+  },
+  {
+   "i": 6,
+   "type": "p",
+   "style": "normal",
+   "text": "This book is a work of nonfiction. The recipes, tips, and information contained within are based on the author's personal experience and research and are intended for general informational and educational purposes only.",
+   "bold": false
+  },
+  {
+   "i": 7,
+   "type": "p",
+   "style": "normal",
+   "text": "Disclaimer",
+   "bold": false
+  },
+  {
+   "i": 8,
+   "type": "p",
+   "style": "normal",
+   "text": "The information in this book is not intended as a substitute for medical advice from a physician, dietitian, or other qualified healthcare provider. Always consult a qualified healthcare professional before making changes to your diet, especially if you have food allergies, intolerances, or medical conditions such as celiac disease.",
+   "bold": false
+  },
+  {
+   "i": 9,
+   "type": "p",
+   "style": "normal",
+   "text": "While recipes in this book are labeled gluten-free and/or dairy-free based on the ingredients listed, readers are responsible for verifying that all products used meet their individual dietary needs, as ingredient formulations and cross-contamination risks can vary by brand and manufacturer. The author and publisher are not responsible for any adverse reactions, allergic responses, or health issues that may result from following the recipes or advice in this book.",
+   "bold": false
+  },
+  {
+   "i": 10,
+   "type": "p",
+   "style": "normal",
+   "text": "The author and publisher make no representations or warranties with respect to the accuracy or completeness of the contents of this book and specifically disclaim any implied warranties of merchantability or fitness for a particular purpose. Neither the author nor the publisher shall be liable for any damages arising from the use of this book.",
+   "bold": false
+  },
+  {
+   "i": 11,
+   "type": "p",
+   "style": "normal",
+   "text": "First Edition",
+   "bold": false
+  },
+  {
+   "i": 12,
+   "type": "p",
+   "style": "normal",
+   "text": "For questions, feedback, or reader inquiries, ",
+   "bold": false
+  },
+  {
+   "i": 13,
+   "type": "p",
+   "style": "normal",
+   "text": "contact: maggie@maggiespantryclub.com",
+   "bold": false
+  },
+  {
+   "i": 15,
+   "type": "p",
+   "style": "Heading 1",
+   "text": "Index",
+   "bold": true
+  },
+  {
+   "i": 16,
+   "type": "p",
+   "style": "Heading 1",
+   "text": "Index",
+   "bold": true
+  },
+  {
+   "i": 18,
+   "type": "p",
+   "style": "Heading 1",
+   "text": "Index",
+   "bold": true
+  },
+  {
+   "i": 20,
+   "type": "p",
+   "style": "Heading 1",
+   "text": "FREE BONUS: Your 30-Day Dry Mix Meal Plan",
+   "bold": false
+  },
+  {
+   "i": 21,
+   "type": "p",
+   "style": "normal",
+   "text": "Scan the QR code below to grab your free meal plan instantly.",
+   "bold": false
+  },
+  {
+   "i": 42,
+   "type": "p",
+   "style": "Heading 1",
+   "text": "Foreword",
+   "bold": true
+  },
+  {
+   "i": 43,
+   "type": "p",
+   "style": "normal",
+   "text": "Hi. I'm Maggie, I firstly want to thank you for purchasing this book. Whether you bought this off a whim, or decided enough is enough and you want to actually use your pantry to its full potential, I’m glad you’ve trusted these tested recipes.\n\nI made this book because I am sick to death of hearing the dreaded question, \"What's for dinner tonight?\" about five times a day. ",
+   "bold": false
+  },
+  {
+   "i": 44,
+   "type": "p",
+   "style": "normal",
+   "text": "\nFive times a day, without fail. I love my family dearly, and I would also like it noted for the record that I nearly lost my goddamned mind.",
+   "bold": false
+  },
+  {
+   "i": 45,
+   "type": "p",
+   "style": "normal",
+   "text": "So before we go one step further, I want you to know something very important. I am not here to judge your pantry, I’m here because I’ve been in that overwhelming situation before, and I’m showing you the way out with this book.",
+   "bold": false
+  },
+  {
+   "i": 46,
+   "type": "p",
+   "style": "normal",
+   "text": "Now, I don't care if there's a box of pasta in there that expired around the time your youngest learned to walk. I don't care if you've got three half-bags of rice hiding behind the cereal because you weren't sure which one was still good. I don't care if the ranch dressing packet in the back has been \"just in case\" for three months and counting. No judgment. I've been there, standing in front of an open pantry door at 5pm, staring into it like it might rearrange itself into a finished dinner if I just looked hard enough.",
+   "bold": false
+  },
+  {
+   "i": 47,
+   "type": "p",
+   "style": "normal",
+   "text": "Here's what those 5pm moments actually feel like, in case you need to hear someone else say it out loud: the pancake box is empty, the taco seasoning is gone, and you already know that another grocery trip means another fifty dollars gone, and you still won't have solved the actual problem, which is that tomorrow at 5pm you'll be standing here again, doing this exact same thing.",
+   "bold": false
+  },
+  {
+   "i": 48,
+   "type": "p",
+   "style": "normal",
+   "text": "And somewhere in the background, someone is asking what's for dinner. Again. Sweetly, innocently, completely unaware that you don't have an answer, and that the not-having-an-answer is doing something to your nervous system.",
+   "bold": false
+  },
+  {
+   "i": 49,
+   "type": "p",
+   "style": "normal",
+   "text": "I want to say something plainly, because I think you need to hear it: the problem was never your cooking. You can cook. You've been cooking every single day, which is more than most people manage. The problem is that nobody ever handed you an actual system. So you've been winging it. Which is exhausting, because winging it means making forty decisions before you've even touched a pan.",
+   "bold": true
+  },
+  {
+   "i": 50,
+   "type": "p",
+   "style": "normal",
+   "text": "I know you've tried things. I know you've pulled recipes off the internet and had your cornbread come out chalky one time and fine the next, for reasons you never quite figured out, so you stopped trusting yourself with it. I know you've flipped over a box mix from the store, read an ingredient list that looked more like a chemistry exam, and quietly put it back thinking I don't even know what half of this is. I know you've bought the matching jars, and the cute labels, and told yourself this is the year you get organized — only to end up with beautiful empty containers and no real plan for what goes in them.",
+   "bold": false
+  },
+  {
+   "i": 51,
+   "type": "p",
+   "style": "normal",
+   "text": "None of that was you failing. That was you trying to solve a systems problem with recipes, and a shopping problem with containers. Different tools for a different job.",
+   "bold": false
+  },
+  {
+   "i": 52,
+   "type": "p",
+   "style": "normal",
+   "text": "This book is the actual system. Not \"here's a taco seasoning, good luck\" as you've seen that book already, and frankly, so have I. These are ratios that hold up the fourth time you make them, the same as the first. These are mixes that use ingredients you can actually pronounce, sitting in jars that tell you exactly what's inside and how long it's good for. This book lets you walk past the pantry on a Tuesday, glance at a jar, and just... know. Grab it, add what it says, done. Dinner decided without another decision.",
+   "bold": false
+  },
+  {
+   "i": 53,
+   "type": "p",
+   "style": "normal",
+   "text": "That's it. That's the whole promise. Not a perfect pantry. Not a Pinterest kitchen. Just: dinner's decided, and you got a little bit of your evening back.",
+   "bold": false
+  },
+  {
+   "i": 54,
+   "type": "p",
+   "style": "normal",
+   "text": "I built this the way I wish someone had built it for me back when I was the one standing in front of that open pantry door, tired, doing math about whether the rice in the back was still good, wondering if I'd ever actually get this organized or if I was just going to keep buying jars and hoping. Back when \"what's for dinner\" felt less like a question and more like a personal attack.",
+   "bold": false
+  },
+  {
+   "i": 55,
+   "type": "p",
+   "style": "normal",
+   "text": "You will get organized. Not because you're about to become a different person, but because this time, the system is doing the remembering instead of you. And the next time someone asks you what's for dinner? You'll actually know. You might even enjoy answering.",
+   "bold": false
+  },
+  {
+   "i": 56,
+   "type": "p",
+   "style": "normal",
+   "text": "So, from my pantry to yours. Let's get you out of the 5pm panic and back to the table.",
+   "bold": false
+  },
+  {
+   "i": 57,
+   "type": "p",
+   "style": "normal",
+   "text": "Maggie",
+   "bold": true
+  },
+  {
+   "i": 58,
+   "type": "p",
+   "style": "normal",
+   "text": "P.S. Seriously, if a mix flops, if you've got a question at 9pm with flour on your hands, or you just want to tell me it worked, email me. I read every single one myself, no assistant, no auto-reply, just me, probably also elbow-deep in something on my own counter.",
+   "bold": false
+  },
+  {
+   "i": 59,
+   "type": "p",
+   "style": "normal",
+   "text": "maggie@maggiespantryclub.com",
+   "bold": false
+  },
+  {
+   "i": 60,
+   "type": "p",
+   "style": "Heading 1",
+   "text": "Chapter One: What a Dry Mix Pantry Actually Is ",
+   "bold": false
+  },
+  {
+   "i": 61,
+   "type": "p",
+   "style": "normal",
+   "text": "A dry mix pantry is the system that prevents boxes of unfinished pasta just sitting, collecting dust. A dry mix pantry is a small collection of jars, each one holding a mix you made once, correctly, using ratios that actually work, so that on a Tuesday at 5pm you're not deciding anything. You're just grabbing a jar, adding what the label says to add, and getting dinner on the table.",
+   "bold": false
+  },
+  {
+   "i": 62,
+   "type": "p",
+   "style": "normal",
+   "text": "That's the whole idea of this book, and really the problem I had and one that I wanted to change. Everything else in this chapter is just explaining why it works.",
+   "bold": false
+  },
+  {
+   "i": 63,
+   "type": "p",
+   "style": "normal",
+   "text": "It's also worth noting plainly, because I think you need to hear it early: you're not starting this from zero. You've made mixes before and you have the basic idea, combine the dry ingredients once, add the wet ones later, and you've clearly got the instinct for this or else you wouldn't have picked up a book like this in the first place. What you haven't had is a reliable reference, one single place that holds ratios you can actually trust, instead of a scattered folder of recipes from a dozen different sources that all disagree with each other. That's the problem I hope I can solve for you with this cookbook.",
+   "bold": false
+  },
+  {
+   "i": 64,
+   "type": "p",
+   "style": "Heading 2",
+   "text": "Why Homemade Always Beats Store-Bought ",
+   "bold": false
+  },
+  {
+   "i": 65,
+   "type": "p",
+   "style": "normal",
+   "text": "I'm not going to tell you those boxes are poison, because most of them aren’t. But you deserve to know what's actually in your food, and a lot of those mixes are built for shelf life and cost, not for you. Preservatives you don't recognize. Anti-caking agents. Sometimes partially hydrogenated oils, sitting quietly in something as innocent-looking as a pancake mix. You're not wrong to want out of that, believe me I too couldn’t believe what I was eating when I paid attention.",
+   "bold": true
+  },
+  {
+   "i": 66,
+   "type": "p",
+   "style": "normal",
+   "text": "Here's the part I think is very important to know, because it's the part that trips people up. Homemade doesn't automatically mean cheaper. If you buy six specialty spices for one recipe and use them once, you haven't saved money. You've spent thirty dollars to make something that would have cost four dollars in a box, and you've got five jars of something you'll never touch again taking up space next to the rice you're avoiding.",
+   "bold": false
+  },
+  {
+   "i": 67,
+   "type": "p",
+   "style": "normal",
+   "text": "That's not a real dry mix pantry.",
+   "bold": false
+  },
+  {
+   "i": 68,
+   "type": "p",
+   "style": "normal",
+   "text": "A real dry mix pantry saves you money because the mixes are built from ingredients that repeat and can be used time and time again. Flour, salt, common spices, things you already buy and already use, just recombined into a few master mixes that cover a dozen different dinners. You're not stocking a spice rack for one recipe. You're building a small, tight set of ingredients that work across everything in this book. That's where the savings actually come from, not from the word \"homemade\" doing magic on its own.",
+   "bold": false
+  },
+  {
+   "i": 69,
+   "type": "p",
+   "style": "normal",
+   "text": "And the ingredients you do use, you'll recognize. No chemistry exam on the back of a box. Just things you could actually pronounce and know where they come from.",
+   "bold": false
+  },
+  {
+   "i": 70,
+   "type": "p",
+   "style": "normal",
+   "text": "There's another piece to this, one that doesn't get talked about enough. A dry mix pantry isn't just cheaper and cleaner, it's also what finally makes shopping less exhausting. You've probably tried the \"shop once a month\" thing before, or at least thought about it, because in theory it sounds like the answer. Fewer trips, fewer impulse buys, more money left at the end of the week. But in practice, without mixes already built and waiting, a big shop just means a fridge full of half-used ingredients you're not sure what to do with, and you end up back at the store within the week anyway, buying the one thing you forgot or replacing items that went out of date.",
+   "bold": false
+  },
+  {
+   "i": 71,
+   "type": "p",
+   "style": "normal",
+   "text": "A dry mix pantry actually makes the once-a-month shop work, because the mixes themselves are shelf-stable and already planned. You're not buying ingredients hoping you'll use them before they go bad. You're buying a smaller, repeating set of staples, turning them into mixes in one sitting, and then drawing from that pantry all month without a single extra trip. The system isn't just about dinner. It's about breaking the constant, draining cycle of grocery runs that never quite solve the problem.",
+   "bold": false
+  },
+  {
+   "i": 72,
+   "type": "p",
+   "style": "Heading 2",
+   "text": "What \"Reading the Label\" Should Actually Feel Like",
+   "bold": false
+  },
+  {
+   "i": 73,
+   "type": "p",
+   "style": "normal",
+   "text": "We’ve all been there before, standing in the aisle with the box in hand, ten ingredients deep into something that's supposed to just be seasoning, hitting a word that sounds more like a lab report than a spice blend.",
+   "bold": false
+  },
+  {
+   "i": 74,
+   "type": "p",
+   "style": "normal",
+   "text": "That's not you overthinking it. That's a food industry that is optimized for shelf life and cost, rather than what is actually good for your bodies.",
+   "bold": false
+  },
+  {
+   "i": 75,
+   "type": "p",
+   "style": "normal",
+   "text": "A dry mix pantry works differently. When you make a mix from this book, you already know what's in the jar, because you put it there, salt, flour, paprika, garlic powder, things you could find in almost any kitchen.",
+   "bold": true
+  },
+  {
+   "i": 76,
+   "type": "p",
+   "style": "normal",
+   "text": "The same goes for why your past attempts at homemade mixes might not have worked out. A recipe that comes out great once and chalky the next wasn't your fault. That's a recipe someone online has tried a single time, wrote down, and never tested again. Every mix in this book has been tested for consistency, not just flavor, so you get the same result whether it's your first time making it or your fifteenth.",
+   "bold": false
+  },
+  {
+   "i": 77,
+   "type": "p",
+   "style": "Heading 2",
+   "text": "This Isn't the Basic Book You've Already Read",
+   "bold": false
+  },
+  {
+   "i": 78,
+   "type": "p",
+   "style": "normal",
+   "text": "If you've picked up a beginner pantry book before and felt a little let down, taco seasoning, pancake mix, the same six basics you'd already found for free online, I want you to know this book isn't that.",
+   "bold": false
+  },
+  {
+   "i": 79,
+   "type": "p",
+   "style": "normal",
+   "text": "Yes, you'll find the staples in here, because you genuinely need them. But this book keeps going well past that. You'll find mixes that build full dinners, not just seasoning packets, and combinations designed to pull double or triple duty, so one jar in your pantry can become three different meals depending on what you pair it with. Nothing in here is the recipe you've already seen a hundred times with a new cover on it.",
+   "bold": false
+  },
+  {
+   "i": 80,
+   "type": "p",
+   "style": "normal",
+   "text": "Think of it less like a beginner cookbook and more like a pantry that grows with you. In the early weeks, you'll likely lean on the staples, the ones solving your most immediate 5pm problems. A few months in, once those feel like second nature, you'll start reaching for the combinations built to flex, the ones that turn one jar into a different dinner depending on your mood, your fridge, or how much time you've actually got that night. You won't outgrow this book. You'll just keep finding more of it.",
+   "bold": false
+  },
+  {
+   "i": 81,
+   "type": "p",
+   "style": "Heading 2",
+   "text": "How to Use This Book",
+   "bold": false
+  },
+  {
+   "i": 82,
+   "type": "p",
+   "style": "normal",
+   "text": "I've laid this out so you can move through it at your own pace, not all at once.",
+   "bold": false
+  },
+  {
+   "i": 83,
+   "type": "p",
+   "style": "normal",
+   "text": "I’d recommend that you start with the staples. The first section covers the mixes you'll use most, the ones that show up again and again across other recipes in the book. Get these into jars first. They're the foundation of your pantry, and every other meal builds from them.",
+   "bold": false
+  },
+  {
+   "i": 84,
+   "type": "p",
+   "style": "normal",
+   "text": "Build your jar system as you go. Each mix in this book tells you exactly what goes in the jar, how to label it, and how long it'll keep. You don't need matching containers or a Pinterest-worthy shelf to start (although it is nice to look at). You need a jar, a label, and five minutes. The system does the organizing for you. You don't have to be naturally organized for this to work, which is honestly the whole reason I built it this way.",
+   "bold": false
+  },
+  {
+   "i": 85,
+   "type": "p",
+   "style": "normal",
+   "text": "Top tip: Use the labels as your recipe. Every mix comes with clear instructions for what to add at cooking time, and how much. That's your actual recipe on cooking night. You won't be flipping back through the book hunting for a page while dinner burns. The jar tells you what it needs and how to do it.",
+   "bold": false
+  },
+  {
+   "i": 86,
+   "type": "p",
+   "style": "normal",
+   "text": "Move at your own pace. You don't have to make every mix in this book in the first week. Pick two or three that solve your worst 5pm problems first, the ones you're most tired of running out of, and start there. Add more as you go. This isn't a challenge with a deadline, it’s a pantry building exercise to help you get back more of your time.",
+   "bold": false
+  },
+  {
+   "i": 87,
+   "type": "p",
+   "style": "normal",
+   "text": "Come back when life gets busy again. That's kind of the whole point. This book isn't something you read once and shelve. It's something I want you to keep reaching for, the same way you'll keep reaching for the jars themselves, because the problem it solves doesn't go away after one good week. It just gets easier to handle with the methods and recipes I show in this book.",
+   "bold": false
+  },
+  {
+   "i": 88,
+   "type": "p",
+   "style": "normal",
+   "text": "Now before we get into the recipes, I want to let you imagine the end goal that this book actually builds toward. ",
+   "bold": false
+  },
+  {
+   "i": 89,
+   "type": "p",
+   "style": "normal",
+   "text": "It's a weeknight, the kids have been asking you what's for dinner since 3pm, and instead of that slow-motion panic, you already know. You grab a jar, you check the label for what to add, usually something you already have, and it's on the table. No decision fatigue, no last-minute grocery run, no mental math. Just a jar, a plan, and dinner.",
+   "bold": true
+  },
+  {
+   "i": 90,
+   "type": "p",
+   "style": "normal",
+   "text": "It's not only about the meal either. It's the hour you get back once dinner stops eating up all your energy, an hour that isn't spent standing at the fridge deciding, then driving to the store, then deciding again. That's what a well-stocked, labeled dry mix pantry actually does. This cookbook is how you build that pantry.",
+   "bold": false
+  },
+  {
+   "i": 91,
+   "type": "p",
+   "style": "normal",
+   "text": "Now let’s get to it.",
+   "bold": false
+  },
+  {
+   "i": 92,
+   "type": "p",
+   "style": "Heading 2",
+   "text": "Chapter Two: What You'll Actually Need",
+   "bold": false
+  },
+  {
+   "i": 93,
+   "type": "p",
+   "style": "normal",
+   "text": "Before we get into jars and mixes, let's talk about what's going into them and what you'll be reaching for on cooking night. I'm not going to send you on a scavenger hunt for equipment you'll use once and forget about. Everything on this list is needed, and once you've got it, you're set for every single recipe in this book. No guessing what else you might need halfway through a mix.",
+   "bold": false
+  },
+  {
+   "i": 94,
+   "type": "p",
+   "style": "Heading 3",
+   "text": "The Jars",
+   "bold": false
+  },
+  {
+   "i": 95,
+   "type": "p",
+   "style": "normal",
+   "text": "This is the heart of the whole system, so let's get it right from the start.",
+   "bold": false
+  },
+  {
+   "i": 96,
+   "type": "p",
+   "style": "normal",
+   "text": "You'll want wide-mouth glass jars, and it's worth knowing upfront that size isn't a one-size-fits-all answer here. A seasoning blend that flavors six dinners takes up a lot less room than a full pancake or bread mix that makes six breakfasts on its own, so a jar built for one won't necessarily fit the other. Rather than guess, every recipe in this book tells you exactly how many servings it makes, so you'll always know the right jar size before you start. As a general rule of thumb though, a set that mixes pint (16oz) and quart (32oz) wide-mouth jars will cover almost everything you make. Mason jars work perfectly well, and you probably already have a few kicking around. If you don't, a basic set of a dozen wide-mouth jars in both sizes will see you through most of what's in this book.",
+   "bold": false
+  },
+  {
+   "i": 97,
+   "type": "p",
+   "style": "normal",
+   "text": "You don't need anything fancy here. A wide mouth matters more than people think, since a narrow jar means fighting a spoon around corners every time you scoop, and that's exactly the kind of small annoyance that makes a good system fall apart. Beyond that, plain glass, a tight-fitting lid, and a flat surface to write on is genuinely all it takes.",
+   "bold": false
+  },
+  {
+   "i": 98,
+   "type": "p",
+   "style": "Heading 3",
+   "text": "Labels",
+   "bold": false
+  },
+  {
+   "i": 99,
+   "type": "p",
+   "style": "normal",
+   "text": "A mix without a label is just a mystery jar, and mystery jars are exactly what we're trying to get away from.",
+   "bold": false
+  },
+  {
+   "i": 100,
+   "type": "p",
+   "style": "normal",
+   "text": "You've got two solid options; Painter's tape and a permanent marker will do the whole job for free, and it comes off clean when you want to reuse the jar for something else. If you'd rather something that looks a bit more finished on the shelf, a roll of chalkboard labels or a basic label maker works well too, and it's genuinely satisfying to see a shelf of matching labels once you've built up a few mixes. Either way works, so keep whichever one you choose in the drawer nearest your jars, so it's never the reason a mix goes unlabeled.",
+   "bold": false
+  },
+  {
+   "i": 101,
+   "type": "p",
+   "style": "normal",
+   "text": "On every label, you'll want the mix name, the date you made it, and how much water, oil, egg, or protein to add at cooking time. That last part is what turns your jar into a recipe card, so don't skip it, even if it feels obvious the day you make it. It won't feel obvious in three weeks.",
+   "bold": false
+  },
+  {
+   "i": 102,
+   "type": "p",
+   "style": "Heading 3",
+   "text": "Measuring Tools",
+   "bold": false
+  },
+  {
+   "i": 103,
+   "type": "p",
+   "style": "normal",
+   "text": "You already own most of this, so this part's short. A standard set of measuring cups and spoons, a large mixing bowl, and a whisk or fork for combining dry ingredients evenly. If you've got a kitchen scale, it's a nice-to-have for a few of the more precise mixes later in the book, but nothing here requires one. Every recipe works fine with standard cups and spoons.",
+   "bold": false
+  },
+  {
+   "i": 104,
+   "type": "p",
+   "style": "Heading 3",
+   "text": "A Funnel",
+   "bold": false
+  },
+  {
+   "i": 105,
+   "type": "p",
+   "style": "normal",
+   "text": "This one feels small, but it earns its spot. Getting a dry mix from a mixing bowl into a jar without a funnel is how you end up with paprika on your countertop and half your cinnamon in the cutlery drawer. A wide-mouth funnel, the kind sold for canning, makes this a thirty-second job instead of a small cleanup project.",
+   "bold": false
+  },
+  {
+   "i": 106,
+   "type": "p",
+   "style": "Heading 3",
+   "text": "Storage Space",
+   "bold": false
+  },
+  {
+   "i": 107,
+   "type": "p",
+   "style": "normal",
+   "text": "You don't need a pantry overhaul. You need one shelf, or even one shoebox-sized space, that's just for these jars. Somewhere cool and dry, out of direct sunlight, and away from the stove, since heat is what shortens a mix's shelf life faster than almost anything else. If your kitchen is tight on space, a single shelf in a closet works just as well as a pantry. What matters is that it's one dedicated spot, so you're not hunting for jars in three different cupboards on a night you're already short on time.",
+   "bold": false
+  },
+  {
+   "i": 108,
+   "type": "p",
+   "style": "normal",
+   "text": "That's the full list. Nothing on it is expensive, nothing requires a special trip, and most of it you probably already own. Once you've got these together, you're not missing a single thing for anything in this book.",
+   "bold": false
+  },
+  {
+   "i": 109,
+   "type": "p",
+   "style": "Heading 3",
+   "text": "How a Jar Becomes Dinner",
+   "bold": false
+  },
+  {
+   "i": 110,
+   "type": "p",
+   "style": "normal",
+   "text": "Here's what actually happens on a night you reach for one of these mixes, broken down so you can see the whole shape of it before you make your first one.",
+   "bold": false
+  },
+  {
+   "i": 111,
+   "type": "p",
+   "style": "normal",
+   "text": "Step one is making the mix itself, and you'll only do this part occasionally, not every night. You combine the dry ingredients in a bowl, following the ratios exactly as written, and whisk or stir until everything's evenly distributed. This matters more than it sounds like it should. A mix with the salt settled at the bottom and the flour clumped at the top won't cook the same from the first scoop as it does from the last, so take the extra minute here.",
+   "bold": false
+  },
+  {
+   "i": 112,
+   "type": "p",
+   "style": "normal",
+   "text": "Step two is the one you'll do most often, and it's the one that actually gets dinner on the table. You pull the jar down, read the label, and add exactly what it tells you to add, at cooking time. Sometimes that's water and oil. Sometimes it's an egg. Sometimes it's whatever protein you've got in the fridge that night, because a lot of these mixes are built to flex around what you already have on hand rather than demanding a specific ingredient. The label tells you the ratio. You're not guessing, and you're not deciding anything new. You're just following what you already worked out weeks ago, when you had the time and headspace to get it right.",
+   "bold": false
+  },
+  {
+   "i": 113,
+   "type": "p",
+   "style": "normal",
+   "text": "That two-step shape is the same for every mix in this book, whether it's a simple seasoning blend or a full dinner base. Once you've made a jar or two, you'll stop thinking about the steps at all. You'll just reach for a jar the way you'd reach for anything else in your kitchen, without a second thought about what's supposed to happen next.",
+   "bold": false
+  },
+  {
+   "i": 114,
+   "type": "p",
+   "style": "normal",
+   "text": "That's the whole engine behind this book, laid out plainly so you can see it before we start filling your shelf. Now let's get you a full pantry of jars to reach for and turn that dinnertime dread into dinnertime dreams!",
+   "bold": false
+  },
+  {
+   "i": 115,
+   "type": "p",
+   "style": "normal",
+   "text": "(Middle of book review request)\nHi, it's me again.",
+   "bold": false
+  },
+  {
+   "i": 117,
+   "type": "p",
+   "style": "normal",
+   "text": "If you're somewhere in the middle of this book right now, jars lined up, maybe a little flour on the counter, I just want to stop you for one second.",
+   "bold": false
+  },
+  {
+   "i": 119,
+   "type": "p",
+   "style": "normal",
+   "text": "I'm not going to pretend I don't need your help, because I do. I'm one person doing this from my own kitchen, no big publisher behind me, no marketing team, just me and this book I built because I needed it myself. The way books like this get found by other tired parents standing in front of their own pantry is other people telling the truth about whether it actually worked.",
+   "bold": false
+  },
+  {
+   "i": 121,
+   "type": "p",
+   "style": "normal",
+   "text": "So if a mix has already saved you a night, or even just made you feel a little less behind, would you take two minutes and leave a review on Amazon? You don't need to write an essay. Just tell the next person what it did for you.",
+   "bold": false
+  },
+  {
+   "i": 123,
+   "type": "p",
+   "style": "normal",
+   "text": "If you leave a review, thank you.I read every single one myself, and it genuinely keeps me going.",
+   "bold": false
+  },
+  {
+   "i": 124,
+   "type": "p",
+   "style": "normal",
+   "text": "To make the review even better, a photo of your mixes would be amazing! You can scan the QR code to leave a review.",
+   "bold": false
+  },
+  {
+   "i": 126,
+   "type": "p",
+   "style": "normal",
+   "text": "Maggie",
+   "bold": false
+  },
+  {
+   "i": 130,
+   "type": "p",
+   "style": "Heading 2",
+   "text": "Conclusion: From My Pantry to Yours",
+   "bold": false
+  },
+  {
+   "i": 131,
+   "type": "p",
+   "style": "normal",
+   "text": "So, you made it to the end of the book. Jars on the shelf, hopefully, or at least the first few.",
+   "bold": false
+  },
+  {
+   "i": 132,
+   "type": "p",
+   "style": "normal",
+   "text": "Before you close this and get back to your evening, I want to ask you for something, plainly, no dressing it up.",
+   "bold": false
+  },
+  {
+   "i": 133,
+   "type": "p",
+   "style": "normal",
+   "text": "If this book made even one dinner or breakfast easier for you, I'd genuinely love to hear about it, and if you've got a minute to leave a review wherever you picked this up, it helps more than you'd probably guess. Not for me, particularly, though I won't pretend it doesn't make my day. It helps the next version of you, the parent still standing in front of an empty pantry right now, scrolling through options, trying to figure out if this book is actually going to be different. Your review is what tells her it is.",
+   "bold": false
+  },
+  {
+   "i": 134,
+   "type": "p",
+   "style": "normal",
+   "text": "This book doesn't have a marketing budget. It doesn't have a publicist or a team pushing it in front of people. What it has is me, and readers like you, and whatever you decide to say once you've actually used it.",
+   "bold": false
+  },
+  {
+   "i": 135,
+   "type": "p",
+   "style": "normal",
+   "text": "You can scan this QR to leave a review, I will read them all and would love if you could share your mixes too in the review.",
+   "bold": false
+  },
+  {
+   "i": 138,
+   "type": "p",
+   "style": "normal",
+   "text": "From my pantry to yours, thank you for trusting me with your kitchen.",
+   "bold": false
+  },
+  {
+   "i": 139,
+   "type": "p",
+   "style": "normal",
+   "text": "Maggie",
+   "bold": true
+  },
+  {
+   "i": 140,
+   "type": "p",
+   "style": "normal",
+   "text": "maggie@maggiespantryclub.com",
+   "bold": false
+  }
+ ]
+}
