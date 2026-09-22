@@ -22,6 +22,7 @@ import requests
 from .common import (
     ROOT,
     active_profile,
+    rel,
     get_logger,
     img_name,
     load_config,
@@ -157,8 +158,8 @@ def generate_one(
         raw_path = raw_dir / f"{entry_id:03d}_a{attempt}_{stamp}.png"
         att: dict = {"attempt": attempt, "started": stamp}
 
+        # ── the PAID call. Only a failure here is worth retrying. ────────
         try:
-            # reference handles must be re-opened for every call
             handles = [open(h, "rb") for h in ref_handles]
             try:
                 payload = build_input(prompt, cfg, prof, handles)
@@ -168,9 +169,24 @@ def generate_one(
             finally:
                 for h in handles:
                     h.close()
+        except Exception as exc:                        # noqa: BLE001
+            att["error"] = redact(f"{type(exc).__name__}: {exc}")
+            att["stage"] = "api_call"
+            attempts_log.append(att)
+            log.error("%03d attempt %d — API call failed: %s",
+                      entry_id, attempt, att["error"])
+            if attempt < max_attempts:
+                wait = backoff[min(attempt - 1, len(backoff) - 1)]
+                log.info("retrying %03d in %ss", entry_id, wait)
+                time.sleep(wait)
+            continue
 
+        # ── past this point the call is already paid for. A local error ──
+        # ── must NOT trigger another one: fail fast and keep the raw    ──
+        # ── output so it can be reprocessed for free.                   ──
+        try:
             _save_output(output, raw_path, timeout)
-            att["raw_file"] = str(raw_path.relative_to(ROOT))
+            att["raw_file"] = rel(raw_path)
 
             rep = process(raw_path, final_path, cfg)
             att.update(rep)
@@ -179,32 +195,37 @@ def generate_one(
             att["validation_status"] = verdict["status"]
             att["validation_failures"] = verdict["failures"]
             att["validation_warnings"] = verdict["warnings"]
-
-            if verdict["status"] == "PASS":
-                attempts_log.append(att)
-                log.info("%03d PASS on attempt %d (%s)", entry_id, attempt,
-                         rep.get("resample_direction"))
-                break
-
-            # failed QC: keep the attempt for comparison, then retry
-            rej_dir.mkdir(parents=True, exist_ok=True)
-            keep = rej_dir / f"{entry_id:03d}_a{attempt}_{stamp}_FAIL.png"
-            if final_path.exists():
-                final_path.replace(keep)
-            att["rejected_file"] = str(keep.relative_to(ROOT))
-            log.warning("%03d attempt %d FAILED: %s", entry_id, attempt,
-                        "; ".join(verdict["failures"]))
-            attempts_log.append(att)
-
         except Exception as exc:                        # noqa: BLE001
             att["error"] = redact(f"{type(exc).__name__}: {exc}")
+            att["stage"] = "local_processing"
+            att["local_failure"] = True
             attempts_log.append(att)
-            log.error("%03d attempt %d errored: %s", entry_id, attempt, att["error"])
-            if attempt < max_attempts:
-                wait = backoff[min(attempt - 1, len(backoff) - 1)]
-                log.info("retrying %03d in %ss", entry_id, wait)
-                time.sleep(wait)
-            continue
+            log.error(
+                "%03d attempt %d — the image was generated and PAID FOR but "
+                "local processing failed: %s", entry_id, attempt, att["error"]
+            )
+            log.error(
+                "%03d raw output kept at %s — fix the cause and run "
+                "`python main.py reprocess --id %d` (free, no new API call)",
+                entry_id, att.get("raw_file", raw_path), entry_id,
+            )
+            break
+
+        if verdict["status"] == "PASS":
+            attempts_log.append(att)
+            log.info("%03d PASS on attempt %d (%s)", entry_id, attempt,
+                     rep.get("resample_direction"))
+            break
+
+        # failed QC: keep the attempt for comparison, then retry
+        rej_dir.mkdir(parents=True, exist_ok=True)
+        keep = rej_dir / f"{entry_id:03d}_a{attempt}_{stamp}_FAIL.png"
+        if final_path.exists():
+            final_path.replace(keep)
+        att["rejected_file"] = rel(keep)
+        log.warning("%03d attempt %d FAILED QC: %s", entry_id, attempt,
+                    "; ".join(verdict["failures"]))
+        attempts_log.append(att)
 
         if attempt < max_attempts:
             wait = backoff[min(attempt - 1, len(backoff) - 1)]
@@ -398,3 +419,63 @@ def main(
 
 if __name__ == "__main__":
     main()
+
+
+# ── free recovery: re-run post-processing on already-paid-for raw output ──
+def reprocess(cfg: dict, ids: list[int], quiet: bool = False) -> dict:
+    """Re-derive production assets from saved raw output. Makes NO API call.
+
+    Use after a local post-processing or validation failure, or after changing
+    the postprocess settings in config.yaml: the Replicate output has already
+    been paid for, so there is no reason to buy it twice.
+    """
+    raw_dir = p(cfg, "raw_dir")
+    final_dir = p(cfg, "final_dir")
+    prompts = read_json(p(cfg, "generated_prompts"), default={"prompts": {}})["prompts"]
+    meta = load_metadata(cfg)
+
+    results: dict[int, dict] = {}
+    for i in ids:
+        candidates = sorted(raw_dir.glob(f"{i:03d}_a*.png"))
+        if not candidates:
+            results[i] = {"status": "NO_RAW",
+                          "detail": f"no saved raw output in {rel(raw_dir)}"}
+            continue
+        newest = candidates[-1]                 # timestamped, so last == latest
+        final_path = final_dir / img_name(i)
+        try:
+            rep = process(newest, final_path, cfg)
+            verdict = validate_one(i, final_path, cfg, prompts.get(str(i)))
+        except Exception as exc:                        # noqa: BLE001
+            results[i] = {"status": "ERROR", "detail": redact(str(exc))}
+            continue
+
+        rec = meta["images"].setdefault(str(i), {"id": i})
+        rec.update(
+            {
+                "source_output_dimensions": rep.get("source_output_dimensions", ""),
+                "final_dimensions": rep.get("final_dimensions", ""),
+                "resample_direction": rep.get("resample_direction", ""),
+                "validation_status": verdict["status"],
+                "validation_failures": verdict["failures"],
+                "validation_warnings": verdict["warnings"],
+                "reprocessed_from": rel(newest),
+                "reprocessed_at": dt.datetime.now().isoformat(timespec="seconds"),
+            }
+        )
+        results[i] = {"status": verdict["status"],
+                      "detail": "; ".join(verdict["failures"]),
+                      "raw": rel(newest)}
+    save_metadata(cfg, meta)
+
+    if not quiet:
+        print("reprocessed from saved raw output — no API calls, no charge\n")
+        print(f"{'id':>4}  {'status':<9}source / problem")
+        print("-" * 72)
+        for i in sorted(results):
+            r = results[i]
+            print(f"{i:>4}  {r['status']:<9}{r.get('raw') or r.get('detail', '')}")
+        print("-" * 72)
+        ok = sum(1 for r in results.values() if r["status"] == "PASS")
+        print(f"{ok}/{len(results)} now PASS")
+    return results

@@ -9,6 +9,7 @@
     python main.py generate --start 1 --end 20 # paid: generate a batch
     python main.py validate --start 1 --end 20
     python main.py contact-sheet --start 1 --end 20
+    python main.py reprocess --id 7                # free: redo local processing
     python main.py regenerate --id 7
     python main.py status
     python main.py build-book
@@ -161,6 +162,15 @@ def cmd_regenerate(a, cfg):
     return 1 if bad else 0
 
 
+def cmd_reprocess(a, cfg):
+    """Re-derive production assets from saved raw output. Free — no API call."""
+    from scripts.common import parse_range
+    from scripts.generate_images import reprocess
+    ids = a.ids or parse_range(a.start, a.end, cfg["book"]["total_entries"])
+    res = reprocess(cfg, ids)
+    return 1 if any(r["status"] != "PASS" for r in res.values()) else 0
+
+
 def cmd_validate(a, cfg):
     from scripts.validate_images import main as run
     res = run(cfg, start=a.start, end=a.end, ids=a.ids)
@@ -227,6 +237,7 @@ COMMANDS = {
     "plan": cmd_plan,
     "generate": cmd_generate,
     "regenerate": cmd_regenerate,
+    "reprocess": cmd_reprocess,
     "validate": cmd_validate,
     "contact-sheet": cmd_contact,
     "status": cmd_status,
@@ -248,7 +259,7 @@ def build_parser() -> argparse.ArgumentParser:
     for name in ("parse", "analyze-refs", "status", "build-book", "preflight"):
         sub.add_parser(name)
 
-    for name in ("prompts", "validate", "contact-sheet"):
+    for name in ("prompts", "validate", "contact-sheet", "reprocess"):
         sp = sub.add_parser(name)
         _range_args(sp)
 

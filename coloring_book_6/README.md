@@ -470,6 +470,7 @@ python main.py generate --start 1 --end 20    # PAID: generate a batch
 python main.py generate --start 1 --end 20 --dry-run   # plan only, no charge
 python main.py validate --start 1 --end 20    # QC a range
 python main.py contact-sheet --start 1 --end 20
+python main.py reprocess --id 7               # FREE: redo local processing only
 python main.py regenerate --id 7              # PAID: redraw one image
 python main.py build-book                     # lay out the interior PDF
 python main.py preflight                      # KDP compliance report
@@ -496,6 +497,9 @@ Image generation costs real money, so the pipeline is deliberately cautious:
 * Finished, passing images are **skipped** — you never pay twice for the same picture.
 * Replacing approved artwork requires `regenerate` or an explicit `--force`.
 * Retries are capped (3 attempts per image by default, set in `config.yaml`).
+* **Only a genuine API failure is retried.** If the picture arrives but local
+  processing fails, the pipeline stops immediately rather than buying it again,
+  and tells you to run `reprocess` — which reuses the output you already paid for.
 * Failed attempts are kept rather than silently redone.
 
 Current settings: `google/nano-banana-pro` at 4K, about **$0.24 per image**.
@@ -537,6 +541,17 @@ paid for again.
 **`no scene authored yet for id(s): 021…`**
 That batch's scene descriptions have not been written yet. They are written one
 batch at a time, on purpose. Nothing was charged.
+
+**An image was generated but something failed afterwards**
+The picture has already been paid for and the untouched model output is kept in
+`images/raw/`. Re-run just the local processing — this costs nothing:
+
+```bash
+python main.py reprocess --id 7
+```
+
+Use the same command after changing any `postprocess` setting in `config.yaml`,
+so you never pay twice for the same picture.
 
 **An image keeps failing validation**
 Read the reason in the `validate` output. If it is about resolution, raise
