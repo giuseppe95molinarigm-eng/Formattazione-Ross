@@ -151,7 +151,8 @@ for i in range(N):
         if first_arabic is None and f == "1":
             first_arabic = i
         lines = body_lines(doc[i])
-        title = [t for y, t, sp in lines if "Display-Sans" in sp[0]["font"] and sp[0]["size"] >= 20]
+        title = [t for y, t, sp in lines if "Display-Sans" in sp[0]["font"] and
+                 (sp[0]["size"] >= 20 or ("Ultra-Bold" in sp[0]["font"] and sp[0]["size"] >= 15.9))]
         openers[" ".join(title).replace("  ", " ").strip()] = int(f)
 say(f"arabic page 1 = PDF page {first_arabic + 1}")
 for k, v in openers.items():

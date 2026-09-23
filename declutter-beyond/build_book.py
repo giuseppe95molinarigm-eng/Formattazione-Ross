@@ -26,6 +26,7 @@ WP = "{http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing}"
 EMU_PER_PT = 12700
 
 BOOK_TITLE = "Declutter Beyond"
+QR_SIZE_PT = 144.0      # 2 in; the reference prints its QR at ~2.2 in
 
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
 
@@ -238,17 +239,25 @@ class Book:
         m = re.match(r"Phase\s+([IVX]+):\s*(.*)", text)
         num, name = m.group(1), m.group(2)
         a = self.anchor()
-        if " — " in name:
-            main, sub = name.split(" — ", 1)
-            sub_html = f'<p class="phase-sub">{esc(sub.upper())}</p>'
-        else:
-            main, sub_html = name, ""
-        main_u = main.upper()
-        if text_width(main_u, "nunito-sans-300-normal.ttf", 28) > 300:
-            a1, b1 = split_balanced(main_u.split(), "nunito-sans-300-normal.ttf", 28)
-            main_html = f"{esc(a1)}<br>{esc(b1)}"
-        else:
-            main_html = esc(main_u)
+        # full phase name at one size; lines broken after the em dash and
+        # balanced, as the reference breaks its 3-line PHASE IV name
+        lines = []
+        for part in name.upper().split(" — "):
+            if lines:
+                lines[-1] += " —"
+            if text_width(part, "nunito-sans-300-normal.ttf", 28) > 300:
+                words = part.split()
+                k = len(words)
+                while k > 1 and text_width(" ".join(words[:k]), "nunito-sans-300-normal.ttf", 28) > 300:
+                    k -= 1
+                if len(words) - k == 1:        # never leave one word alone
+                    lines.extend(split_balanced(words, "nunito-sans-300-normal.ttf", 28))
+                else:
+                    lines.extend([" ".join(words[:k]), " ".join(words[k:])])
+            else:
+                lines.append(part)
+        main_html = "<br>".join(esc(x) for x in lines)
+        sub_html = ""
         self.parts.append(
             f'<section class="phase" id="{a}"><div class="phase-num">PHASE {num}</div>'
             f'<div class="phase-rule"></div><p class="phase-name">{main_html}</p>{sub_html}</section>')
@@ -269,6 +278,21 @@ class Book:
         self.prev = "opener"
         self.dropcap_pending = dropcap
 
+    def backmatter(self, title, sub, rh, toc_level, toc_text, dropcap, cls="chap back"):
+        """Note / Appendix / Toolkit / About: the reference sets these with a
+        centred black caps title underlined by a grey rule (as the TOC title),
+        no flourish; an appendix name follows as a caps sub-head."""
+        self.close_section()
+        a = self.anchor()
+        sub_html = f'<p class="back-sub">{esc(sub.upper())}</p>' if sub else ""
+        self.parts.append(
+            f'<section class="{cls}" id="{a}"><div class="rhr">{esc(rh)}</div>'
+            f'<h1 class="back-title"><span>{esc(title.upper())}</span></h1>{sub_html}')
+        self.open_section = True
+        self.toc.append((toc_level, None, toc_text, a))
+        self.prev = "backsub" if sub else "opener"
+        self.dropcap_pending = dropcap
+
     # ----- paragraphs -----
     def para(self, info):
         segs, text = info["segs"], info["text"]
@@ -280,12 +304,13 @@ class Book:
             # author's placed size, limited to the text block
             maxw, maxh = 312.0, 378.0
             if qr:
-                maxh = 86.4          # 1.2 in: scannable, ~330 dpi from the supplied file
+                maxh = QR_SIZE_PT
             k = self.fig_n
             self.fig_n += 1
             maxh = self.fig_heights.get(k, maxh)
             s = min(1.0, maxw / wpt, maxh / hpt)
-            fig = (f'<figure class="{cls}" data-fig="{k}"><img src="../images/{name}" '
+            src = "image9_print.png" if qr else name
+            fig = (f'<figure class="{cls}" data-fig="{k}"><img src="../images/{src}" '
                    f'style="width:{wpt*s:.1f}pt;height:{hpt*s:.1f}pt" alt=""></figure>')
             self.dropcap_pending = False
             if self.fig_defer.get(k):
@@ -300,6 +325,9 @@ class Book:
             return
         centered = al in ("center",)
         body = seg_html(segs, url_breaks=True)
+        if self.opener_kind == "note" and "http" in text:
+            # the reference sets the review URL on its own line, smaller
+            body = body.replace('<span class="url">', '<br><span class="url note-url">', 1)
 
         # chapter epigraph: centered italic quote right after an opener
         bal = ""
@@ -358,7 +386,7 @@ class Book:
         if self.prev in ("boldhead", "item") and segs and segs[0][1] and segs[0][0].rstrip().endswith(":"):
             classes.append("item")
             kind = "item"
-        if self.prev in ("opener", "epigraph", "h3", "h4", "boldhead") or self.prev is None:
+        if self.prev in ("opener", "epigraph", "h3", "h4", "boldhead", "backsub") or self.prev is None:
             classes.append("noindent")
         if self.dropcap_pending and re.match(r"[A-Za-z]", text):
             classes.append("dropcap")
@@ -420,18 +448,25 @@ def build(fig_heights=None, fig_defer=None):
                 bk.opener_kind = None
                 bk.phase(text)
                 continue
-            m = re.match(r"(Introduction|CONCLUSION|Appendix [A-Z]):\s*(.*)", text, re.I)
+            ma = re.match(r"(Appendix [A-Z]):\s*(.*)", text)
+            if ma:
+                bk.opener_kind = "back"
+                bk.backmatter(ma.group(1), ma.group(2), ma.group(2), "sub", text, dropcap=False)
+                continue
+            m = re.match(r"(Introduction|CONCLUSION):\s*(.*)", text, re.I)
             if m:
                 lab = m.group(1).upper()
                 ttl = m.group(2)
                 bk.opener_kind = "chapter"
                 cls = "chap intro" if lab == "INTRODUCTION" else "chap"
-                bk.opener(lab, ttl, ttl, "top" if not lab.startswith("APPENDIX") else "sub",
+                bk.opener(lab, ttl, ttl, "top",
                           f"{m.group(1).title() if lab != 'CONCLUSION' else 'Conclusion'}: {ttl}",
                           cls=cls)
             else:
-                bk.opener_kind = "back"
-                bk.opener(None, text, text, "top" if text == "A Note From Me to You" else "sub", text)
+                note = text == "A Note From Me to You"
+                bk.opener_kind = "note" if note else "back"
+                bk.backmatter(text, None, text, "top" if note else "sub", text,
+                              dropcap=not note, cls="chap back note" if note else "chap back")
             continue
         if st == "Heading2":
             m = re.match(r"CHAPTER\s+(\d+):\s*(.*)", text)
@@ -520,7 +555,7 @@ def fit_figures(pdf_path, fig_heights, fig_defer, final=False):
                 continue
             k += 1
             x0, y0, x1, y1 = info["bbox"]
-            if y0 > 90 or i == 0 or (info["width"], info["height"]) == (399, 399):
+            if y0 > 90 or i == 0 or (info["width"], info["height"]) == (1596, 1596):
                 continue
             prev = doc[i - 1]
             lines = [s["origin"][1] for b in prev.get_text("dict")["blocks"] if b["type"] == 0

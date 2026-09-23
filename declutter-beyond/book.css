@@ -41,14 +41,14 @@
 @page front  { @top-left { content: none; } @top-right { content: none; } }
 @page toc    { @top-left { content: none; } @top-right { content: none; }
                @bottom-center { content: counter(page, lower-roman); font: 700 10pt "EB Garamond"; color: var(--ink);
-                                vertical-align: top; padding-top: 4pt; } }
+                                vertical-align: top; padding-top: 7.2pt; } }
 @page phase  { @top-left { content: none; } @top-right { content: none; } }
 
 /* opening pages: no running head, folio centred at the foot */
 @page :nth(1 of chap), :nth(1 of intro) {
   @top-left { content: none; } @top-right { content: none; }
   @bottom-center { content: counter(page); font: 700 10pt "EB Garamond"; color: var(--ink);
-                   vertical-align: top; padding-top: 4pt; }
+                   vertical-align: top; padding-top: 7.2pt; }
 }
 @page :nth(1 of intro) { counter-reset: page 1; }
 
@@ -117,7 +117,7 @@ section.phase { page: phase; break-before: right; break-after: page; }
 .toc p:first-of-type { margin-top: 0; }
 
 /* ---------------- phase divider ---------------- */
-.phase { text-align: center; padding-top: 158pt; }
+.phase { text-align: center; padding-top: 164.4pt; }
 .phase-num { font: 800 30pt/1 "Display Sans"; letter-spacing: 0.3pt; }
 .phase-rule { border-top: 2pt solid var(--rule); margin: 10pt 0 0; }
 .phase p { text-indent: 0; text-align: center; hyphens: none; }
@@ -135,6 +135,17 @@ section.phase { page: phase; break-before: right; break-after: page; }
   font-style: italic; text-align: center; text-indent: 0; hyphens: none;
   margin: -12pt 18pt 26pt;
 }
+
+/* back matter (Note, Appendix, Toolkit, About): reference style */
+.back-title { text-align: center; margin: 52.7pt 0 45pt; font: 800 16pt/1 "Display Sans"; hyphens: none; }
+.back-title span { display: inline-block; border-bottom: 0.75pt solid #818385; padding-bottom: 5pt; }
+.note .back-title { margin-top: 75.7pt; margin-bottom: 38pt; }
+.back-sub { font: 500 14pt/16.8pt "Display Sans"; text-indent: 0; text-align: left; hyphens: none;
+            margin: -4pt 0 6pt; break-after: avoid; }
+.note p.keyline { margin: 0 0 22pt; }
+.note p.center { margin: 9pt 0; }
+.note-url { font-size: 10pt; }
+.back p.item { margin-left: 14.4pt; }
 
 /* drop cap: two-line, as in the reference */
 p.dropcap { text-indent: 0; }

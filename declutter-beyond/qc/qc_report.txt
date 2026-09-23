@@ -1,8 +1,6 @@
 == 1. Text integrity (manuscript vs PDF, word sequence) ==
-manuscript words/tokens: 40215   PDF body tokens: 40234
-  delete: MS[—]  PDF[]
+manuscript words/tokens: 40215   PDF body tokens: 40236
   replace: MS[i want]  PDF[iwant]
-  delete: MS[—]  PDF[]
   insert: MS[]  PDF[1 .]
   insert: MS[]  PDF[. 2]
   insert: MS[]  PDF[. 3]
@@ -14,28 +12,28 @@ manuscript words/tokens: 40215   PDF body tokens: 40234
   insert: MS[]  PDF[2 .]
   insert: MS[]  PDF[3 .]
   insert: MS[]  PDF[4 .]
-difference blocks: 14
+difference blocks: 12
 
 == 2. Toolkit / Checklist content not inserted ==
 checklist paragraphs found in book but not in manuscript: 0
 
 == 3. Openings and TOC ==
 arabic page 1 = PDF page 5
-  p.  1  The Clutter You Can’t See
-  p. 13  Why Your Life Filled Up — And Why It’s Not Your Fault
-  p. 25  The Question That Works Everywhere
-  p. 37  Building Your Life Assessment and Action Plan
-  p. 51  Your Time — Clearing Your Calendar
-  p. 69  Your Digital Life — Clearing Your Inbox and Attention
-  p. 87  Your Money — Clearing Your Financial Life
-  p.103  Your Relationships — Clearing Your Social Obligations
-  p.119  The Maintenance System — Keeping All Four Areas Clear
-  p.131  The Life You’ve Been Clearing Toward
-  p.139  A Note From Me to You
-  p.141  The Four Maintenance Habits
-  p.145  Troubleshooting Common Challenges
-  p.153  The Declutter Beyond Toolkit
-  p.155  About The Author
+  p.  1  INTRODUCTION The Clutter You Can’t See
+  p. 13  CHAPTER 1 Why Your Life Filled Up — And Why It’s Not Your Fault
+  p. 25  CHAPTER 2 The Question That Works Everywhere
+  p. 37  CHAPTER 3 Building Your Life Assessment and Action Plan
+  p. 51  CHAPTER 4 Your Time — Clearing Your Calendar
+  p. 69  CHAPTER 5 Your Digital Life — Clearing Your Inbox and Attention
+  p. 87  CHAPTER 6 Your Money — Clearing Your Financial Life
+  p.103  CHAPTER 7 Your Relationships — Clearing Your Social Obligations
+  p.119  CHAPTER 8 The Maintenance System — Keeping All Four Areas Clear
+  p.131  CONCLUSION The Life You’ve Been Clearing Toward
+  p.139  A NOTE FROM ME TO YOU
+  p.141  APPENDIX A
+  p.145  APPENDIX B
+  p.153  THE DECLUTTER BEYOND TOOLKIT
+  p.155  ABOUT THE AUTHOR
 TOC page numbers: [1, 13, 25, 37, 51, 69, 87, 103, 119, 131, 139, 141, 145, 153, 155]
 opening folios   : [1, 13, 25, 37, 51, 69, 87, 103, 119, 131, 139, 141, 145, 153, 155]
 phase divider pages: [11, 35, 49, 117]

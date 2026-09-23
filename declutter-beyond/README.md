@@ -4,6 +4,7 @@ Alex Lee · Purposeful Living Press. The series design follows
 "Declutter Your Home, Calm Your Life" (V9, 6x9); the reference PDF is in `source/`.
 
 - `output/Declutter_Beyond_Interior_6x9.pdf` is the print interior (159 pages).
+- `source/` holds both reference PDFs from Book 1: the opening excerpt and the final part.
 - `build_book.py` goes manuscript .docx → `output/book.html` → PDF, using WeasyPrint.
   It includes a pagination pass for illustrations.
 - `book.css` holds the series design, with specs measured from the reference PDF.
