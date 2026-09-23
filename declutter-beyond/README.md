@@ -15,3 +15,13 @@ Alex Lee · Purposeful Living Press. The series design follows
   EB Garamond and League Gothic are the same fonts the reference uses.
 
 Rebuild: `pip install weasyprint python-docx pymupdf pillow && python3 build_book.py`
+
+## The Declutter Beyond Toolkit (printable companion)
+
+- `toolkit/output/Declutter_Beyond_Toolkit_Letter.pdf` is the downloadable workbook,
+  US Letter (8.5 x 11 in), 16 pages, set for home printing.
+- `toolkit/build_toolkit.py` and `toolkit/toolkit.css` build it from
+  `toolkit/source/Declutter_Beyond_Checklist_v13_7.docx`, using the same design system as the book.
+- The manuscript's underscore lines are drawn as ruled writing lines, one rule per line (158).
+
+Rebuild: `python3 toolkit/build_toolkit.py`

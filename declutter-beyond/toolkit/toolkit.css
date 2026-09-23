@@ -1,0 +1,94 @@
+/* ==========================================================================
+   The Declutter Beyond Toolkit — printable companion, US Letter 8.5 x 11 in
+   Same design system as the book (see ../book.css), scaled for a
+   home-printed page: all pages are treated as right-hand pages
+   (single-sided printing), 1 in margins all round.
+   ========================================================================== */
+
+@font-face { font-family: "EB Garamond"; src: url(../fonts/EBGaramond-Regular.ttf); font-weight: 400; font-style: normal; }
+@font-face { font-family: "EB Garamond"; src: url(../fonts/EBGaramond-Italic.ttf); font-weight: 400; font-style: italic; }
+@font-face { font-family: "EB Garamond"; src: url(../fonts/EBGaramond-Bold.ttf); font-weight: 700; font-style: normal; }
+@font-face { font-family: "EB Garamond"; src: url(../fonts/EBGaramond-BoldItalic.ttf); font-weight: 700; font-style: italic; }
+@font-face { font-family: "Display Sans"; src: url(../fonts/nunito-sans-300-normal.ttf); font-weight: 300; }
+@font-face { font-family: "Display Sans"; src: url(../fonts/nunito-sans-500-normal.ttf); font-weight: 500; }
+@font-face { font-family: "Display Sans"; src: url(../fonts/nunito-sans-800-normal.ttf); font-weight: 800; }
+@font-face { font-family: "League Gothic"; src: url(../fonts/league-gothic-400-normal.ttf); }
+@font-face { font-family: "Caslon Italic"; src: url(../fonts/libre-caslon-text-400-italic.ttf); font-style: italic; }
+
+:root { --ink: #231f20; --rh-ink: #58595b; --label: #808285; --rule: #a7a9ab; }
+
+@page {
+  size: 8.5in 11in;
+  margin: 72pt 72pt 72pt 72pt;
+  @top-right { content: element(rh); vertical-align: bottom; padding-bottom: 22pt; }
+}
+@page front { @top-right { content: none; } }
+@page :nth(1 of part) {
+  @top-right { content: none; }
+  @bottom-center { content: counter(page); font: 700 10pt "EB Garamond"; color: var(--ink);
+                   vertical-align: top; padding-top: 30pt; }
+}
+
+.rh { position: running(rh); font: italic 400 9.5pt/1 "EB Garamond"; color: var(--rh-ink);
+      text-align: right; white-space: nowrap; }
+.rh::after { content: "\2009\2009\2022\2009\2009" counter(page); font: normal 700 10.5pt/1 "EB Garamond"; color: var(--ink); }
+
+html { color: var(--ink); }
+body { font-family: "EB Garamond"; font-size: 12pt; line-height: 17pt; text-align: justify;
+       hyphens: auto; hyphenate-limit-chars: 6 3 3; orphans: 2; widows: 2; margin: 0; }
+p { margin: 0; text-indent: 14.4pt; }
+p.noindent { text-indent: 0; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+section.titlepage, section.contents { page: front; break-after: page; }
+section.part { page: part; break-before: page; }
+section.part.follow { break-before: auto; margin-top: 30pt; }   /* Worksheet 1 shares the intro page */
+
+/* ---------------- title page (book title page, scaled to Letter) ---------------- */
+.titlepage { text-align: center; padding-top: 30pt; }
+.tp-title { font: 60pt/72pt "League Gothic"; letter-spacing: 0.6pt; }
+.tp-rule { width: 234pt; border-top: 0.6pt solid var(--ink); margin: 44pt auto 0; }
+.tp-sub { font: italic 21pt/30pt "Caslon Italic"; margin-top: 40pt; }
+.tp-author { font: 36pt/1 "League Gothic"; letter-spacing: 0.5pt; margin-top: 230pt; }
+.tp-pub { font: 17pt/1 "EB Garamond"; margin-top: 16pt; }
+.tp-copy { font: 9.5pt/1 "EB Garamond"; margin-top: 30pt; color: var(--rh-ink); }
+
+/* ---------------- contents (book TOC style) ---------------- */
+.back-title { text-align: center; margin: 40pt 0 54pt; font: 800 18pt/1 "Display Sans"; }
+.back-title span { display: inline-block; border-bottom: 0.75pt solid #818385; padding-bottom: 6pt; }
+.contents { padding: 0 36pt; }
+.contents p { text-indent: 0; text-align: left; hyphens: none; }
+.contents a { color: inherit; text-decoration: none; }
+.contents a::after { content: leader(".") target-counter(attr(href), page); }
+.toc-top { font: 500 12pt/15pt "Display Sans"; margin: 18pt 0 8pt; }
+.toc-entry { font: 13pt/18pt "EB Garamond"; margin: 0 0 6pt 22pt; }
+
+/* ---------------- openers (book chapter opening, scaled) ---------------- */
+.opener { text-align: center; padding-top: 24pt; margin-bottom: 34pt; }
+.ch-label { font: 800 17pt/1 "Display Sans"; color: var(--label); letter-spacing: 0.3pt; }
+.ch-title { font: 300 26pt/34pt "Display Sans"; margin: 12pt 0 0; hyphens: none; }
+.flourish { display: block; width: 44pt; height: 13.5pt; margin: 20pt auto 0; }
+
+p.dropcap { text-indent: 0; }
+p.dropcap .dc { display: block; float: left; font-size: 39pt; line-height: 30pt; margin: 3.6pt 2pt 0 -1pt; }
+
+/* ---------------- headings ---------------- */
+h2.h2 { font: 500 15pt/18pt "Display Sans"; text-align: left; hyphens: none;
+        margin: 26pt 0 8pt; break-after: avoid; }
+h3.h3 { font: 800 11.5pt/14pt "Display Sans"; text-align: left; hyphens: none;
+        margin: 16pt 0 4pt; break-after: avoid; }
+.opener + h2.h2 { margin-top: 0; }
+
+/* ---------------- worksheet prompts and writing lines ---------------- */
+.task { margin: 12pt 0 0; }
+.task-head { break-inside: avoid; }
+.task .wline:last-child { break-before: avoid; }
+h2 + .task { margin-top: 4pt; }
+p.prompt { text-indent: 0; text-align: left; hyphens: none; }
+.wline { height: 22pt; border-bottom: 0.6pt solid #9d9fa2; }
+
+/* the protocol's starting-point questions (indented, as the book's quotes) */
+p.quote { text-indent: 0; text-align: left; hyphens: none; margin: 6pt 21.6pt 6pt 21.6pt; }
+p.quote + p.quote { margin-top: 2pt; }
+p.quote + p:not(.quote) { margin-top: 6pt; }
