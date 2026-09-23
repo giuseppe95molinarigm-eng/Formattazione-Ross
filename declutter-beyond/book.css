@@ -1,0 +1,184 @@
+/* ==========================================================================
+   Declutter Beyond — 6 x 9 in print interior
+   Series design system measured from "Declutter Your Home, Calm Your Life"
+   (V9, 6x9, InDesign):
+     body      EB Garamond 12/16, justified, first-line indent 0.2in
+     display   Avenir (Book / Medium / Black)  -> Nunito Sans 300 / 500 / 800
+     title pg  League Gothic + Adobe Caslon Pro Italic -> Libre Caslon Text Italic
+     margins   inside 1in, outside 0.667-0.7in, 33 lines per page
+   ========================================================================== */
+
+@font-face { font-family: "EB Garamond"; src: url(fonts/EBGaramond-Regular.ttf); font-weight: 400; font-style: normal; }
+@font-face { font-family: "EB Garamond"; src: url(fonts/EBGaramond-Italic.ttf); font-weight: 400; font-style: italic; }
+@font-face { font-family: "EB Garamond"; src: url(fonts/EBGaramond-Bold.ttf); font-weight: 700; font-style: normal; }
+@font-face { font-family: "EB Garamond"; src: url(fonts/EBGaramond-BoldItalic.ttf); font-weight: 700; font-style: italic; }
+@font-face { font-family: "Display Sans"; src: url(fonts/nunito-sans-300-normal.ttf); font-weight: 300; }
+@font-face { font-family: "Display Sans"; src: url(fonts/nunito-sans-500-normal.ttf); font-weight: 500; }
+@font-face { font-family: "Display Sans"; src: url(fonts/nunito-sans-800-normal.ttf); font-weight: 800; }
+@font-face { font-family: "League Gothic"; src: url(fonts/league-gothic-400-normal.ttf); }
+@font-face { font-family: "Caslon Italic"; src: url(fonts/libre-caslon-text-400-italic.ttf); font-style: italic; }
+
+:root {
+  --ink: #231f20;
+  --rh-ink: #58595b;
+  --label: #808285;
+  --rule: #a7a9ab;
+}
+
+/* ---------------- page geometry ---------------- */
+@page {
+  size: 6in 9in;
+  margin: 66.7pt 48pt 53.3pt 72pt;           /* recto: inside 72, outside 48 */
+}
+@page :left  { margin: 66.7pt 69.6pt 53.3pt 50.4pt; }   /* verso mirror as in reference */
+
+/* running heads: verso = folio . book title ; recto = chapter title . folio */
+@page :left  { @top-left  { content: element(rhv); vertical-align: bottom; padding-bottom: 17pt; } }
+@page :right { @top-right { content: element(rhr); vertical-align: bottom; padding-bottom: 17pt; } }
+
+/* no heads on blank pages, front matter or phase dividers */
+@page :blank { @top-left { content: none; } @top-right { content: none; } }
+@page front  { @top-left { content: none; } @top-right { content: none; } }
+@page toc    { @top-left { content: none; } @top-right { content: none; }
+               @bottom-center { content: counter(page, lower-roman); font: 700 10pt "EB Garamond"; color: var(--ink);
+                                vertical-align: top; padding-top: 4pt; } }
+@page phase  { @top-left { content: none; } @top-right { content: none; } }
+
+/* opening pages: no running head, folio centred at the foot */
+@page :nth(1 of chap), :nth(1 of intro) {
+  @top-left { content: none; } @top-right { content: none; }
+  @bottom-center { content: counter(page); font: 700 10pt "EB Garamond"; color: var(--ink);
+                   vertical-align: top; padding-top: 4pt; }
+}
+@page :nth(1 of intro) { counter-reset: page 1; }
+
+.rhv, .rhr {
+  font: italic 400 9pt/1 "EB Garamond"; color: var(--rh-ink);
+  white-space: nowrap;
+}
+.rhv { position: running(rhv); text-align: left; }
+.rhr { position: running(rhr); text-align: right; }
+.rhv::before { content: counter(page) "\2009\2009\2022\2009\2009"; font: normal 700 10pt/1 "EB Garamond"; color: var(--ink); }
+.rhr::after  { content: "\2009\2009\2022\2009\2009" counter(page); font: normal 700 10pt/1 "EB Garamond"; color: var(--ink); }
+
+/* ---------------- base text ---------------- */
+html { color: var(--ink); }
+body {
+  font-family: "EB Garamond";
+  font-size: 12pt;
+  line-height: 16pt;
+  text-align: justify;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  orphans: 2;
+  widows: 2;
+  margin: 0;
+}
+p { margin: 0; text-indent: 14.4pt; }
+p.noindent { text-indent: 0; }
+strong { font-weight: 700; }
+em { font-style: italic; }
+.url { hyphens: none; }
+
+/* ---------------- section flow ---------------- */
+section.titlepage, section.copyright { page: front; break-after: page; }
+section.toc   { page: toc; break-before: page; }
+section.chap  { page: chap; break-before: right; }
+section.intro { page: intro; }
+section.phase { page: phase; break-before: right; break-after: page; }
+
+/* ---------------- title page ---------------- */
+.titlepage { text-align: center; margin-top: -10.5pt; }
+.tp-title {
+  font: 45pt/54pt "League Gothic"; letter-spacing: 0.5pt; margin-top: 0;
+  padding-top: 0;
+}
+.tp-rule { width: 176.4pt; border-top: 0.5pt solid var(--ink); margin: 34pt auto 0; }
+.tp-sub { font: italic 16pt/23.2pt "Caslon Italic"; margin-top: 29.7pt; }
+.tp-author { font: 28.3pt/1 "League Gothic"; letter-spacing: 0.4pt; margin-top: 231pt; }
+.tp-pub { font: 14pt/1 "EB Garamond"; margin-top: 14.6pt; }
+
+/* ---------------- copyright page ---------------- */
+.copyright { margin-top: -1pt; }
+.copyright p { font-size: 10.5pt; line-height: 14pt; text-indent: 0; margin-bottom: 9pt; hyphens: manual; }
+.copyright p.cp-head { font-weight: 700; margin: 14pt 0 4pt; }
+
+/* ---------------- table of contents ---------------- */
+.toc-title { text-align: center; margin: 52.7pt 0 55pt; font: 800 16pt/1 "Display Sans"; }
+.toc-title span { display: inline-block; border-bottom: 0.75pt solid #818385; padding-bottom: 5pt; }
+.toc p { text-indent: 0; text-align: left; hyphens: none; }
+.toc a { color: inherit; text-decoration: none; }
+.toc a::after { content: leader(".") target-counter(attr(href), page); }
+.toc-phase { font: 500 10.5pt/13pt "Display Sans"; margin: 13pt 0 5pt; break-after: avoid; }
+.toc-phase strong { font-weight: 800; }
+.toc-phase a::after { content: none; }
+.toc-top { font: 500 10.5pt/13pt "Display Sans"; margin: 13pt 0 5pt; }
+.toc-entry { font: 11pt/16pt "EB Garamond"; margin: 0 0 4.5pt 18pt; padding-left: 0; }
+.toc p:first-of-type { margin-top: 0; }
+
+/* ---------------- phase divider ---------------- */
+.phase { text-align: center; padding-top: 158pt; }
+.phase-num { font: 800 30pt/1 "Display Sans"; letter-spacing: 0.3pt; }
+.phase-rule { border-top: 2pt solid var(--rule); margin: 10pt 0 0; }
+.phase p { text-indent: 0; text-align: center; hyphens: none; }
+.phase-name { font: 300 28pt/40pt "Display Sans"; margin-top: 12pt; }
+.phase-sub  { font: 300 18pt/25pt "Display Sans"; margin-top: 10pt; }
+
+/* ---------------- chapter / section opening ---------------- */
+.opener { text-align: center; padding-top: 53pt; margin-bottom: 39pt; }
+.opener.nolabel { padding-top: 80pt; }
+.ch-label { font: 800 16pt/1 "Display Sans"; color: var(--label); letter-spacing: 0.3pt; }
+.ch-title { font: 300 22pt/30.4pt "Display Sans"; margin: 10pt 0 0; hyphens: none; }
+.flourish { display: block; width: 36.5pt; height: 11.2pt; margin: 18pt auto 0; }
+
+.epigraph {
+  font-style: italic; text-align: center; text-indent: 0; hyphens: none;
+  margin: -12pt 18pt 26pt;
+}
+
+/* drop cap: two-line, as in the reference */
+p.dropcap { text-indent: 0; }
+p.dropcap .dc {
+  display: block;
+  float: left;
+  font-size: 36.4pt;
+  line-height: 28pt;
+  margin: 3.2pt 1.5pt 0 -1pt;
+}
+
+/* ---------------- headings in text ---------------- */
+h2.h2 {
+  font: 500 14pt/16.8pt "Display Sans"; text-align: left; hyphens: none;
+  margin: 24pt 0 6pt; break-after: avoid; break-inside: avoid;
+}
+h3.h3 {
+  font: 800 11pt/14pt "Display Sans"; text-align: left; hyphens: none;
+  margin: 14pt 0 3pt; break-after: avoid; break-inside: avoid;
+}
+h2.h2 + h3.h3 { margin-top: 4pt; }
+p.boldhead {
+  text-indent: 0; text-align: left; hyphens: none;
+  margin-top: 10pt; break-after: avoid;
+}
+h2 + p.boldhead, h3 + p.boldhead { margin-top: 2pt; }
+
+/* ---------------- special content ---------------- */
+.keyline {                      /* the book's recurring centred questions */
+  font-style: italic; text-align: center; text-indent: 0; hyphens: none;
+  margin: 10pt 18pt; break-inside: avoid;
+}
+.script, .quote {               /* scripts / indented example wording */
+  text-indent: 0; text-align: left; hyphens: none;
+  margin: 8pt 21.6pt 8pt 21.6pt; break-inside: avoid;
+}
+p.item { text-indent: 0; margin-top: 4pt; }
+.center { text-align: center; text-indent: 0; hyphens: none; margin: 8pt 0; }
+
+ol.numlist { list-style: none; margin: 10pt 0 10pt 0; padding: 0 0 0 32.4pt; }
+ol.numlist li { margin: 0 0 4pt; text-indent: 0; }
+ol.numlist li:last-child { margin-bottom: 0; }
+ol.numlist .marker { display: inline-block; width: 18pt; margin-left: -18pt; }
+
+figure.fig { margin: 14pt 0; text-align: center; break-inside: avoid; }
+figure.fig img { display: inline-block; }
+figure.qr { margin: 16pt 0 8pt; }
