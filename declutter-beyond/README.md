@@ -25,3 +25,14 @@ Rebuild: `pip install weasyprint python-docx pymupdf pillow && python3 build_boo
 - The manuscript's underscore lines are drawn as ruled writing lines, one rule per line (158).
 
 Rebuild: `python3 toolkit/build_toolkit.py`
+
+## Revision 1 (client review, Nelson)
+
+- Ink: text 100% black, running heads 80%, labels 60%, rules 40% (Book 1's values).
+- Hyphenation: off by default. A composition pass (`tune_text`) tightens tracking, and only
+  as a last resort hyphenates long words, in paragraphs with a very loose line. Result: 0.5% of
+  lines hyphenated, the same as Book 1. A paragraph's last word is never hyphenated.
+- The space above headings, quotes, lists and figures is carried by the preceding element,
+  so anything that starts a page sits at the top of the text block.
+- Illustrations use the crop set in Word (`images/cropped/`); previously the crop was ignored.
+- Wording: "this document" → "this book" (3×, copyright page), listed in `CLIENT_EDITS`.

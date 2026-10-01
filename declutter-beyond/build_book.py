@@ -26,6 +26,26 @@ WP = "{http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing}"
 EMU_PER_PT = 12700
 
 BOOK_TITLE = "Declutter Beyond"
+
+# Wording changes requested by the client (Nelson, review of the first proof):
+# (paragraph text that must contain it, old, new, expected number of changes)
+CLIENT_EDITS = [
+    ("Please note the information contained within this document", "this document", "this book", 1),
+    ("By reading this document", "this document", "this book", 2),
+]
+
+
+def apply_client_edits(infos):
+    done = 0
+    for key, old, new, n in CLIENT_EDITS:
+        hits = [x for x in infos if x["text"].startswith(key)]
+        assert len(hits) == 1, key
+        x = hits[0]
+        assert x["text"].count(old) == n, (key, x["text"].count(old))
+        x["segs"] = [(t.replace(old, new), b, i) for t, b, i in x["segs"]]
+        x["text"] = x["text"].replace(old, new)
+        done += n
+    return done
 QR_SIZE_PT = 144.0      # 2 in; the reference prints its QR at ~2.2 in
 
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
@@ -123,6 +143,12 @@ def para_info(p, rels):
         ext = p.find(".//" + WP + "extent")
         img = (Path(rels[rid].target_ref).name,
                int(ext.get("cx")) / EMU_PER_PT, int(ext.get("cy")) / EMU_PER_PT)
+        src_rect = p.find(".//" + A + "srcRect")
+        crop = None
+        if src_rect is not None:
+            # Word crop, in 1/1000 of a percent of each side (negative = padding)
+            crop = tuple(int(src_rect.get(k, 0)) / 100000.0 for k in ("l", "t", "r", "b"))
+        img = img + (crop,)
     total = sum(len(s[0]) for s in segs if s[0].strip())
     bold = sum(len(s[0]) for s in segs if s[1] and s[0].strip())
     ital = sum(len(s[0]) for s in segs if s[2] and s[0].strip())
@@ -166,6 +192,28 @@ def split_balanced(words, font_file, size_pt):
         if best is None or m < best[0]:
             best = (m, a, b)
     return best[1], best[2]
+
+
+# --------------------------------------------------------------------------
+# images: apply the crop the author set in Word
+# --------------------------------------------------------------------------
+def cropped_image(name, crop):
+    """Return the file name of `name` cropped as in Word (negative values add
+    white margin, as Word does).  Written once to images/cropped/."""
+    from PIL import Image
+    out_dir = HERE / "images" / "cropped"
+    out_dir.mkdir(exist_ok=True)
+    out = out_dir / (Path(name).stem + ".png")
+    if not out.exists():
+        im = Image.open(HERE / "images" / name).convert("RGB")
+        w, h = im.size
+        l, t, r, b = crop
+        box = (round(l * w), round(t * h), round(w - r * w), round(h - b * h))
+        canvas = Image.new("RGB", (box[2] - box[0], box[3] - box[1]), "white")
+        src = im.crop((max(box[0], 0), max(box[1], 0), min(box[2], w), min(box[3], h)))
+        canvas.paste(src, (max(-box[0], 0), max(-box[1], 0)))
+        canvas.save(out, dpi=(300, 300))
+    return "cropped/" + out.name
 
 
 # --------------------------------------------------------------------------
@@ -298,7 +346,9 @@ class Book:
         segs, text = info["segs"], info["text"]
         st, al = info["style"], info["align"]
         if info["img"]:
-            name, wpt, hpt = info["img"]
+            name, wpt, hpt, crop = info["img"]
+            if crop and any(crop):
+                name = cropped_image(name, crop)
             qr = name == "image9.png"
             cls = "fig qr" if qr else "fig"
             # author's placed size, limited to the text block
@@ -403,12 +453,89 @@ class Book:
 
 
 # --------------------------------------------------------------------------
-def build(fig_heights=None, fig_defer=None):
+def finish_text(html_text, tune, top):
+    """Give every text block an id, apply the per-paragraph spacing level
+    chosen by the composition pass, keep a heading that opens a page flush
+    with the top of the text block, and never hyphenate a paragraph's last
+    word (no word fragment alone on a paragraph's last line)."""
+    n = {"b": 0, "hd": 0}
+
+    def tag(m):
+        name, attrs = m.group(1), m.group(2) or ""
+        kind = "hd" if name in ("h2", "h3") else "b"
+        n[kind] += 1
+        ident = f"{kind}{n[kind]}"
+        extra = []
+        if kind == "b" and tune.get(ident):
+            extra.append(f"t{tune[ident]}")
+        if ident in top:
+            extra.append("pagetop")
+        if extra:
+            if 'class="' in attrs:
+                attrs = attrs.replace('class="', 'class="' + " ".join(extra) + " ", 1)
+            else:
+                attrs += f' class="{" ".join(extra)}"'
+        return f'<{name} id="{ident}"{attrs}>'
+
+    html_text = re.sub(r"<(p|li|h2|h3)((?:\s[^>]*)?)>", tag, html_text)
+
+    def last_word(m):
+        inner = m.group(2)
+        inner = re.sub(r"([^\s<>]+)((?:</[^>]+>|\s)*)$", r'<span class="nohy">\1</span>\2', inner, count=1)
+        return m.group(1) + inner + m.group(3)
+
+    html_text = re.sub(r"(<(?:p|li) id=\"b\d+\"[^>]*>)(.*?)(</(?:p|li)>)", last_word, html_text, flags=re.S)
+    return space_before_heads(html_text)
+
+
+# space above / below each block type in book.css (pt)
+SPACE_TOP = {"h2": 24, "h3": 14, "boldhead": 10, "keyline": 10, "script": 8, "quote": 8,
+             "center": 8, "numlist": 10, "fig": 14}
+SPACE_BOTTOM = {"keyline": 10, "script": 8, "quote": 8, "center": 8, "numlist": 10, "fig": 14}
+
+
+def _kind(el):
+    if el.tag in ("h2", "h3"):
+        return el.tag
+    for c in (el.get("class") or "").split():
+        if c in SPACE_TOP:
+            return c
+    return None
+
+
+def space_before_heads(html_text):
+    """Carry the space above headings, quotes, lists and figures as a bottom
+    margin on the element before them.  Space at the foot of a page
+    disappears with the page break, so whatever begins a page sits flush with
+    the top of the text block, as in Book 1, while mid-page spacing is
+    unchanged."""
+    import lxml.html
+    root = lxml.html.fragment_fromstring(html_text, create_parent="div")
+    for el in list(root.iter()):
+        k = _kind(el)
+        if k is None:
+            continue
+        prev = el.getprevious()
+        if prev is None or prev.tag in ("h1", "h2", "h3", "header") or "rhr" in (prev.get("class") or ""):
+            continue                       # heading pairs keep their own spacing
+        if "boldhead" in (prev.get("class") or "").split():
+            continue
+        if k in ("boldhead",) and prev.tag in ("h2", "h3"):
+            continue
+        space = max(SPACE_TOP[k], SPACE_BOTTOM.get(_kind(prev), 0))
+        prev.set("class", ((prev.get("class") or "") + f" sp{space}").strip())
+        el.set("class", ((el.get("class") or "") + " after-sp").strip())
+    out = lxml.html.tostring(root, encoding="unicode")
+    return out[len("<div>"):-len("</div>")]
+
+
+def build(fig_heights=None, fig_defer=None, tune=None, top=None):
     d = docx.Document(str(SRC))
     rels = d.part.rels
     body = d.element.body
     paras = [c for c in body if c.tag == W + "p"]   # the Word TOC (w:sdt) is skipped
     infos = [para_info(p, rels) for p in paras]
+    apply_client_edits(infos)
 
     # --- front matter (paragraphs 0-38) -----------------------------------
     first_h = next(i for i, x in enumerate(infos) if x["style"] == "Heading1")
@@ -521,7 +648,7 @@ def build(fig_heights=None, fig_defer=None):
 <div class="rhv">{BOOK_TITLE}</div>
 {"".join(fm_html)}
 {"".join(toc)}
-{"".join(bk.parts)}
+{finish_text("".join(bk.parts), tune or {}, top or set())}
 </body></html>'''
     OUT_HTML.write_text(doc, encoding="utf-8")
     return bk
@@ -579,17 +706,95 @@ def fit_figures(pdf_path, fig_heights, fig_defer, final=False):
     return changed
 
 
+# --------------------------------------------------------------------------
+# composition passes on the laid-out book
+# --------------------------------------------------------------------------
+PX_PER_PT = 4 / 3
+LOOSE_PT = 4.9        # extra space added to a word gap by justification
+MAX_LEVEL = 3         # t1, t2 tighter tracking; t3 + long-word hyphenation
+
+
+def _walk(box):
+    yield box
+    for child in getattr(box, "children", None) or []:
+        yield from _walk(child)
+
+
+def tune_text(doc, tune):
+    """Book 1 (InDesign) almost never hyphenates and evens out spacing by
+    adjusting tracking paragraph by paragraph.  Here every paragraph starts
+    unhyphenated; a paragraph that still has a very loose justified line is
+    stepped up one level.  Returns True if anything changed."""
+    from weasyprint.formatting_structure import boxes
+    loose = set()
+    for page in doc.pages:
+        for box in _walk(page._page_box):
+            if not isinstance(box, boxes.LineBox) or box.element is None:
+                continue
+            ident = box.element.get("id") or ""
+            if not ident.startswith("b"):
+                continue
+            extra = max((getattr(c, "justification_spacing", 0) or 0
+                         for c in _walk(box) if isinstance(c, boxes.TextBox)), default=0)
+            if extra / PX_PER_PT > LOOSE_PT:
+                loose.add(ident)
+    changed = False
+    for ident in loose:
+        if tune.get(ident, 0) < MAX_LEVEL:
+            tune[ident] = tune.get(ident, 0) + 1
+            changed = True
+    return changed
+
+
+def top_blocks(doc):
+    """Ids of headings / bold run-in heads that begin a page."""
+    from weasyprint.formatting_structure import boxes
+    found = set()
+    for page in doc.pages:
+        pb = page._page_box
+        top = pb.margin_top + pb.padding_top + pb.border_top_width
+        for box in _walk(pb):
+            if not isinstance(box, boxes.BlockBox) or box.element is None:
+                continue
+            ident = box.element.get("id") or ""
+            cls = box.element.get("class") or ""
+            if box.element.tag in ("h2", "h3") or "boldhead" in cls:
+                if abs(box.position_y - top) < 0.5:
+                    found.add(ident)
+    return found
+
+
+def loose_lines(doc):
+    from weasyprint.formatting_structure import boxes
+    out = []
+    for i, page in enumerate(doc.pages):
+        for box in _walk(page._page_box):
+            if isinstance(box, boxes.LineBox) and box.element is not None and (box.element.get("id") or "").startswith("b"):
+                extra = max((getattr(c, "justification_spacing", 0) or 0
+                             for c in _walk(box) if isinstance(c, boxes.TextBox)), default=0)
+                if extra / PX_PER_PT > LOOSE_PT:
+                    out.append(i + 1)
+    return out
+
+
 if __name__ == "__main__":
-    fig_heights, fig_defer = {}, {}
+    fig_heights, fig_defer, tune, top, banned = {}, {}, {}, set(), set()
     build()
     if "--html-only" not in sys.argv:
-        for _ in range(8):
+        for it in range(14):
             d = render()
-            if not fit_figures(OUT_PDF, fig_heights, fig_defer):
+            c1 = tune_text(d, tune)
+            c2 = False
+            c3 = fit_figures(OUT_PDF, fig_heights, fig_defer)
+            print(f"pass {it + 1}: tuned paragraphs {len(tune)}, page-top heads {len(top)}, "
+                  f"figures {fig_defer}", flush=True)
+            if not (c1 or c2 or c3):
                 break
-            build(fig_heights, fig_defer)
+            build(fig_heights, fig_defer, tune, top)
         if fit_figures(OUT_PDF, fig_heights, fig_defer, final=True):
-            build(fig_heights, fig_defer)
+            build(fig_heights, fig_defer, tune, top)
             d = render()
+        print("headings starting a page:", len(top_blocks(d)))
+        print("remaining loose lines on pages:", loose_lines(d))
         print("figure scaling:", fig_heights, "figure float:", fig_defer)
         print(f"{OUT_PDF.name}: {len(d.pages)} pages")

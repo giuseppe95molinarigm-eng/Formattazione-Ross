@@ -19,10 +19,11 @@
 @font-face { font-family: "Caslon Italic"; src: url(fonts/libre-caslon-text-400-italic.ttf); font-style: italic; }
 
 :root {
-  --ink: #231f20;
-  --rh-ink: #58595b;
-  --label: #808285;
-  --rule: #a7a9ab;
+  /* Book 1 inks: text 100% K, running heads 80% K, labels 60% K, rules 40% K */
+  --ink: #000000;
+  --rh-ink: #333333;
+  --label: #666666;
+  --rule: #999999;
 }
 
 /* ---------------- page geometry ---------------- */
@@ -68,13 +69,24 @@ body {
   font-size: 12pt;
   line-height: 16pt;
   text-align: justify;
-  hyphens: auto;
-  hyphenate-limit-chars: 6 3 3;
+  hyphens: manual;           /* hyphenation only where the composition pass needs it */
+  hyphenate-limit-chars: 9 4 4;
   orphans: 2;
   widows: 2;
   margin: 0;
 }
 p { margin: 0; text-indent: 14.4pt; }
+p, li { word-spacing: -0.3pt; }   /* Book 1 median word space (3.2pt) */
+.t1 { letter-spacing: -0.1pt; }
+.t2 { letter-spacing: -0.2pt; }
+.t3 { letter-spacing: -0.1pt; hyphens: auto; }
+.nohy { hyphens: none; }
+/* space above headings is carried by the element before them (see build_book.space_before_heads) */
+.after-sp { margin-top: 0 !important; }
+.sp24 { margin-bottom: 24pt !important; }
+.sp14 { margin-bottom: 14pt !important; }
+.sp10 { margin-bottom: 10pt !important; }
+.sp8  { margin-bottom: 8pt !important; }
 p.noindent { text-indent: 0; }
 strong { font-weight: 700; }
 em { font-style: italic; }
@@ -105,7 +117,7 @@ section.phase { page: phase; break-before: right; break-after: page; }
 
 /* ---------------- table of contents ---------------- */
 .toc-title { text-align: center; margin: 52.7pt 0 55pt; font: 800 16pt/1 "Display Sans"; }
-.toc-title span { display: inline-block; border-bottom: 0.75pt solid #818385; padding-bottom: 5pt; }
+.toc-title span { display: inline-block; border-bottom: 0.75pt solid #666666; padding-bottom: 5pt; }
 .toc p { text-indent: 0; text-align: left; hyphens: none; }
 .toc a { color: inherit; text-decoration: none; }
 .toc a::after { content: leader(".") target-counter(attr(href), page); }
@@ -138,7 +150,7 @@ section.phase { page: phase; break-before: right; break-after: page; }
 
 /* back matter (Note, Appendix, Toolkit, About): reference style */
 .back-title { text-align: center; margin: 52.7pt 0 45pt; font: 800 16pt/1 "Display Sans"; hyphens: none; }
-.back-title span { display: inline-block; border-bottom: 0.75pt solid #818385; padding-bottom: 5pt; }
+.back-title span { display: inline-block; border-bottom: 0.75pt solid #666666; padding-bottom: 5pt; }
 .note .back-title { margin-top: 75.7pt; margin-bottom: 38pt; }
 .back-sub { font: 500 14pt/16.8pt "Display Sans"; text-indent: 0; text-align: left; hyphens: none;
             margin: -4pt 0 6pt; break-after: avoid; }

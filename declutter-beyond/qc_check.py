@@ -16,6 +16,9 @@ from pathlib import Path
 import docx
 import pymupdf
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from build_book import CLIENT_EDITS  # noqa: E402  (approved wording changes)
+
 HERE = Path(__file__).resolve().parent
 PDF = HERE / "output" / "Declutter_Beyond_Interior_6x9.pdf"
 MS = HERE / "source" / "Declutter_Beyond_Manuscript_v13_24_1.1.docx"
@@ -88,6 +91,9 @@ ms_text = []
 for p in ms_paras:
     t = "".join(x.text or "" for x in p.iter(W + "t"))
     t = re.sub(r"^(CHAPTER \d+|Introduction|CONCLUSION|Appendix [AB]|Phase [IVX]+):\s*", r"\1 ", t)
+    for key, old, new, _n in CLIENT_EDITS:
+        if t.startswith(key):
+            t = t.replace(old, new)
     ms_text.append(t)
 ms_words = words("\n".join(ms_text))
 
