@@ -147,9 +147,9 @@ def define_styles(doc):
                                     Justification="CenterAlign"))
 
     cs = doc.character_style
-    cs("Bold", FontStyle="Bold")
-    cs("Italic", FontStyle="Italic")
-    cs("Bold Italic", FontStyle="Bold Italic")
+    cs("Bold", SERIF, FontStyle="Bold")
+    cs("Italic", SERIF, FontStyle="Italic")
+    cs("Bold Italic", SERIF, FontStyle="Bold Italic")
     cs("Folio", SERIF, FontStyle="Bold", PointSize=10, FillColor=black)
     cs("TOC Phase Label", SANS, FontStyle="Black")
     return k80
@@ -201,6 +201,8 @@ def graphic(img, links):
     m = re.search(r"width:([\d.]+)pt;height:([\d.]+)pt", style)
     if m:
         w, h = float(m.group(1)), float(m.group(2))
+        if w > 309:                       # an inline graphic must be narrower than the column
+            w, h = 309, h * 309 / w
     else:                                             # the flourish (sized in CSS)
         w, h = 36.5, 11.2
     name = src.name if src.name not in links or links[src.name] == src else src.parent.name + "_" + src.name
@@ -362,6 +364,13 @@ def build():
 
     doc = Document(W, H, facing=True)
     define_styles(doc)
+    for style, ps in (("Regular", "EBGaramond-Regular"), ("Italic", "EBGaramond-Italic"),
+                      ("Bold", "EBGaramond-Bold"), ("Bold Italic", "EBGaramond-BoldItalic")):
+        doc.font(SERIF, style, ps)
+    for style in ("Book", "Medium", "Black"):
+        doc.font(SANS, style, "Avenir-" + style, "TrueType")
+    doc.font(GOTHIC, "Regular", "LeagueGothic-Regular")
+    doc.font(CASLON, "Italic", "ACaslonPro-Italic", "OpenTypeCFF")
     doc.add_variable("Chapter Title", "Chapter Title")
     doc.add_variable("Appendix Title", "Back Subtitle")
 

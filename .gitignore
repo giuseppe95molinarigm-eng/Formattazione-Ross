@@ -1,2 +1,3 @@
 .replicate_token
 *.env
+__pycache__/

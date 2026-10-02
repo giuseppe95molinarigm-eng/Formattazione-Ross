@@ -15,7 +15,7 @@
 				<Leading type="enumeration">Auto</Leading>
 				<TabList type="list">
 				</TabList>
-				<AppliedFont type="string">Minion Pro</AppliedFont>
+				<AppliedFont type="string">EB Garamond</AppliedFont>
 				<RuleAboveColor type="string">Text Color</RuleAboveColor>
 				<RuleBelowColor type="string">Text Color</RuleBelowColor>
 				<RuleAboveType type="object">StrokeStyle/$ID/Solid</RuleAboveType>

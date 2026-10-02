@@ -111,6 +111,7 @@ class Document:
         self.par_styles = []     # xml strings
         self.char_styles = []
         self.var_ids = {}
+        self.fonts = []          # (family, style, postscript name, font type)
 
     def uid(self, prefix="u"):
         self.n += 1
@@ -125,6 +126,8 @@ class Document:
 
     def spread_xy(self, page_index_in_spread_side, x, y):
         """page coords -> spread coords; side 'L' (left page) or 'R' (right)."""
+        if not self.facing:                 # single pages are centred on the spread origin
+            return x - self.W / 2, y - self.H / 2
         if page_index_in_spread_side == "L":
             return x - self.W, y - self.H / 2
         return x, y - self.H / 2
@@ -246,6 +249,9 @@ class Document:
             f'Name={a(name)}{at}><Properties>{props}<PreviewColor type="enumeration">Nothing</PreviewColor>'
             '</Properties></CharacterStyle>')
 
+    def font(self, family, style, ps_name, font_type="OpenTypeTT"):
+        self.fonts.append((family, style, ps_name, font_type))
+
     def color(self, name, cmyk):
         self.colors.append((name, cmyk))
         return "Color/" + name
@@ -282,7 +288,7 @@ class Document:
         return groups
 
     def _page_xml(self, p, side, name, master_id):
-        tx = -self.W if side == "L" else 0
+        tx = -self.W if side == "L" else (0 if self.facing else -self.W / 2)
         mt = master_id or "n"
         margins = p.get("margins", (0, 0, 0, 0))
         return (f'<Page Self={a(p["id"])} GeometricBounds="0 0 {num(self.H)} {num(self.W)}" '
@@ -313,7 +319,7 @@ class Document:
             sides = [("L", left_items), ("R", right_items)] if self.facing else [("R", right_items)]
             for side, items in sides:
                 pid = self.uid("mp")
-                tx = -self.W if side == "L" else 0
+                tx = -self.W if side == "L" else (0 if self.facing else -self.W / 2)
                 m = page_margins(side)
                 pages_xml.append(
                     f'<Page Self={a(pid)} GeometricBounds="0 0 {num(self.H)} {num(self.W)}" '
@@ -367,6 +373,7 @@ class Document:
             story_refs.append(f'<idPkg:Story src="Stories/Story_{sid}.xml"/>')
 
         # --- styles, swatches, preferences, designmap
+        self._patch_fonts(work)
         self._patch_styles(work)
         self._patch_graphic(work)
         self._patch_preferences(work)
@@ -386,6 +393,27 @@ class Document:
         links.mkdir(exist_ok=True)
         for name, src in self.links.items():
             shutil.copy(src, links / name)
+
+    def _patch_fonts(self, work):
+        """List the document's fonts in Resources/Fonts.xml, as InDesign does."""
+        f = work / "Resources" / "Fonts.xml"
+        s = f.read_text(encoding="utf-8")
+        families = {}
+        for fam, style, ps, ftype in self.fonts:
+            families.setdefault(fam, []).append((style, ps, ftype))
+        xml = ""
+        for fam, styles in families.items():
+            fid = self.uid("ff")
+            xml += f'<FontFamily Self={a(fid)} Name={a(fam)}>'
+            for style, ps, ftype in styles:
+                xml += (f'<Font Self={a(fid + "Fontn" + fam + " " + style)} FontFamily={a(fam)} '
+                        f'Name={a(fam + " " + style)} PostScriptName={a(ps)} Status="Installed" '
+                        f'FontStyleName={a(style)} FontType={a(ftype)} WritingScript="0" '
+                        f'FullName={a(fam + " " + style)} FullNameNative={a(fam + " " + style)} '
+                        f'FontStyleNameNative={a(style)} PlatformName="$ID/" Version="$ID/" TypekitID="$ID/"/>')
+            xml += "</FontFamily>"
+        i = s.index("<FontFamily")
+        f.write_text(s[:i] + xml + s[i:], encoding="utf-8")
 
     def _patch_styles(self, work):
         f = work / "Resources" / "Styles.xml"
