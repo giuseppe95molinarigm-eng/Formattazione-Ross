@@ -480,6 +480,10 @@ def finish_text(html_text, tune, top):
     html_text = re.sub(r"<(p|li|h2|h3)((?:\s[^>]*)?)>", tag, html_text)
 
     def last_word(m):
+        # only paragraphs where hyphenation is switched on (level 3) need it;
+        # elsewhere the extra inline box only risks a bad line break
+        if 'class="t3' not in m.group(1):
+            return m.group(0)
         inner = m.group(2)
         inner = re.sub(r"([^\s<>]+)((?:</[^>]+>|\s)*)$", r'<span class="nohy">\1</span>\2', inner, count=1)
         return m.group(1) + inner + m.group(3)
@@ -578,7 +582,7 @@ def build(fig_heights=None, fig_defer=None, tune=None, top=None):
             ma = re.match(r"(Appendix [A-Z]):\s*(.*)", text)
             if ma:
                 bk.opener_kind = "back"
-                bk.backmatter(ma.group(1), ma.group(2), ma.group(2), "sub", text, dropcap=False)
+                bk.backmatter(ma.group(1), ma.group(2), ma.group(2), "top", text, dropcap=False)
                 continue
             m = re.match(r"(Introduction|CONCLUSION):\s*(.*)", text, re.I)
             if m:
@@ -592,7 +596,7 @@ def build(fig_heights=None, fig_defer=None, tune=None, top=None):
             else:
                 note = text == "A Note From Me to You"
                 bk.opener_kind = "note" if note else "back"
-                bk.backmatter(text, None, text, "top" if note else "sub", text,
+                bk.backmatter(text, None, text, "top", text,
                               dropcap=not note, cls="chap back note" if note else "chap back")
             continue
         if st == "Heading2":
@@ -660,7 +664,23 @@ def render():
     doc.metadata.title = "Declutter Beyond: Simplify Your Time, Digital Life, Money, and Relationships"
     doc.metadata.authors = ["Alex Lee"]
     doc.write_pdf(str(OUT_PDF))
+    finish_pdf(OUT_PDF, front_pages=4)
     return doc
+
+
+def finish_pdf(path, front_pages):
+    """PDF page labels matching the printed folios (i-iv, then 1...), as the
+    InDesign export of Book 1 has, and a two-up view with the title page on
+    its own (a book's first page is a right-hand page)."""
+    import pymupdf
+    tmp = path.with_suffix(".tmp.pdf")
+    d = pymupdf.open(path)
+    d.set_page_labels([{"startpage": 0, "prefix": "", "style": "r", "firstpagenum": 1},
+                       {"startpage": front_pages, "prefix": "", "style": "D", "firstpagenum": 1}])
+    d.set_pagelayout("TwoPageRight")
+    d.save(tmp, garbage=3, deflate=True)
+    d.close()
+    tmp.replace(path)
 
 
 TEXT_BOTTOM = 648 - 53.3      # bottom of the text block (pt)
