@@ -1,3 +1,4 @@
 .replicate_token
 *.env
 __pycache__/
+book1/output/epub_build/
