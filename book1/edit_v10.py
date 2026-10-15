@@ -19,11 +19,12 @@ import pymupdf
 
 HERE = Path(__file__).resolve().parent
 SRC = HERE / "source" / "V10-Declutter_Your_Home_Alex_Lee_6x9.pdf"
-OUT = HERE / "output" / "V11-Declutter_Your_Home_Alex_Lee_6x9.pdf"
+OUT = HERE / "output" / "V12-Declutter_Your_Home_Alex_Lee_6x9.pdf"
 FONTS = HERE.parent / "declutter-beyond" / "fonts"
 QR_RES = HERE / "qr" / "qr-resources-declutter-captioned.png"
 QR_REV = HERE / "qr" / "QR_home-review_labeled.png"
 
+ISBN_LINE = "ISBN: 979-8-9821289-0-4 (paperback)"
 REVIEW_URL = "home-review.purposefullivingpress.com"
 RESOURCES_URL = "resources-declutter.purposefullivingpress.com"
 RESOURCES_LINE = "You can download the Companion Resources here:"
@@ -121,6 +122,16 @@ def main():
     for (clip, base), target in zip(blocks, targets):
         move(p, orig, i, clip, target - base)
 
+    # ---- p. ii: paperback ISBN after "First Edition" (client, Oct 15);
+    # the DISCLAIMER block moves down by one paragraph step (23 pt)
+    i = label_index(doc, "ii")
+    p = doc[i]
+    assert "First Edition" in p.get_text() and "ISBN" not in p.get_text()
+    clear(p, pymupdf.Rect(40, 236, 380, 335))
+    move(p, orig, i, pymupdf.Rect(40, 236, 380, 335), 23)
+    p.insert_text((50.4, 233.8), ISBN_LINE, fontname="EBGR",
+                  fontfile=str(FONTS / FONT_FILES["EBGR"]), fontsize=10.5, color=BLACK)
+
     # ---- p. 221: add the download line, "SCAN THE QR CODE BELOW" moved down, new QR (1.5 in)
     i = label_index(doc, "221")
     p = doc[i]
@@ -131,7 +142,7 @@ def main():
     move(p, orig, i, pymupdf.Rect(120, 355, 340, 372), 396.0 - 367.3)
     gray_image(p, qr_rect(QR_RES, 1.5, 406), QR_RES)
 
-    for lab in ("49", "219", "221"):     # PDF/X-1a: plain DeviceGray, no ICC-based colour
+    for lab in ("49", "219", "221", "ii"):     # PDF/X-1a: plain DeviceGray, no ICC-based colour
         pg = doc[label_index(doc, lab)]
         for im in pg.get_images(full=True):
             if doc.xref_get_key(im[0], "ColorSpace")[0] == "xref":
