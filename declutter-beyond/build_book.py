@@ -442,7 +442,10 @@ class Book:
             classes.append("dropcap")
         self.dropcap_pending = False
         if "dropcap" in classes:
-            body = re.sub(r"^((?:<[^>]+>)*)([A-Za-z])", r'\1<span class="dc">\2</span>', body, count=1)
+            # a one-letter first word ("I want...") keeps a word space after the cap
+            word = re.match(r"^(?:<[^>]+>)*[A-Za-z]\s", body) is not None
+            cls_dc = "dc dc-word" if word else "dc"
+            body = re.sub(r"^((?:<[^>]+>)*)([A-Za-z])", rf'\1<span class="{cls_dc}">\2</span>', body, count=1)
         c = f' class="{" ".join(classes)}"' if classes else ""
         self.add(f"<p{c}>{body}</p>", kind)
 

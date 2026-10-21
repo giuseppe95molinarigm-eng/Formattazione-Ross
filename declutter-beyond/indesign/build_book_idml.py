@@ -152,6 +152,7 @@ def define_styles(doc):
     cs("Bold Italic", SERIF, FontStyle="Bold Italic")
     cs("Folio", SERIF, FontStyle="Bold", PointSize=10, FillColor=black)
     cs("TOC Phase Label", SANS, FontStyle="Black")
+    cs("TOC Number", SERIF, FontStyle="Regular", PointSize=11, Tracking=0)
     return k80
 
 
@@ -471,7 +472,8 @@ def build():
             runs = [(t, "TOC Phase Label" if s == "Bold" else None, at) for t, s, at in runs]
             st.para("TOC Phase", runs)
         else:
-            st.para("TOC Section" if cls == "toc-top" else "TOC Entry", runs + [("\t" + num, None, {})])
+            # leader tab + page number in one character style on every entry
+            st.para("TOC Section" if cls == "toc-top" else "TOC Entry", runs + [("\t" + num, "TOC Number", {})])
     f1, f2 = frame(st, BACK_TOP), frame(st, 89.7 - 13)
     thread([f1, f2])
     pages[2]["items"].append(f1)

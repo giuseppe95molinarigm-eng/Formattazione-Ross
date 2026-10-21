@@ -36,3 +36,12 @@ Rebuild: `python3 toolkit/build_toolkit.py`
   so anything that starts a page sits at the top of the text block.
 - Illustrations use the crop set in Word (`images/cropped/`); previously the crop was ignored.
 - Wording: "this document" → "this book" (3×, copyright page), listed in `CLIENT_EDITS`.
+
+## Revision 3 (Oct 21, check of the Oct 7 review points)
+
+- Points 1–3 (TOC levels, "to" on p. 42, title/copyright/TOC sequence) were already fixed in the Oct 7 build;
+  re-verified on the PDF.
+- TOC: leader dots and page numbers now use one style on every entry (EB Garamond 11 pt), so the dot-to-number
+  gap is uniform. IDML: tab + number in character style "TOC Number".
+- p. 13: the drop cap "I" ("I want…") now keeps a word space after it.
+- Pagination unchanged (159 pages); only pages iii, iv and 13 differ from the Oct 7 PDF.
