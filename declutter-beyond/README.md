@@ -45,3 +45,13 @@ Rebuild: `python3 toolkit/build_toolkit.py`
   gap is uniform. IDML: tab + number in character style "TOC Number".
 - p. 13: the drop cap "I" ("I want…") now keeps a word space after it.
 - Pagination unchanged (159 pages); only pages iii, iv and 13 differ from the Oct 7 PDF.
+
+## Revision 4 (client, Oct 28)
+
+- Copyright page: Book 1's wording plus `ISBN: 979-8-9821289-1-1 (paperback)` (`COPYRIGHT` in build_book.py).
+- p. 139: review address `beyond-review.purposefullivingpress.com` plus review QR (1 in).
+- p. 153: address `resources-declutter.purposefullivingpress.com` plus resources QR (1.5 in), replacing the old QR.
+- New: `build_epub.py` builds the Kindle EPUB (`output/Declutter_Beyond_Alex_Lee.epub`) from `output/book.html`,
+  with links and QR alt text. EPUBCheck reports 0 errors and 0 warnings.
+- Pending: Avenir (Book/Medium/Black) and Adobe Caslon Pro Italic font files, to match Book 1 exactly in the PDF.
+  The PDF still uses Nunito Sans and Libre Caslon as stand-ins; the IDML already specifies Avenir and Adobe Caslon Pro.

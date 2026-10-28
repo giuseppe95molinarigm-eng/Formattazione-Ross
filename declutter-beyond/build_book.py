@@ -48,6 +48,39 @@ def apply_client_edits(infos):
     return done
 QR_SIZE_PT = 144.0      # 2 in; the reference prints its QR at ~2.2 in
 
+# Client update of Oct 28: web addresses and QR codes (printed without https://)
+REVIEW_URL = "beyond-review.purposefullivingpress.com"
+RESOURCES_URL = "resources-declutter.purposefullivingpress.com"
+OLD_REVIEW_URL = "https://www.amazon.com/review/create-review?asin=YOUR_ASIN"
+TOOLKIT_LINE = "To download the Companion Resources, scan the code below."
+# QR image, QR symbol size in inches, share of the image width taken by the symbol
+QR_REVIEW = ("qr-review-beyond-captioned.png", 1.0, 0.8043, 1640, 1900)
+QR_RESOURCES = ("qr-resources-declutter-captioned.png", 1.5, 0.8338, 1799, 2000)
+
+# Copyright page: Book 1's wording (client request, Oct 28) + this book's ISBN
+COPYRIGHT = [
+    ("p", "Copyright © 2026 by Alex Lee"),
+    ("p", "All rights reserved."),
+    ("p", "No part of this book may be reproduced in any form or by any electronic or mechanical means, "
+          "including information storage and retrieval systems, without written permission from the author, "
+          "except for the use of brief quotations in a book review."),
+    ("p", "Published by Purposeful Living Press"),
+    ("p", "First Edition"),
+    ("p", "ISBN: 979-8-9821289-1-1 (paperback)"),
+    ("head", "DISCLAIMER:"),
+    ("p", "The information contained in this book is for general guidance and educational purposes only. "
+          "While the author has made every effort to ensure the accuracy and completeness of the information, "
+          "no warranty or fitness is implied. The author and publisher shall have no liability for any damages "
+          "or losses arising from the use of this information. Individual results may vary."),
+]
+
+
+def qr_figure(qr):
+    name, inches, share, pw, ph = qr
+    w = inches * 72 / share
+    return (f'<figure class="fig qrcode"><img src="../images/{name}" '
+            f'style="width:{w:.1f}pt;height:{w * ph / pw:.1f}pt" alt=""></figure>')
+
 ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4}
 
 
@@ -345,6 +378,10 @@ class Book:
     def para(self, info):
         segs, text = info["segs"], info["text"]
         st, al = info["style"], info["align"]
+        if info["img"] and info["img"][0] == "image9.png":
+            self.add(qr_figure(QR_RESOURCES), "fig")      # Toolkit page: new resources QR
+            self.dropcap_pending = False
+            return
         if info["img"]:
             name, wpt, hpt, crop = info["img"]
             if crop and any(crop):
@@ -375,9 +412,20 @@ class Book:
             return
         centered = al in ("center",)
         body = seg_html(segs, url_breaks=True)
-        if self.opener_kind == "note" and "http" in text:
-            # the reference sets the review URL on its own line, smaller
-            body = body.replace('<span class="url">', '<br><span class="url note-url">', 1)
+        review_page = self.opener_kind == "note" and OLD_REVIEW_URL in text
+        if review_page:
+            # new review address on its own line (as in Book 1), QR code below it
+            pre = seg_html([(t.replace(OLD_REVIEW_URL, ""), b, i) for t, b, i in segs]).rstrip()
+            body = f'{pre}<br><strong class="web">{esc(REVIEW_URL)}</strong>'
+            self.add(f'<p class="center">{body}</p>', "center")
+            self.add(qr_figure(QR_REVIEW), "fig")
+            self.dropcap_pending = False
+            return
+        if text.strip() == TOOLKIT_LINE:
+            self.add(f'<p class="center">{body}</p>', "center")
+            self.add(f'<p class="center web-line"><strong class="web">{esc(RESOURCES_URL)}</strong></p>', "center")
+            self.dropcap_pending = False
+            return
 
         # chapter epigraph: centered italic quote right after an opener
         bal = ""
@@ -563,13 +611,8 @@ def build(fig_heights=None, fig_defer=None, tune=None, top=None):
 <div class="tp-author">{esc(author.upper())}</div>
 <div class="tp-pub">{esc(publisher)}</div>
 </section>''']
-    cp = []
-    for x in copyright_paras:
-        t = x["text"].strip()
-        if t.endswith(":") and len(t) < 30:
-            cp.append(f'<p class="cp-head">{esc(t)}</p>')
-        else:
-            cp.append(f"<p>{seg_html(x['segs'])}</p>")
+    cp = [f'<p class="cp-head">{esc(t)}</p>' if kind == "head" else f"<p>{esc(t)}</p>"
+          for kind, t in COPYRIGHT]
     fm_html.append('<section class="copyright">' + "\n".join(cp) + "</section>")
 
     # --- main text ---------------------------------------------------------
@@ -701,11 +744,11 @@ def fit_figures(pdf_path, fig_heights, fig_defer, final=False):
     k = -1
     for i in range(len(doc)):
         for info in doc[i].get_image_info():
-            if (info["width"], info["height"]) == (153, 47):      # flourish
+            if (info["width"], info["height"]) in ((153, 47), (1640, 1900), (1799, 2000)):   # flourish, QR codes
                 continue
             k += 1
             x0, y0, x1, y1 = info["bbox"]
-            if y0 > 90 or i == 0 or (info["width"], info["height"]) == (1596, 1596):
+            if y0 > 90 or i == 0 or (info["width"], info["height"]) in ((1596, 1596), (1640, 1900), (1799, 2000)):
                 continue
             prev = doc[i - 1]
             lines = [s["origin"][1] for b in prev.get_text("dict")["blocks"] if b["type"] == 0

@@ -1,5 +1,5 @@
 == 1. Text integrity (manuscript vs PDF, word sequence) ==
-manuscript words/tokens: 40215   PDF body tokens: 40236
+manuscript words/tokens: 40067   PDF body tokens: 40088
   replace: MS[i want]  PDF[iwant]
   insert: MS[]  PDF[1 .]
   insert: MS[]  PDF[. 2]

@@ -209,3 +209,5 @@ ol.numlist .marker { display: inline-block; width: 18pt; margin-left: -18pt; }
 figure.fig { margin: 14pt 0; text-align: center; break-inside: avoid; }
 figure.fig img { display: inline-block; }
 figure.qr { margin: 16pt 0 8pt; }
+figure.qrcode { margin: 10pt 0 6pt; }
+p.web-line { margin-top: 2pt; }

@@ -17,7 +17,7 @@ import docx
 import pymupdf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_book import CLIENT_EDITS  # noqa: E402  (approved wording changes)
+from build_book import CLIENT_EDITS, COPYRIGHT, OLD_REVIEW_URL, REVIEW_URL, RESOURCES_URL, TOOLKIT_LINE  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 PDF = HERE / "output" / "Declutter_Beyond_Interior_6x9.pdf"
@@ -88,8 +88,22 @@ pdf_words = words(joined)
 d = docx.Document(str(MS))
 ms_paras = [p for p in d.element.body if p.tag == W + "p"]
 ms_text = []
+in_copyright = False
 for p in ms_paras:
     t = "".join(x.text or "" for x in p.iter(W + "t"))
+    # the copyright page now uses Book 1's wording (client, Oct 28): checked separately below
+    if t.startswith("© Copyright"):
+        in_copyright = True
+    if in_copyright:
+        if p.find(f".//{W}pStyle[@{W}val='Heading1']") is not None:
+            in_copyright = False
+            for kind, text in COPYRIGHT:
+                ms_text.append(text)
+        else:
+            continue
+    t = t.replace(OLD_REVIEW_URL, REVIEW_URL)
+    if t.strip() == TOOLKIT_LINE:
+        t = t + "\n" + RESOURCES_URL
     t = re.sub(r"^(CHAPTER \d+|Introduction|CONCLUSION|Appendix [AB]|Phase [IVX]+):\s*", r"\1 ", t)
     for key, old, new, _n in CLIENT_EDITS:
         if t.startswith(key):
@@ -225,6 +239,8 @@ for i in range(N):
     f = spans[0]["font"]
     if doc[i].get_text().strip().startswith("PHASE"):
         continue
+    if t.strip() in (REVIEW_URL, RESOURCES_URL) and doc[i].get_images():
+        continue                 # web address with its QR code below it, not a heading
     if ("Display-Sans" in f and spans[0]["size"] < 20) or (
             all("Bold" in s["font"] for s in spans if s["text"].strip()) and len(lines) > 3
             and y < 560):
